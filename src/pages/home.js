@@ -224,7 +224,7 @@ function reel(root) {
   let visible = true;
   let stopped = false;
   const kenburns = (el) => (state.reduced ? null : gsap.fromTo(el.querySelector('img'),
-    { scale: 1.16, xPercent: gsap.utils.random(-2.5, 2.5) }, { scale: 1.02, xPercent: 0, duration: 7.5, ease: 'none' }));
+    { scale: 1.16, xPercent: gsap.utils.random(-2.5, 2.5) }, { scale: 1.02, xPercent: 0, duration: 3.4, ease: 'none' }));
   const next = () => {
     if (stopped) return;
     const a = slides[i];
@@ -232,11 +232,11 @@ function reel(root) {
     const b = slides[i];
     gsap.set(b, { zIndex: 2 });
     gsap.set(a, { zIndex: 1 });
-    gsap.fromTo(b, { opacity: 0 }, { opacity: 1, duration: state.reduced ? 0.8 : 1.4, ease: 'power2.inOut', onComplete: () => gsap.set(a, { opacity: 0, zIndex: 0 }) });
+    gsap.fromTo(b, { opacity: 0 }, { opacity: 1, duration: state.reduced ? 0.8 : 0.7, ease: 'power2.inOut', onComplete: () => gsap.set(a, { opacity: 0, zIndex: 0 }) });
     kb?.kill();
     kb = kenburns(b);
   };
-  const schedule = () => { timer = gsap.delayedCall(state.reduced ? 6.5 : 5.2, () => { next(); schedule(); }); if (!visible) timer.pause(); };
+  const schedule = () => { timer = gsap.delayedCall(state.reduced ? 5 : 2.6, () => { next(); schedule(); }); if (!visible) timer.pause(); };
   kb = kenburns(slides[0]);
   schedule();
   const sync = () => { timer?.paused(!visible); kb?.paused(!visible); };

@@ -7,7 +7,7 @@ const ROOT = new URL('..', import.meta.url).pathname;
 const DIST = join(ROOT, 'dist');
 const OUT_DIR = join(ROOT, 'dist-single');
 const manifest = JSON.parse(readFileSync(join(ROOT, 'src/manifest.json'), 'utf8'));
-const HERO = ['furn', 'sfiha', 'manoucheZaatar', 'taouk', 'interior', 'storefront'];
+const HERO = ['storefront', 'furn', 'interior', 'sfiha', 'manoucheZaatar', 'taouk', 'fatayers_plateau', 'pizza_reine', 'wraps', 'dessert'];
 
 const dataUri = (file, type) => `data:${type};base64,${readFileSync(file).toString('base64')}`;
 

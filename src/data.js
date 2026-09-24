@@ -320,16 +320,18 @@ export const PHOTOS = {
 };
 
 // Hero reel (frame #1 = the fire).
-export const HERO_REEL = ['furn', 'sfiha', 'manoucheZaatar', 'taouk', 'interior', 'storefront'];
+export const HERO_REEL = ['storefront', 'furn', 'interior', 'sfiha', 'manoucheZaatar', 'taouk', 'fatayers_plateau', 'pizza_reine', 'wraps', 'dessert'];
 
 // Infos mosaic. Add `video: 'assets/ig-1.mp4'` to a tile to play a clip in place of the photo.
 export const GALLERY = [
   { photo: 'Portrait', size: 'xl', video: null },
   { photo: 'interior', size: 'tall', video: null },
   { photo: 'pizzalibaniase', size: 's', video: null },
-  { photo: 'furn_boutique', size: 's', video: null },
+  { photo: 'pizza_pepperoni', size: 's', video: null },
   { photo: 'epinard', size: 'wide', video: null },
   { photo: 'manouchefromagepommedeterre', size: 's', video: null },
   { photo: 'storefront', size: 's', video: null },
   { photo: 'jebnelahme', size: 'tall', video: null },
+  { photo: 'wraps', size: 'tall', video: null },
+  { photo: 'fatayers_plateau', size: 'sq', pcOnly: true, video: null }, // fills the last 2×2 gap on desktop only
 ];

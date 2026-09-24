@@ -28,7 +28,7 @@ export function render() {
   const g = i.gallery;
   const f = i.faq;
   const photo = `<div class="visit__photo" data-cursor="view" data-photo="homepage">${pic('homepage', { sizes: '(min-width: 900px) 34vw, 90vw', pos: '50% 0%' })}</div>`;
-  const tiles = GALLERY.map((tile, n) => `<button class="tile tile--${tile.size}" type="button" data-tile="${n}" data-cursor="view" data-reveal="up" aria-label="${esc(d.a11y.photo)} ${n + 1}/${GALLERY.length}">
+  const tiles = GALLERY.map((tile, n) => `<button class="tile tile--${tile.size}${tile.pcOnly ? ' tile--pc' : ''}" type="button" data-tile="${n}" data-cursor="view" data-reveal="up" aria-label="${esc(d.a11y.photo)} ${n + 1}/${GALLERY.length}">
       ${pic(tile.photo, { sizes: tile.size === 'xl' ? '(min-width: 768px) 50vw, 100vw' : '(min-width: 768px) 25vw, 50vw', alt: '' })}
       ${tile.video ? `<video muted loop playsinline preload="none" data-src="${esc(tile.video)}" aria-hidden="true"></video>` : ''}
     </button>`).join('');
