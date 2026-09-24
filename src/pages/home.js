@@ -52,17 +52,7 @@ function ratingBadge() {
 function maison() {
   const d = t();
   const m = d.home.maison;
-  const pr = d.home.process;
   const stamp = d.ticker.slice(2, 5).join(' · ') + ' · ';
-  const steps = [['minipizza'], ['furn'], ['manoucheZaatar'], ['wraps']].map(([photo], i) => `
-    <li class="step">
-      <div class="arch step__media shutter">${pic(photo, { sizes: '(min-width: 900px) 22vw, 45vw' })}</div>
-      <div class="step__meta">
-        <span class="step__num">0${i + 1}</span>
-        <h4 class="step__title">${esc(pr.steps[i][0])}</h4>
-        <p class="step__text">${esc(pr.steps[i][1])}</p>
-      </div>
-    </li>`).join('');
   return `<section class="sec t-paper maison" aria-labelledby="maison-title">
     ${watermark()}
     <div class="wrap maison__grid">
@@ -83,6 +73,22 @@ function maison() {
         </div>
       </figure>
     </div>
+  </section>`;
+}
+
+function process() {
+  const d = t();
+  const pr = d.home.process;
+  const steps = [['minipizza'], ['furn'], ['manoucheZaatar'], ['wraps']].map(([photo], i) => `
+    <li class="step">
+      <div class="arch step__media shutter">${pic(photo, { sizes: '(min-width: 900px) 22vw, 45vw' })}</div>
+      <div class="step__meta">
+        <span class="step__num">0${i + 1}</span>
+        <h4 class="step__title">${esc(pr.steps[i][0])}</h4>
+        <p class="step__text">${esc(pr.steps[i][1])}</p>
+      </div>
+    </li>`).join('');
+  return `<section class="sec t-paper process-sec" aria-label="${esc(pr.eyebrow)}">
     <div class="wrap process" data-process>
       <div class="process__head">
         <div class="stack" style="--gap:1rem"><p class="eyebrow">${star()}${esc(pr.eyebrow)}</p><h3 class="h h--l" data-split>${pr.title}</h3></div>
@@ -187,7 +193,7 @@ function find() {
 }
 
 export function render() {
-  return hero() + maison() + chef() + envies() + reviews() + find();
+  return hero() + maison() + envies() + process() + chef() + reviews() + find();
 }
 
 /* ── Behaviour ─────────────────────────────────────────────────────── */

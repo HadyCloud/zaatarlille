@@ -87,7 +87,7 @@
 }
 
 /* Du pétrin au four */
-.process { margin-top: clamp(96px, 12vw, 180px); }
+.process { margin-top: 0; }
 .process__head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 18px 40px; margin-bottom: clamp(36px, 5vw, 64px); }
 .process__steps { display: grid; grid-template-columns: repeat(2, 1fr); gap: 36px 16px; position: relative; }
 .step__media { aspect-ratio: 3 / 4; }
