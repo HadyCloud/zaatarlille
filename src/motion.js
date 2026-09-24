@@ -125,8 +125,8 @@ export function initCursor() {
   const label = c.querySelector('.cursor__label');
   const dx = gsap.quickTo(dot, 'x', { duration: 0.06 });
   const dy = gsap.quickTo(dot, 'y', { duration: 0.06 });
-  const rx = gsap.quickTo(ring, 'x', { duration: 0.38, ease: 'power3.out' });
-  const ry = gsap.quickTo(ring, 'y', { duration: 0.38, ease: 'power3.out' });
+  const rx = gsap.quickTo(ring, 'x', { duration: 0.16, ease: 'power3.out' });
+  const ry = gsap.quickTo(ring, 'y', { duration: 0.16, ease: 'power3.out' });
   let seen = false;
   window.addEventListener('pointermove', (e) => {
     if (e.pointerType !== 'mouse') return;
