@@ -1,0 +1,205 @@
+/* ── Tokens ─────────────────────────────────────────────────────────── */
+:root {
+  --sage: #637c7a;       /* sampled from logo.webp */
+  --sage-deep: #4f6660;  /* text-safe sage */
+  --forest: #26332f;
+  --forest-2: #1d2825;
+  --cream: #e8e3d7;      /* sampled logo ink */
+  --paper: #f4f0e6;
+  --paper-2: #ebe5d7;
+  --ember: #e2682b;
+  --ember-ink: #a8421a;  /* ember darkened for text on paper */
+  --sesame: #d9a441;
+  --zaatar: #5b5a2e;
+
+  --f-display: 'Amatic SC', 'Arial Narrow', 'Helvetica Neue Condensed', sans-serif;
+  --f-cond: 'Antonio', 'Arial Narrow', 'Roboto Condensed', sans-serif;
+  --f-script: 'Mrs Saint Delafield', 'Snell Roundhand', 'Brush Script MT', cursive;
+  --f-sans: 'Jost', 'Futura', 'Century Gothic', 'Avenir Next', sans-serif;
+  --f-grot: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+
+  --gutter: clamp(16px, 4.2vw, 64px);
+  --maxw: 1320px;
+  --ticker-h: 34px;
+  --header-h: 68px;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --arch: 999px 999px 0 0;
+  --safe-b: env(safe-area-inset-bottom, 0px);
+}
+@media (min-width: 1024px) {
+  :root { --header-h: 76px; }
+}
+
+/* ── Themes: every section declares one. Small text never sits on --sage. */
+.t-paper { --bg: var(--paper); --fg: var(--forest); --muted: var(--sage-deep); --accent: var(--ember-ink); --line: rgba(38, 51, 47, 0.16); --focus: var(--forest); --wm: #ebe4d4; --btn-bg: var(--forest); --btn-fg: var(--cream); }
+.t-paper2 { --bg: var(--paper-2); --fg: var(--forest); --muted: var(--sage-deep); --accent: var(--ember-ink); --line: rgba(38, 51, 47, 0.18); --focus: var(--forest); --wm: #e2dbc9; --btn-bg: var(--forest); --btn-fg: var(--cream); }
+.t-sage { --bg: var(--sage); --fg: var(--cream); --muted: var(--cream); --accent: var(--paper); --line: rgba(232, 227, 215, 0.34); --focus: var(--cream); --wm: #6b8482; --btn-bg: var(--cream); --btn-fg: var(--forest); }
+.t-sagedeep { --bg: var(--sage-deep); --fg: var(--cream); --muted: var(--cream); --accent: var(--cream); --line: rgba(232, 227, 215, 0.3); --focus: var(--cream); --wm: #566e68; --btn-bg: var(--cream); --btn-fg: var(--forest); }
+.t-forest { --bg: var(--forest); --fg: var(--cream); --muted: #c9c4b6; --accent: var(--ember); --line: rgba(232, 227, 215, 0.18); --focus: var(--sesame); --wm: #2c3a36; --btn-bg: var(--cream); --btn-fg: var(--forest); }
+[class*='t-'] { background-color: var(--bg); color: var(--fg); }
+
+/* ── Reset ──────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-padding-top: calc(var(--header-h) + 72px); }
+html.lenis, html.lenis body { height: auto; }
+.lenis:not(.lenis-autoToggle).lenis-stopped { overflow: clip; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--forest);
+  font: 400 1rem/1.65 var(--f-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+img, video, svg, canvas, iframe { display: block; max-width: 100%; }
+img { height: auto; }
+button, input, select { font: inherit; color: inherit; }
+button { cursor: pointer; background: none; border: 0; padding: 0; }
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
+h1, h2, h3, h4, p, figure, blockquote, ul, ol, dl, dd { margin: 0; }
+ul[role='list'], ol[role='list'] { list-style: none; padding: 0; }
+:where(a, button, input, select, summary, [tabindex]):focus-visible {
+  outline: 3px solid var(--focus, var(--forest));
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+::selection { background: var(--sesame); color: var(--forest); }
+
+.sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+.sr-only { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.noscript { padding: 120px 24px; font-size: 18px; text-align: center; }
+
+.skip {
+  position: fixed; top: 10px; left: 10px; z-index: 200;
+  padding: 12px 18px; border-radius: 999px;
+  background: var(--forest); color: var(--cream);
+  font: 500 14px/1 var(--f-grot); text-decoration: none;
+  transform: translateY(-160%); transition: transform 0.25s var(--ease-out);
+  --focus: var(--sesame);
+}
+.skip:focus-visible { transform: none; }
+
+/* ── Layout ─────────────────────────────────────────────────────────── */
+.wrap { width: min(100% - 2 * var(--gutter), var(--maxw)); margin-inline: auto; position: relative; z-index: 1; }
+.sec { position: relative; padding-block: clamp(88px, 12vw, 176px); overflow: clip; }
+.sec--tight { padding-block: clamp(64px, 8vw, 112px); }
+.stack > * + * { margin-top: var(--gap, 1.25rem); }
+
+/* ── Type ───────────────────────────────────────────────────────────── */
+.h {
+  font-family: var(--f-display);
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: 0.015em;
+  -webkit-text-stroke: 0.028em currentColor;
+  paint-order: stroke fill;
+  text-wrap: balance;
+}
+.h em, .script {
+  font-family: var(--f-script);
+  font-style: normal;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0.01em;
+  -webkit-text-stroke: 0;
+}
+.h em {
+  color: var(--accent);
+  font-size: 1.02em;
+  line-height: 0.6;
+  padding-inline: 0.04em 0.12em;
+  white-space: nowrap;
+}
+.h--xl { font-size: clamp(3.6rem, 9.2vw, 9rem); }
+.h--l { font-size: clamp(3.2rem, 6.6vw, 6.4rem); }
+.h--m { font-size: clamp(2.6rem, 4.6vw, 4.2rem); }
+
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 0.7em;
+  font: 500 0.75rem/1.2 var(--f-grot);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.eyebrow .star { width: 12px; height: 12px; color: var(--accent); flex: none; }
+.t-sage .eyebrow { background: var(--sage-deep); color: var(--cream); padding: 8px 14px; border-radius: 999px; }
+.t-sage .eyebrow .star { color: var(--sesame); }
+
+.lead { font: 300 clamp(1.25rem, 2.1vw, 1.6rem)/1.45 var(--f-sans); text-wrap: pretty; }
+.body { font-size: clamp(1rem, 1.15vw, 1.0625rem); line-height: 1.7; color: var(--fg); max-width: 60ch; text-wrap: pretty; }
+.muted { color: var(--muted); }
+.num { font-family: var(--f-cond); font-weight: 600; font-variant-numeric: tabular-nums lining-nums; letter-spacing: 0.02em; }
+.star { width: 1em; height: 1em; display: inline-block; vertical-align: -0.12em; }
+.ico { width: 20px; height: 20px; flex: none; }
+
+/* ── Buttons & links ────────────────────────────────────────────────── */
+.btn {
+  --h: 52px;
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.75em;
+  min-height: var(--h); padding: 0 1.6em;
+  border-radius: 999px;
+  background: var(--btn-bg); color: var(--btn-fg);
+  font: 600 0.78rem/1 var(--f-grot); letter-spacing: 0.16em; text-transform: uppercase;
+  text-decoration: none; white-space: nowrap;
+  border: 1.5px solid transparent;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  will-change: transform;
+}
+.btn .ico { width: 18px; height: 18px; transition: transform 0.4s var(--ease-out); }
+.btn:hover .ico { transform: translateX(4px); }
+.btn--ghost { background: transparent; color: var(--fg); border-color: currentColor; }
+.t-sage .btn--ghost { background: var(--sage-deep); border-color: var(--sage-deep); }
+.btn--ember { background: var(--ember); color: var(--forest); }
+.btn--sm { --h: 44px; padding: 0 1.2em; font-size: 0.72rem; }
+
+.link {
+  display: inline-flex; align-items: center; gap: 0.6em;
+  min-height: 44px;
+  font: 600 0.78rem/1 var(--f-grot); letter-spacing: 0.16em; text-transform: uppercase;
+  text-decoration: none;
+  background: linear-gradient(currentColor, currentColor) 0 calc(50% + 0.95em) / 100% 1px no-repeat;
+  transition: background-size 0.4s var(--ease-out);
+}
+.link:hover { background-size: 30% 1px; }
+.link .ico { transition: transform 0.4s var(--ease-out); }
+.link:hover .ico { transform: translateX(5px); }
+
+/* ── Shapes ─────────────────────────────────────────────────────────── */
+.arch { border-radius: var(--arch); overflow: hidden; position: relative; isolation: isolate; background: var(--forest); }
+.arch > img, .arch > video, .fill { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.wm {
+  position: absolute; z-index: 0; pointer-events: none; user-select: none;
+  font: 700 clamp(16rem, 58vw, 64rem)/0.78 var(--f-display);
+  color: var(--wm); -webkit-text-stroke: 0.02em var(--wm);
+  white-space: nowrap; rotate: -7deg;
+  inset-inline-end: -6vw; top: 4%;
+}
+.rule { display: flex; align-items: center; gap: 14px; color: var(--accent); }
+.rule::before, .rule::after { content: ''; height: 1px; flex: 1; background: var(--line); }
+.rule .star { width: 14px; height: 14px; }
+
+/* ── Motion helpers (JS adds .is-in; reduced motion shows everything) ── */
+html.js:not(.reduced) [data-reveal='up'] { opacity: 0; }
+.media-mask { overflow: hidden; }
+
+[hidden] { display: none !important; }
+.pillnav { list-style: none; margin: 0; }
+
+/* Transform-only "clip" reveal: a shutter in the section colour lifts off the image. */
+.shutter { position: relative; }
+html.js:not(.reduced) .shutter::after {
+  content: ''; position: absolute; inset: -1px; z-index: 3; pointer-events: none;
+  background: var(--bg, var(--paper));
+  transform: scaleY(var(--shut, 1)); transform-origin: 50% 0%;
+}
+
+/* Pause switch stops every CSS loop too. */
+html.motion-paused *, html.motion-paused *::before, html.motion-paused *::after { animation-play-state: paused !important; }
+/* Parallax images get real overscan (GSAP owns the transform). */
+.arch > img[data-speed] { top: -8%; bottom: auto; height: 116%; }
+html.js:not(.reduced) .arch.shutter { background: var(--bg, var(--paper)); }
+/* Programmatic focus targets (route headings, <main>) are not interactive. */
+[tabindex='-1']:focus { outline: none; }

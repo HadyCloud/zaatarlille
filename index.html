@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Za'atar — Boulangerie libanaise à Lille · Man'ouches, fatayers, wraps</title>
+  <meta name="description" content="Za'atar, le furn libanais de la rue des Postes à Lille : man'ouches, fatayers, wraps et knefeh cuits au four. Du mardi au dimanche.">
+  <meta name="theme-color" content="#637C7A">
+  <meta name="color-scheme" content="light">
+  <meta property="og:type" content="restaurant">
+  <meta property="og:site_name" content="Za'atar">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:locale:alternate" content="en_GB">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta property="og:title" content="Za'atar — La Boulangerie Libanaise, Lille">
+  <meta property="og:description" content="Le furn libanais de la rue des Postes : man'ouches, fatayers, wraps et knefeh cuits au four.">
+  <meta property="og:image" content="assets/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Logo Za'atar, La Boulangerie Libanaise, crème sur fond sauge">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Za'atar — La Boulangerie Libanaise, Lille">
+  <meta name="twitter:description" content="Le furn libanais de la rue des Postes : man'ouches, fatayers, wraps et knefeh cuits au four.">
+  <meta name="twitter:image" content="assets/og.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Antonio:wght@400;600&family=Archivo:wght@400;500;600&family=Jost:ital,wght@0,300;0,400;0,500;1,300&family=Mrs+Saint+Delafield&display=swap">
+  <link rel="preload" as="image" href="assets/img/furn-800.webp" imagesrcset="assets/img/furn-800.webp 800w, assets/img/furn-1400.webp 1400w" imagesizes="100vw" fetchpriority="high">
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      try { if (sessionStorage.getItem('zaatar.visited')) d.classList.add('no-preload'); } catch (e) {}
+      try { var l = localStorage.getItem('zaatar.lang'); if (l === 'en' || l === 'es') d.lang = l; } catch (e) {}
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches || /[?&]motion=reduce\b/.test(location.search)) d.classList.add('reduced');
+    })();
+  </script>
+  <!--JSONLD-->
+</head>
+<body>
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="sfiha" viewBox="0 0 24 24">
+        <path fill="currentColor" fill-rule="evenodd" d="M2 2.6Q12 6.4 21.4 2Q17.6 12 22 21.4Q12 17.6 2.6 22Q6.4 12 2 2.6ZM9.2 9.6Q12 10.7 14.6 9.2Q13.5 12 14.8 14.4Q12 13.3 9.6 14.8Q10.7 12 9.2 9.6Z"/>
+        <circle cx="12" cy="12" r="1.4" fill="currentColor"/>
+      </symbol>
+      <filter id="boil" x="-4%" y="-10%" width="108%" height="120%" color-interpolation-filters="sRGB">
+        <feTurbulence id="boil-noise" type="fractalNoise" baseFrequency="0.02 0.034" numOctaves="2" seed="1" result="n"/>
+        <feDisplacementMap in="SourceGraphic" in2="n" scale="5" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+    </defs>
+  </svg>
+
+  <a class="skip" href="#main" data-skip>Aller au contenu</a>
+  <div class="progress" aria-hidden="true"><span></span></div>
+
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <img class="preloader__logo" src="assets/img/logo-tile-842.webp" width="842" height="502" alt="">
+    <span class="preloader__line"></span>
+  </div>
+
+  <div class="curtain" id="curtain" aria-hidden="true">
+    <div class="curtain__arch"><img src="assets/img/logo-tile-421.webp" width="421" height="251" alt=""></div>
+  </div>
+
+  <div class="topbar" id="topbar"></div>
+  <main id="main" tabindex="-1"></main>
+  <footer class="footer t-sage" id="footer"></footer>
+  <nav class="actionbar" id="actionbar"></nav>
+  <div class="overlay t-forest" id="overlay" role="dialog" aria-modal="true" hidden></div>
+
+  <dialog class="lightbox" id="lightbox"></dialog>
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <span class="cursor__dot"></span>
+    <span class="cursor__ring"><svg viewBox="0 0 24 24"><use href="#sfiha"/></svg><span class="cursor__label"></span></span>
+  </div>
+  <div class="floatpic" id="floatpic" aria-hidden="true"><img alt="" width="400" height="500"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="sr-only" id="live" aria-live="polite" aria-atomic="true"></div>
+
+  <noscript>
+    <div class="noscript">
+      <p><strong>Za'atar — La Boulangerie Libanaise</strong></p>
+      <p>139 Rue des Postes, 59000 Lille · <a href="tel:+33983846975">09 83 84 69 75</a></p>
+      <p>Mardi–samedi 10h–15h · 18h–20h30 · Dimanche 10h–15h · Lundi fermé</p>
+      <p><a href="https://www.instagram.com/zaatar.lille/">@zaatar.lille</a></p>
+    </div>
+  </noscript>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
