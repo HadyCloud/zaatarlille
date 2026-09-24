@@ -1,6 +1,6 @@
-import { CONFIG, MENU, SIGNATURE, REVIEWS, HERO_REEL } from '../data.js';
+import { CONFIG, MENU, REVIEWS, HERO_REEL } from '../data.js';
 import { t, lang } from '../i18n.js';
-import { esc, formatPrice, findItem } from '../format.js';
+import { esc } from '../format.js';
 import { pic, ICON, links, hoursGroups, external, watermark } from '../util.js';
 import { mapHTML, mountMap } from '../map.js';
 import { visitCardHTML } from '../visit.js';
@@ -111,36 +111,6 @@ function chef() {
   </section>`;
 }
 
-function signature() {
-  const d = t();
-  const cards = SIGNATURE.map((s, i) => {
-    const item = findItem(MENU, s.ref);
-    const cat = s.ref.split('/')[0];
-    return `<article class="card">
-      <a class="card__link" href="#/carte?cat=${cat}" data-tilt>
-        <div class="arch card__media" data-cursor="view">${pic(s.photo, { sizes: '(min-width: 1024px) 28vw, 78vw' })}</div>
-        <div class="card__meta">
-          <span class="card__num">0${i + 1}</span>
-          <h3 class="card__name">${esc(s.name)}</h3>
-          <span class="card__price">${formatPrice(item.price)}</span>
-        </div>
-      </a>
-    </article>`;
-  }).join('');
-  return `<section class="t-paper sig" data-sig aria-labelledby="sig-title">
-    <div class="sig__pin">
-      <div class="sig__track" data-sig-track>
-        <div class="sig__intro stack">
-          <p class="eyebrow" data-reveal="up">${star()}${esc(d.home.sig.eyebrow)}</p>
-          <h2 class="h h--xl" id="sig-title" data-split>${d.home.sig.title}</h2>
-          <a class="link" href="#/carte" data-reveal="up">${esc(d.common.seeMenu)} ${ICON.arrow}</a>
-        </div>
-        <div class="sig__cards">${cards}</div>
-      </div>
-    </div>
-  </section>`;
-}
-
 function envies() {
   const d = t();
   const panels = MENU.sections.map((s) => {
@@ -217,7 +187,7 @@ function find() {
 }
 
 export function render() {
-  return hero() + maison() + chef() + signature() + envies() + reviews() + find();
+  return hero() + maison() + chef() + envies() + reviews() + find();
 }
 
 /* ── Behaviour ─────────────────────────────────────────────────────── */
@@ -306,17 +276,6 @@ function processScrub(root) {
 
 function responsive(root) {
   const mm = gsap.matchMedia();
-  mm.add('(min-width: 1024px) and (prefers-reduced-motion: no-preference)', () => {
-    if (state.reduced) return;
-    const pin = root.querySelector('.sig__pin');
-    const track = root.querySelector('[data-sig-track]');
-    const dist = () => Math.max(0, track.scrollWidth - window.innerWidth);
-    gsap.to(track, {
-      x: () => -dist(), ease: 'none',
-      scrollTrigger: { trigger: pin, start: 'top top', end: () => `+=${dist()}`, pin: true, scrub: 0.6, invalidateOnRefresh: true },
-    });
-  });
-
   mm.add('(min-width: 1024px)', () => {
     const rail = root.querySelector('[data-envies]');
     const panels = [...rail.querySelectorAll('[data-env]')];
