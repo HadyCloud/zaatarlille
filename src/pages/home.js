@@ -23,7 +23,7 @@ function hero() {
         <div class="hero__arch" data-arch>
           <div class="hero__inner" data-inner>
             ${HERO_REEL.map((p, i) => `<div class="hero__slide">${pic(p, {
-              sizes: '100vw', eager: i === 0, priority: i === 0, alt: i === 0 ? undefined : '',
+              sizes: '100vw', eager: i < 4, priority: i === 0, alt: i === 0 ? undefined : '',
               attrs: i === 0 ? '' : 'fetchpriority="low"',
             })}</div>`).join('')}
             <video class="hero__video" data-src="${CONFIG.heroVideo}" muted loop playsinline preload="none" aria-hidden="true"></video>

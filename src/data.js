@@ -31,7 +31,7 @@ export const CONFIG = {
     sat: [['10:00', '15:00'], ['18:00', '20:30']],
     sun: [['10:00', '15:00']],
   },
-  heroVideo: 'assets/hero.mp4', // Drop the file in public/assets/ and it replaces the photo reel.
+  heroVideo: '', // Set to 'assets/hero.mp4' (file in public/assets/) to replace the photo reel with a video.
   siteUrl: '', // Set the production URL (https://…) for canonical + absolute OG links.
   year: 2026,
 };
