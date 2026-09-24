@@ -74,6 +74,7 @@
 .board { position: relative; padding-bottom: clamp(80px, 10vw, 140px); overflow: clip; }
 .board .wm { top: 30%; }
 .msec { position: relative; padding-block: clamp(48px, 6vw, 84px); border-top: 1px solid var(--line); scroll-margin-top: calc(var(--header-h) + 80px); }
+@media (max-width: 767px) { .msec { padding-block: 32px; } .board { padding-bottom: 56px; } }
 .msec:first-child { border-top: 0; }
 .msec__grid { display: grid; gap: 32px; }
 .msec__head { display: grid; justify-items: start; gap: 4px; margin-bottom: clamp(20px, 3vw, 34px); }
@@ -190,3 +191,10 @@
 .faq__q[aria-expanded='true'] .faq__icon::after { transform: rotate(0deg); }
 .faq__a { padding: 0 56px 26px 0; font-size: 1.05rem; line-height: 1.7; color: var(--forest); max-width: 64ch; }
 .faq__a a { font-weight: 500; }
+
+/* Mobile rhythm (see home.css) */
+@media (max-width: 767px) {
+  .phero { padding-bottom: 48px; }
+  .histoire__grid { gap: 32px; }
+  .mosaic__head { margin-bottom: 32px; }
+}

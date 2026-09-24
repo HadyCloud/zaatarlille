@@ -114,6 +114,7 @@
 /* ── Footer ─────────────────────────────────────────────────────────── */
 .footer { position: relative; overflow: clip; }
 .footer__top { position: relative; overflow: clip; padding: clamp(72px, 10vw, 140px) 0 clamp(56px, 7vw, 96px); text-align: center; }
+@media (max-width: 767px) { .footer__top { padding: 52px 0 40px; } }
 .footer__top > :not(.wm) { position: relative; z-index: 1; }
 .footer__top .wm { top: -10%; inset-inline-end: -4vw; }
 .footer__logo { width: min(78vw, 520px); margin-inline: auto; }

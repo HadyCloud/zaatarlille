@@ -246,3 +246,9 @@ html.js:not(.reduced) .hero [data-intro] { opacity: 0; }
   .env__type .script { transition: opacity 0.35s; }
   .env:not(.is-active) .env__type .script { opacity: 0; }
 }
+
+/* ═══ MOBILE RHYTHM: same section padding (48px) and same head→content gap (32px) everywhere ═══ */
+@media (max-width: 767px) {
+  .maison__grid, .chef__grid, .reviews__head, .find__grid { gap: 32px; }
+  .process__head, .envies__head, .reviews__head { margin-bottom: 32px; }
+}

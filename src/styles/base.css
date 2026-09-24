@@ -86,6 +86,10 @@ ul[role='list'], ol[role='list'] { list-style: none; padding: 0; }
 .wrap { width: min(100% - 2 * var(--gutter), var(--maxw)); margin-inline: auto; position: relative; z-index: 1; }
 .sec { position: relative; padding-block: clamp(88px, 12vw, 176px); overflow: clip; }
 .sec--tight { padding-block: clamp(64px, 8vw, 112px); }
+@media (max-width: 767px) {
+  .sec { padding-block: 48px; }
+  .sec--tight { padding-block: 48px; }
+}
 .stack > * + * { margin-top: var(--gap, 1.25rem); }
 
 /* ── Type ───────────────────────────────────────────────────────────── */
