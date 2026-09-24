@@ -32,27 +32,25 @@ export const esc = (s = '') =>
   String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 
 export const CATS = ['manouche', 'fatayers', 'wraps', 'desserts', 'boissons'];
-export const DEFAULT_FILTERS = Object.freeze({ cat: 'all', veg: false, q: '', sort: 'menu' });
+export const DEFAULT_FILTERS = Object.freeze({ cat: 'all', veg: false, q: '' });
 
 /**
- * Pure menu filter. Sort applies within each section so the board keeps its structure.
+ * Pure menu filter: category, vegetarian and accent-insensitive search.
  * @returns {{ sections: Array, count: number }}
  */
 export function filterMenu(menu, filters, lang = 'fr') {
-  const { cat = 'all', veg = false, q = '', sort = 'menu' } = filters;
+  const { cat = 'all', veg = false, q = '' } = filters;
   const tokens = norm(q).split(' ').filter(Boolean);
   let count = 0;
   const sections = menu.sections
     .filter((s) => cat === 'all' || s.id === cat)
     .map((s) => {
-      let items = s.items.filter((it) => {
+      const items = s.items.filter((it) => {
         if (veg && !it.veg) return false;
         if (!tokens.length) return true;
         const hay = norm([it.name, s.title, s.label?.[lang], s.label?.fr, it.gloss?.[lang], it.gloss?.fr].join(' '));
         return tokens.every((t) => hay.includes(t));
       });
-      if (sort === 'asc') items = [...items].sort((a, b) => a.price - b.price);
-      if (sort === 'desc') items = [...items].sort((a, b) => b.price - a.price);
       count += items.length;
       return { ...s, items };
     })

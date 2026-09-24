@@ -16,21 +16,10 @@ export const mq = {
 };
 // ?motion=reduce forces the reduced-motion experience (handy for QA).
 const forceReduce = /[?&]motion=reduce\b/.test(location.search);
-export const state = { reduced: mq.reduced.matches || forceReduce, paused: false, lenis: null };
+export const state = { reduced: mq.reduced.matches || forceReduce, lenis: null };
 root.classList.toggle('reduced', state.reduced);
 root.classList.toggle('has-hover', mq.fine.matches);
 mq.reduced.addEventListener('change', () => location.reload());
-
-/* ── Global pause (WCAG 2.2.2): ticker, reel, sparks, boil, marquees ── */
-const pauseSubs = new Set();
-export const onPause = (fn) => (pauseSubs.add(fn), () => pauseSubs.delete(fn));
-export function setPaused(p) {
-  state.paused = p;
-  root.classList.toggle('motion-paused', p);
-  try { sessionStorage.setItem('zaatar.paused', p ? '1' : ''); } catch { /* ignore */ }
-  pauseSubs.forEach((fn) => fn(p));
-}
-try { if (sessionStorage.getItem('zaatar.paused')) { state.paused = true; root.classList.add('motion-paused'); } } catch { /* ignore */ }
 
 /* ── Smooth scroll ─────────────────────────────────────────────────── */
 export function initSmoothScroll() {
@@ -167,7 +156,7 @@ export function boil(el) {
   const io = new IntersectionObserver(([e]) => { visible = e.isIntersecting; });
   io.observe(el);
   const id = setInterval(() => {
-    if (!visible || state.paused || document.hidden) return;
+    if (!visible || document.hidden) return;
     seed = (seed % 4) + 1;
     noise.setAttribute('seed', String(seed));
   }, 110);
@@ -204,7 +193,7 @@ export function sparks(canvas) {
   resize();
   parts.forEach((p) => spawn(p, true));
   const tick = (_t, dtMs) => {
-    if (!visible || state.paused || document.hidden) return;
+    if (!visible || document.hidden) return;
     const dt = Math.min(dtMs, 50) / 1000;
     ctx.clearRect(0, 0, w, h);
     for (const p of parts) {

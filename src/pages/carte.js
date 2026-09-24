@@ -64,7 +64,6 @@ export function render(route, reason) {
   return `<section class="phero t-sage" aria-labelledby="carte-title">
       ${watermark()}
       <div class="wrap">
-        <p class="eyebrow">${star()}${esc(c.eyebrow)}</p>
         <h1 class="h phero__title" id="carte-title" tabindex="-1" data-split>${esc(c.title)}</h1>
         <p class="phero__script" lang="fr">${esc(c.script)}</p>
         <p class="lead" data-reveal="up">${esc(c.lead)}</p>
@@ -90,13 +89,6 @@ export function render(route, reason) {
           <button class="toggle" type="button" aria-pressed="${filters.veg}" data-veg>
             <span class="toggle__track" aria-hidden="true"></span>${ICON.leaf}${esc(c.vegOnly)}
           </button>
-          <div class="seg" role="group" aria-label="${esc(c.sort)}">
-            <span class="seg__label" aria-hidden="true">${esc(c.sort)}</span>
-            <button type="button" data-sort="menu" aria-pressed="false">${esc(c.sortMenu)}</button>
-            <button type="button" data-sort="asc" aria-pressed="false" aria-label="${esc(c.sortAscLabel)}">${esc(c.sortAsc)}</button>
-            <button type="button" data-sort="desc" aria-pressed="false" aria-label="${esc(c.sortDescLabel)}">${esc(c.sortDesc)}</button>
-          </div>
-          <p class="count"><span class="num" data-count>41</span><span data-count-label></span></p>
         </div>
         <div data-sections>${MENU.sections.map(section).join('')}</div>
         <div class="empty" data-empty>
@@ -119,23 +111,18 @@ export function mount(root, route, reason) {
   const chips = [...chipsBar.querySelectorAll('[data-cat]')];
   const sections = [...root.querySelectorAll('[data-section]')];
   const rowEls = new Map([...root.querySelectorAll('[data-row]')].map((el) => [el.dataset.row, el]));
-  const countEl = root.querySelector('[data-count]');
-  const countLabel = root.querySelector('[data-count-label]');
   const empty = root.querySelector('[data-empty]');
   const input = root.querySelector('[data-q]');
   const clearBtn = root.querySelector('[data-clear]');
   const vegBtn = root.querySelector('[data-veg]');
-  const sortBtns = [...root.querySelectorAll('[data-sort]')];
   const live = document.getElementById('live');
   let flipTl = null;
   let seq = 0;
   let announceTimer;
-  const shown = { count: 41 };
 
   const syncControls = () => {
     chips.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.cat === filters.cat)));
     vegBtn.setAttribute('aria-pressed', String(filters.veg));
-    sortBtns.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.sort === filters.sort)));
     clearBtn.hidden = !filters.q;
     if (input.value !== filters.q) input.value = filters.q;
     const pressed = chips.find((b) => b.dataset.cat === filters.cat);
@@ -145,13 +132,6 @@ export function mount(root, route, reason) {
   const syncUrl = () => {
     const h = filters.cat === 'all' ? '#/carte' : `#/carte?cat=${filters.cat}`;
     if (location.hash !== h) history.replaceState(null, '', h);
-  };
-
-  const setCount = (n, animate) => {
-    const label = c.count(n).replace(/^\d+\s*/, '');
-    countLabel.textContent = label;
-    if (!animate || state.reduced) { shown.count = n; countEl.textContent = n; return; }
-    gsap.to(shown, { count: n, duration: 0.5, ease: 'power2.out', snap: { count: 1 }, overwrite: true, onUpdate: () => { countEl.textContent = shown.count; } });
   };
 
   const announce = (n) => {
@@ -166,7 +146,6 @@ export function mount(root, route, reason) {
     const visible = new Set([...order.values()].flat());
     syncControls();
     syncUrl();
-    setCount(result.count, animate);
     if (animate) announce(result.count);
     const doAnim = animate && !state.reduced;
 
@@ -237,7 +216,6 @@ export function mount(root, route, reason) {
     apply({ scrollTop: true });
   }));
   vegBtn.addEventListener('click', () => { filters.veg = !filters.veg; apply(); });
-  sortBtns.forEach((b) => b.addEventListener('click', () => { filters.sort = b.dataset.sort; apply(); }));
   let qTimer;
   input.addEventListener('input', () => {
     clearBtn.hidden = !input.value;

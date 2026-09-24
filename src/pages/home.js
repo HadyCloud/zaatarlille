@@ -5,7 +5,7 @@ import { pic, ICON, links, hoursGroups, external, watermark } from '../util.js';
 import { mapHTML, mountMap } from '../map.js';
 import { visitCardHTML } from '../visit.js';
 import { openLightbox } from '../lightbox.js';
-import { gsap, ScrollTrigger, state, mq, reveals, magnetic, boil, sparks, onPause } from '../motion.js';
+import { gsap, ScrollTrigger, state, mq, reveals, magnetic, boil, sparks } from '../motion.js';
 
 const star = () => ICON.star();
 
@@ -161,7 +161,6 @@ function envies() {
   return `<section class="sec t-sage envies" aria-labelledby="envies-title">
     ${watermark()}
     <div class="wrap envies__head stack">
-      <p class="eyebrow" data-reveal="up">${star()}${esc(d.home.envies.eyebrow)}</p>
       <h2 class="h h--xl" id="envies-title" data-split>${d.home.envies.title}</h2>
       <p class="lead" data-reveal="up">${esc(d.home.envies.lead)}</p>
     </div>
@@ -253,7 +252,7 @@ function reel(root) {
   let visible = true;
   let stopped = false;
   const kenburns = (el) => (state.reduced ? null : gsap.fromTo(el.querySelector('img'),
-    { scale: 1.16, xPercent: gsap.utils.random(-2.5, 2.5) }, { scale: 1.02, xPercent: 0, duration: 7.5, ease: 'none', paused: state.paused }));
+    { scale: 1.16, xPercent: gsap.utils.random(-2.5, 2.5) }, { scale: 1.02, xPercent: 0, duration: 7.5, ease: 'none' }));
   const next = () => {
     if (stopped) return;
     const a = slides[i];
@@ -265,14 +264,13 @@ function reel(root) {
     kb?.kill();
     kb = kenburns(b);
   };
-  const schedule = () => { timer = gsap.delayedCall(state.reduced ? 6.5 : 5.2, () => { next(); schedule(); }); if (state.paused || !visible) timer.pause(); };
+  const schedule = () => { timer = gsap.delayedCall(state.reduced ? 6.5 : 5.2, () => { next(); schedule(); }); if (!visible) timer.pause(); };
   kb = kenburns(slides[0]);
   schedule();
-  const sync = () => { const run = visible && !state.paused; timer?.paused(!run); kb?.paused(!run); };
-  const off = onPause(sync);
+  const sync = () => { timer?.paused(!visible); kb?.paused(!visible); };
   const io = new IntersectionObserver(([e]) => { visible = e.isIntersecting; sync(); });
   io.observe(root.querySelector('[data-hero]'));
-  return Object.assign(() => { stopped = true; timer?.kill(); kb?.kill(); off(); io.disconnect(); }, { stop: () => { stopped = true; timer?.kill(); } });
+  return Object.assign(() => { stopped = true; timer?.kill(); kb?.kill(); io.disconnect(); }, { stop: () => { stopped = true; timer?.kill(); } });
 }
 
 function heroVideo(root, stopReel) {

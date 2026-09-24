@@ -17,13 +17,6 @@
   font: 500 0.7rem/1 var(--f-grot); letter-spacing: 0.24em; text-transform: uppercase; white-space: nowrap;
 }
 .ticker__item .star { width: 11px; height: 11px; color: var(--sesame); }
-.ticker__pause {
-  display: none; position: absolute; inset-inline-end: 0; top: 0; height: 100%; width: 40px;
-  align-items: center; justify-content: center; background: var(--forest); color: var(--cream);
-  box-shadow: -14px 0 14px var(--forest);
-}
-.ticker__pause .ico { width: 16px; height: 16px; }
-@media (min-width: 768px) { .ticker__pause { display: flex; } }
 
 .hdr {
   --focus: var(--cream);
@@ -116,16 +109,7 @@
 .overlay__foot .pillnav button { min-height: 44px; }
 .overlay__contact { display: grid; gap: 6px; font-size: 1rem; color: var(--muted); }
 .overlay__contact a { color: var(--cream); min-height: 44px; display: inline-flex; align-items: center; gap: 10px; text-decoration: none; justify-self: start; }
-.overlay__foot .motion-toggle { justify-self: start; }
 .overlay-open .actionbar { transform: translateY(110%); }
-
-/* ── Motion toggle (pausable animations, WCAG 2.2.2) ────────────────── */
-.motion-toggle {
-  display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 16px 0 12px;
-  border-radius: 999px; border: 1.5px solid var(--line);
-  font: 500 0.72rem/1 var(--f-grot); letter-spacing: 0.14em; text-transform: uppercase;
-}
-.motion-toggle .ico { width: 16px; height: 16px; }
 
 /* ── Footer ─────────────────────────────────────────────────────────── */
 .footer { position: relative; overflow: clip; }

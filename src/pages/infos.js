@@ -40,7 +40,6 @@ export function render() {
   return `<section class="phero t-sage" aria-labelledby="infos-title">
       ${watermark()}
       <div class="wrap">
-        <p class="eyebrow">${star()}${esc(i.eyebrow)}</p>
         <h1 class="h phero__title" id="infos-title" tabindex="-1" data-split style="font-size:clamp(4.6rem,15vw,11rem)">${i.title}</h1>
         <p class="lead" data-reveal="up">${esc(i.lead)}</p>
       </div>

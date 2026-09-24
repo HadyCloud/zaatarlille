@@ -22,8 +22,6 @@ const DICT = {
     a11y: {
       skip: 'Aller au contenu', nav: 'Navigation principale', lang: 'Langue', menuOpen: 'Ouvrir le menu',
       menuClose: 'Fermer le menu', close: 'Fermer', prev: 'Photo précédente', next: 'Photo suivante',
-      pauseMotion: 'Mettre les animations en pause', playMotion: 'Relancer les animations',
-      motionLabel: 'Animations', motionOn: 'en marche', motionOff: 'en pause',
       pause: 'Pause', play: 'Lecture', mapTitle: "Carte : Za'atar, 139 Rue des Postes, Lille",
       newTab: '(nouvel onglet)', home: "Za'atar, accueil", photo: 'Voir la photo',
       routeLoaded: (p) => `Page ${p} chargée`,
@@ -77,18 +75,16 @@ const DICT = {
       },
       sig: { eyebrow: 'Le plat signature', title: 'Trois classiques, <em>un seul four.</em>' },
       envies: {
-        eyebrow: 'À votre goût', title: 'Cinq envies, <em>une seule adresse.</em>',
+        title: 'Cinq envies, <em>une seule adresse.</em>',
         lead: 'Salé, sucré, frais : chaque envie a sa page sur la carte.',
       },
       reviews: { eyebrow: 'Avis Google', title: 'Ils en <em>parlent.</em>' },
       find: { eyebrow: 'Nous trouver', title: 'Rue des Postes, <em>à Lille.</em>' },
     },
     carte: {
-      eyebrow: 'La carte', title: 'La Carte', script: 'Tout sort du four, ou presque',
+      title: 'La Carte', script: 'Tout sort du four, ou presque',
       lead: "Man'ouches, fatayers, wraps, desserts et boissons fraîches.",
       filters: 'Filtrer la carte', categories: 'Catégories', all: 'Tout', vegOnly: 'Végétarien',
-      sort: 'Trier', sortMenu: 'Carte', sortAsc: 'Prix ↑', sortDesc: 'Prix ↓',
-      sortAscLabel: 'Prix croissant', sortDescLabel: 'Prix décroissant',
       search: 'Rechercher un plat', searchPh: 'épinards, halloumi, jebné…', clear: 'Effacer la recherche',
       count: (n) => (n === 0 ? 'Aucun plat' : n === 1 ? '1 plat' : `${n} plats`),
       empty: 'Rien ne sort du four avec ces filtres.', emptyHint: 'Essayez un autre mot, ou repartez de zéro.',
@@ -96,7 +92,7 @@ const DICT = {
       vegTag: 'Végétarien', photoOf: (n) => `Photo : ${n}`,
     },
     infos: {
-      eyebrow: 'Infos pratiques', title: 'Adresse <em>& accès.</em>',
+      title: 'Adresse <em>& accès.</em>',
       lead: 'Rue des Postes, à Lille. Passez nous voir, le four est chaud.',
       weekTitle: 'Horaires de la semaine',
       histoire: {
@@ -140,8 +136,6 @@ const DICT = {
     a11y: {
       skip: 'Skip to content', nav: 'Main navigation', lang: 'Language', menuOpen: 'Open menu',
       menuClose: 'Close menu', close: 'Close', prev: 'Previous photo', next: 'Next photo',
-      pauseMotion: 'Pause animations', playMotion: 'Resume animations',
-      motionLabel: 'Animations', motionOn: 'on', motionOff: 'paused',
       pause: 'Pause', play: 'Play', mapTitle: "Map: Za'atar, 139 Rue des Postes, Lille",
       newTab: '(new tab)', home: "Za'atar, home", photo: 'View photo',
       routeLoaded: (p) => `${p} page loaded`,
@@ -195,18 +189,16 @@ const DICT = {
       },
       sig: { eyebrow: 'Signature dishes', title: 'Three classics, <em>one oven.</em>' },
       envies: {
-        eyebrow: 'To your taste', title: 'Five cravings, <em>one address.</em>',
+        title: 'Five cravings, <em>one address.</em>',
         lead: 'Savoury, sweet, cold: every craving has its page on the menu.',
       },
       reviews: { eyebrow: 'Google reviews', title: 'What people <em>say.</em>' },
       find: { eyebrow: 'Find us', title: 'Rue des Postes, <em>Lille.</em>' },
     },
     carte: {
-      eyebrow: 'The menu', title: 'The Menu', script: 'Tout sort du four, ou presque',
+      title: 'The Menu', script: 'Tout sort du four, ou presque',
       lead: "Man'ouches, fatayers, wraps, desserts and cold drinks.",
       filters: 'Filter the menu', categories: 'Categories', all: 'All', vegOnly: 'Vegetarian',
-      sort: 'Sort', sortMenu: 'Menu', sortAsc: 'Price ↑', sortDesc: 'Price ↓',
-      sortAscLabel: 'Price, low to high', sortDescLabel: 'Price, high to low',
       search: 'Search a dish', searchPh: 'spinach, halloumi, jebné…', clear: 'Clear search',
       count: (n) => (n === 0 ? 'No dishes' : n === 1 ? '1 dish' : `${n} dishes`),
       empty: 'Nothing comes out of the oven with these filters.', emptyHint: 'Try another word, or start over.',
@@ -214,7 +206,7 @@ const DICT = {
       vegTag: 'Vegetarian', photoOf: (n) => `Photo: ${n}`,
     },
     infos: {
-      eyebrow: 'Visit us', title: 'Address <em>& access.</em>',
+      title: 'Address <em>& access.</em>',
       lead: 'Rue des Postes, Lille. Drop by, the oven is hot.',
       weekTitle: 'Opening hours',
       histoire: {
@@ -258,8 +250,6 @@ const DICT = {
     a11y: {
       skip: 'Ir al contenido', nav: 'Navegación principal', lang: 'Idioma', menuOpen: 'Abrir el menú',
       menuClose: 'Cerrar el menú', close: 'Cerrar', prev: 'Foto anterior', next: 'Foto siguiente',
-      pauseMotion: 'Pausar las animaciones', playMotion: 'Reanudar las animaciones',
-      motionLabel: 'Animaciones', motionOn: 'activadas', motionOff: 'en pausa',
       pause: 'Pausa', play: 'Reproducir', mapTitle: "Mapa: Za'atar, 139 Rue des Postes, Lille",
       newTab: '(pestaña nueva)', home: "Za'atar, inicio", photo: 'Ver la foto',
       routeLoaded: (p) => `Página ${p} cargada`,
@@ -313,18 +303,16 @@ const DICT = {
       },
       sig: { eyebrow: 'Los platos estrella', title: 'Tres clásicos, <em>un solo horno.</em>' },
       envies: {
-        eyebrow: 'A tu gusto', title: 'Cinco antojos, <em>una sola dirección.</em>',
+        title: 'Cinco antojos, <em>una sola dirección.</em>',
         lead: 'Salado, dulce, fresco: cada antojo tiene su página en la carta.',
       },
       reviews: { eyebrow: 'Reseñas de Google', title: 'Lo que <em>dicen.</em>' },
       find: { eyebrow: 'Encontrarnos', title: 'Rue des Postes, <em>en Lille.</em>' },
     },
     carte: {
-      eyebrow: 'La carta', title: 'La Carta', script: 'Tout sort du four, ou presque',
+      title: 'La Carta', script: 'Tout sort du four, ou presque',
       lead: "Man'ouches, fatayers, wraps, postres y bebidas frías.",
       filters: 'Filtrar la carta', categories: 'Categorías', all: 'Todo', vegOnly: 'Vegetariano',
-      sort: 'Ordenar', sortMenu: 'Carta', sortAsc: 'Precio ↑', sortDesc: 'Precio ↓',
-      sortAscLabel: 'Precio, de menor a mayor', sortDescLabel: 'Precio, de mayor a menor',
       search: 'Buscar un plato', searchPh: 'espinacas, halloumi, jebné…', clear: 'Borrar la búsqueda',
       count: (n) => (n === 0 ? 'Ningún plato' : n === 1 ? '1 plato' : `${n} platos`),
       empty: 'Nada sale del horno con estos filtros.', emptyHint: 'Prueba otra palabra o empieza de nuevo.',
@@ -332,7 +320,7 @@ const DICT = {
       vegTag: 'Vegetariano', photoOf: (n) => `Foto: ${n}`,
     },
     infos: {
-      eyebrow: 'Información práctica', title: 'Dirección <em>y acceso.</em>',
+      title: 'Dirección <em>y acceso.</em>',
       lead: 'Rue des Postes, en Lille. Pásate, el horno está caliente.',
       weekTitle: 'Horario de la semana',
       histoire: {

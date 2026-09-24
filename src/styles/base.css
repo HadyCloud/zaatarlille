@@ -125,8 +125,6 @@ ul[role='list'], ol[role='list'] { list-style: none; padding: 0; }
   color: var(--muted);
 }
 .eyebrow .star { width: 12px; height: 12px; color: var(--accent); flex: none; }
-.t-sage .eyebrow { background: var(--sage-deep); color: var(--cream); padding: 8px 14px; border-radius: 999px; }
-.t-sage .eyebrow .star { color: var(--sesame); }
 
 .lead { font: 300 clamp(1.25rem, 2.1vw, 1.6rem)/1.45 var(--f-sans); text-wrap: pretty; }
 .body { font-size: clamp(1rem, 1.15vw, 1.0625rem); line-height: 1.7; color: var(--fg); max-width: 60ch; text-wrap: pretty; }
@@ -196,8 +194,6 @@ html.js:not(.reduced) .shutter::after {
   transform: scaleY(var(--shut, 1)); transform-origin: 50% 0%;
 }
 
-/* Pause switch stops every CSS loop too. */
-html.motion-paused *, html.motion-paused *::before, html.motion-paused *::after { animation-play-state: paused !important; }
 /* Parallax images get real overscan (GSAP owns the transform). */
 .arch > img[data-speed] { top: -8%; bottom: auto; height: 116%; }
 html.js:not(.reduced) .arch.shutter { background: var(--bg, var(--paper)); }

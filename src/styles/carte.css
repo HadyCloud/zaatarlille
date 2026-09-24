@@ -64,10 +64,6 @@
 .toggle[aria-pressed='true'] .toggle__track { background: var(--zaatar); }
 .toggle[aria-pressed='true'] .toggle__track::after { transform: translateX(16px); }
 .toggle .ico--leaf { width: 16px; height: 16px; color: var(--zaatar); }
-.seg { display: inline-flex; align-items: center; gap: 2px; padding: 3px; border-radius: 999px; border: 1.5px solid var(--line); }
-.seg__label { font: 500 0.7rem/1 var(--f-grot); letter-spacing: 0.16em; text-transform: uppercase; color: var(--sage-deep); padding: 0 8px 0 12px; }
-.seg button { min-height: 44px; padding: 0 14px; border-radius: 999px; font: 500 0.74rem/1 var(--f-grot); letter-spacing: 0.08em; white-space: nowrap; }
-.seg button[aria-pressed='true'] { background: var(--forest); color: var(--cream); }
 .count { margin-inline-start: auto; display: inline-flex; align-items: baseline; gap: 8px; font: 500 0.74rem/1 var(--f-grot); letter-spacing: 0.16em; text-transform: uppercase; color: var(--sage-deep); }
 .count .num { font-size: 1.6rem; color: var(--forest); letter-spacing: 0; }
 @media (min-width: 768px) {

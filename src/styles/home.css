@@ -196,7 +196,7 @@
 .mq__row { display: flex; overflow: hidden; }
 .mq__track { display: flex; gap: 16px; padding-inline-end: 16px; flex: none; animation: mq 70s linear infinite; }
 .mq__row--rev .mq__track { animation-direction: reverse; animation-duration: 80s; }
-.mq:hover .mq__track, .mq:focus-within .mq__track, .is-paused .mq__track, html.motion-paused .mq__track { animation-play-state: paused; }
+.mq:hover .mq__track, .mq:focus-within .mq__track, .is-paused .mq__track { animation-play-state: paused; }
 html.reduced .mq__row { overflow-x: auto; }
 html.reduced .mq__track { animation: none; }
 html.reduced .mq__track[aria-hidden='true'] { display: none; }

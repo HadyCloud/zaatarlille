@@ -2,7 +2,7 @@ import { CONFIG } from './data.js';
 import { t, lang, LANGS, tl } from './i18n.js';
 import { esc } from './format.js';
 import { ICON, links, statusInfo, hoursGroups, imgSrc, external } from './util.js';
-import { gsap, state, setPaused, onPause, lockScroll } from './motion.js';
+import { gsap, state, lockScroll } from './motion.js';
 
 const $ = (s, r = document) => r.querySelector(s);
 const ROUTES = [['/', 'home'], ['/carte', 'carte'], ['/infos', 'infos']];
@@ -17,7 +17,6 @@ export function initShell({ onLang }) {
   document.addEventListener('click', onDocClick);
   setInterval(updateStatus, 30_000);
   document.addEventListener('visibilitychange', () => { if (!document.hidden) updateStatus(); });
-  onPause(syncMotionToggles);
   document.querySelector('[data-skip]').addEventListener('click', (e) => {
     e.preventDefault();
     const main = document.getElementById('main');
@@ -39,7 +38,6 @@ export function renderShell() {
   $('#lightbox').setAttribute('aria-label', d.a11y.photo);
   setActive(currentPath);
   updateStatus();
-  syncMotionToggles(state.paused);
   tickerOff?.();
   tickerOff = initTicker($('.ticker'));
 }
@@ -50,7 +48,6 @@ function tickerHTML() {
   const group = `<div class="ticker__group">${d.ticker.map((s) => `<span class="ticker__item">${esc(s)}${ICON.star()}</span>`).join('')}</div>`;
   return `<div class="ticker">
     <div class="ticker__track" aria-hidden="true">${group}${group}${group}</div>
-    <button class="ticker__pause" type="button" data-motion-toggle aria-pressed="false" aria-label="${esc(d.a11y.pauseMotion)}">${ICON.pause}</button>
   </div>`;
 }
 
@@ -83,14 +80,8 @@ function overlayHTML() {
         <a href="${links.tel}">${ICON.phone}${esc(CONFIG.phone.display)}</a>
         ${external(links.instagram, '', '', `${ICON.insta}@${esc(CONFIG.instagram.handle)}`)}
       </div>
-      ${motionToggleHTML()}
     </div>`;
 }
-
-const motionToggleHTML = () => {
-  const d = t().a11y;
-  return `<button class="motion-toggle" type="button" data-motion-toggle aria-pressed="false">${ICON.pause}<span>${esc(d.motionLabel)} : <span data-motion-state>${esc(d.motionOn)}</span></span></button>`;
-};
 
 function footerHTML() {
   const d = t();
@@ -112,7 +103,7 @@ function footerHTML() {
       </div>
       <div class="footer__bottom">
         <p class="footer__signed">${esc(d.footer.signed)}</p>
-        <div class="footer__tools">${motionToggleHTML()}<div class="pillnav langs" role="group" aria-label="${esc(d.a11y.lang)}">${langButtons()}</div></div>
+        <div class="footer__tools"><div class="pillnav langs" role="group" aria-label="${esc(d.a11y.lang)}">${langButtons()}</div></div>
         <p>${esc(d.footer.rights)}</p>
       </div>
     </div></div>`;
@@ -157,21 +148,8 @@ function onDocClick(e) {
     if (l !== lang()) onLangChange(l);
     return;
   }
-  if (e.target.closest('[data-motion-toggle]')) { setPaused(!state.paused); return; }
   if (e.target.closest('[data-burger]')) { toggleOverlay(); return; }
   if (e.target.closest('#overlay a[href^="#/"]')) closeOverlay(true);
-}
-
-function syncMotionToggles(paused) {
-  const d = t().a11y;
-  document.querySelectorAll('[data-motion-toggle]').forEach((b) => {
-    b.setAttribute('aria-pressed', String(paused));
-    const icon = b.querySelector('.ico');
-    if (icon) icon.outerHTML = paused ? ICON.play : ICON.pause;
-    const st = b.querySelector('[data-motion-state]');
-    if (st) st.textContent = paused ? d.motionOff : d.motionOn;
-    if (b.classList.contains('ticker__pause')) b.setAttribute('aria-label', paused ? d.playMotion : d.pauseMotion);
-  });
 }
 
 /* ── Mobile overlay ───────────────────────────────────────────────── */
@@ -243,7 +221,7 @@ function initTicker(el) {
     const dt = Math.min(dtMs, 50) / 1000;
     vel += ((Math.abs(y - lastY) / Math.max(dt, 0.001)) - vel) * 0.12;
     lastY = y;
-    if (state.reduced || state.paused || hover || !width) return;
+    if (state.reduced || hover || !width) return;
     x -= (36 + Math.min(vel * 0.45, 640)) * dt;
     if (x <= -width) x += width;
     set(x);

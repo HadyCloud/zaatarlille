@@ -44,18 +44,13 @@ describe('filterMenu', () => {
     expect(r.sections.map((s) => s.id)).toEqual(['wraps']);
     expect(r.count).toBe(6);
   });
-  it('category + vegetarian + search + sort combined', () => {
-    const r = filterMenu(MENU, { cat: 'manouche', veg: true, q: 'zaatar', sort: 'desc' });
-    expect(r.sections[0].items.map((i) => i.price)).toEqual([6, 5, 5, 5, 4]);
+  it('category + vegetarian + search combined', () => {
+    const r = filterMenu(MENU, { cat: 'manouche', veg: true, q: 'zaatar' });
+    expect(r.sections[0].items.map((i) => i.price)).toEqual([4, 5, 5, 5, 6]);
   });
   it('vegetarian only keeps tagged items', () => {
     const r = filterMenu(MENU, { cat: 'wraps', veg: true });
     expect(r.sections[0].items.map((i) => i.name)).toEqual(['Halloumi pesto']);
-  });
-  it('price ascending within sections', () => {
-    const r = filterMenu(MENU, { cat: 'fatayers', sort: 'asc' });
-    const prices = r.sections[0].items.map((i) => i.price);
-    expect(prices).toEqual([...prices].sort((a, b) => a - b));
   });
   it('empty state', () => {
     const r = filterMenu(MENU, { cat: 'desserts', q: 'halloumi' });
