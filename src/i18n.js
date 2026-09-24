@@ -75,7 +75,7 @@ const DICT = {
       },
       sig: { eyebrow: 'Le plat signature', title: 'Trois classiques, <em>un seul four.</em>' },
       envies: {
-        title: 'Cinq envies, <em>une seule adresse.</em>',
+        title: 'Quatre envies, <em>une seule adresse.</em>',
         lead: 'Salé, sucré, frais : chaque envie a sa page sur la carte.',
       },
       reviews: { eyebrow: 'Avis Google', title: 'Ils en <em>parlent.</em>' },
@@ -189,7 +189,7 @@ const DICT = {
       },
       sig: { eyebrow: 'Signature dishes', title: 'Three classics, <em>one oven.</em>' },
       envies: {
-        title: 'Five cravings, <em>one address.</em>',
+        title: 'Four cravings, <em>one address.</em>',
         lead: 'Savoury, sweet, cold: every craving has its page on the menu.',
       },
       reviews: { eyebrow: 'Google reviews', title: 'What people <em>say.</em>' },
@@ -303,7 +303,7 @@ const DICT = {
       },
       sig: { eyebrow: 'Los platos estrella', title: 'Tres clásicos, <em>un solo horno.</em>' },
       envies: {
-        title: 'Cinco antojos, <em>una sola dirección.</em>',
+        title: 'Cuatro antojos, <em>una sola dirección.</em>',
         lead: 'Salado, dulce, fresco: cada antojo tiene su página en la carta.',
       },
       reviews: { eyebrow: 'Reseñas de Google', title: 'Lo que <em>dicen.</em>' },

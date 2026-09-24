@@ -17,7 +17,8 @@ export const CONFIG = {
   GOOGLE_RATING: null,
   chef: {
     name: 'Jalal',
-    otherHouse: 'Maison L A', // TODO: confirm exact spelling
+    otherHouse: 'Maison L',
+    otherHouseUrl: 'https://www.privateaser.com/lieu/54563-maison-l',
   },
   timezone: 'Europe/Paris',
   // 24h "HH:MM". A slot closes at its end time (20:30 = closed at 20:30).

@@ -115,6 +115,9 @@
 
 .chef__text { --gap: 1.4rem; max-width: 560px; }
 .chef__house { display: inline-flex; gap: 10px; align-items: center; padding: 10px 18px; border-radius: 999px; border: 1.5px solid var(--line); font: 500 0.78rem/1 var(--f-grot); letter-spacing: 0.14em; text-transform: uppercase; }
+.chef__house { text-decoration: none; transition: background-color 0.3s, border-color 0.3s; }
+.chef__house:hover { border-color: currentColor; }
+.chef__house .arrow, .chef__house svg:last-child { width: 14px; height: 14px; }
 .chef__house .star { width: 12px; height: 12px; color: var(--sesame); }
 @media (min-width: 900px) {
   .chef__grid { grid-template-columns: 0.8fr 1.2fr; }

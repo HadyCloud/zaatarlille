@@ -111,7 +111,7 @@ function chef() {
         <p class="eyebrow" data-reveal="up">${star()}${esc(c.eyebrow)}</p>
         <h2 class="h h--l" id="chef-title" data-split>${c.title}</h2>
         <p class="body" data-reveal="up">${esc(c.p)}</p>
-        <p class="chef__house" data-reveal="up">${star()}${esc(CONFIG.chef.otherHouse)} · Lille</p>
+        <a class="chef__house" data-reveal="up" href="${CONFIG.chef.otherHouseUrl}" target="_blank" rel="noopener noreferrer">${star()}${esc(CONFIG.chef.otherHouse)} · Lille ${ICON.arrow}</a>
       </div>
     </div>
   </section>`;
@@ -119,7 +119,7 @@ function chef() {
 
 function envies() {
   const d = t();
-  const panels = MENU.sections.map((s) => {
+  const panels = MENU.sections.filter((s) => s.id !== 'boissons').map((s) => {
     const label = s.label[lang()];
     const media = s.cover
       ? `<div class="env__media">${pic(s.cover, { sizes: '(min-width: 1024px) 64vw, 100vw' })}</div>`

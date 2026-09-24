@@ -189,10 +189,6 @@ html.no-preload .preloader, html.reduced .preloader { display: none; }
 }
 .curtain__arch img { width: min(46vw, 260px); height: auto; }
 
-/* ── Scroll progress ────────────────────────────────────────────────── */
-.progress { position: fixed; inset-inline: 0; top: 0; height: 3px; z-index: 70; pointer-events: none; }
-.progress span { display: block; height: 100%; background: linear-gradient(90deg, var(--sesame), var(--ember)); transform: scaleX(0); transform-origin: 0 50%; }
-
 /* ── Grain ──────────────────────────────────────────────────────────── */
 .grain {
   position: fixed; inset: 0; z-index: 96; pointer-events: none; opacity: 0.09; transform: translateZ(0); contain: strict;

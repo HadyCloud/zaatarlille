@@ -47,11 +47,8 @@ export function lockScroll(lock) {
   root.style.overflow = lock ? 'hidden' : '';
 }
 
-/* ── Scroll progress + compact top bar ─────────────────────────────── */
+/* ── Compact top bar ─────────────────────────────── */
 export function initChrome() {
-  const bar = document.querySelector('.progress span');
-  const setBar = gsap.quickSetter(bar, 'scaleX');
-  ScrollTrigger.create({ start: 0, end: 'max', onUpdate: (self) => setBar(self.progress) });
   const topbar = document.getElementById('topbar');
   ScrollTrigger.create({ start: 0, end: 'max', onUpdate: (self) => topbar.classList.toggle('is-compact', self.scroll() > 80) });
 }
