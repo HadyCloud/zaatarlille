@@ -72,7 +72,7 @@ export const MENU = {
       id: 'fatayers', num: 'II', pre: '', title: 'Fatayers & Beignets', post: '',
       script: 'Amuse-gueule',
       label: { fr: 'Fatayers & Beignets', en: 'Fatayers & Pastries', es: 'Fatayers y Buñuelos' },
-      cover: 'sfihafromage', itemPrefix: '',
+      cover: 'fatayers_plateau', itemPrefix: '',
       items: [
         { id: 'mini-pizza', name: 'Mini pizza', price: 1.5, photo: 'minipizza_cuite' },
         { id: 'mini-zaatar', name: 'Mini zaatar', price: 1, veg: true, photo: 'mini_zaatar' },
@@ -261,6 +261,10 @@ export const PHOTOS = {
     fr: 'Une pizza à la truffe noire, aux champignons et au fromage filant',
     en: 'A black truffle pizza with mushrooms and stretchy cheese',
     es: 'Una pizza de trufa negra con champiñones y queso hilante' } },
+  fatayers_plateau: { pos: '50% 50%', alt: {
+    fr: "Des plateaux en bois de fatayers dorés : triangles, carrés à la viande et au fromage, petites pizzas et za'atar",
+    en: "Wooden boards of golden fatayers: triangles, square pies with meat and cheese, mini pizzas and za'atar rounds",
+    es: "Tablas de madera con fatayers dorados: triángulos, tartas cuadradas de carne y queso, mini pizzas y redondas de za'atar" } },
   dessert: { pos: '50% 50%', alt: {
     fr: 'Un chef détache une part de knefeh fondant à la spatule, sur une grande plaque dorée',
     en: 'A chef lifts a melting portion of knefeh with a spatula from a large golden tray',

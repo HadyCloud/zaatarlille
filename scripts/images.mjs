@@ -25,6 +25,7 @@ const SOURCES = [
   ['store photos/storefront.jpeg', 'storefront', [240, 800, 1024]],
   ['store photos/interior.jpeg', 'interior', [240, 800, 1600]],
   ['store photos/furn.jpeg', 'furn_boutique', [240, 800, 1024]],
+  ['menu photos/fatayers_plateau.jpg', 'fatayers_plateau', [240, 800, 1400]],
   ['menu photos/jebne.jpg', 'jebne', [240, 800, 1080]],
   ['menu photos/zaatar_labneh_legumes.jpg', 'zaatar_labneh_legumes', [240, 750]],
   ['menu photos/minipizza_cuite.jpg', 'minipizza_cuite', [240, 800, 1080]],
