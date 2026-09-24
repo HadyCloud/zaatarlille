@@ -187,7 +187,7 @@ html.js:not(.reduced) [data-reveal='up'] { opacity: 0; }
 .pillnav { list-style: none; margin: 0; }
 
 /* Transform-only "clip" reveal: a shutter in the section colour lifts off the image. */
-.shutter { position: relative; }
+.shutter { position: relative; contain: layout style; }
 html.js:not(.reduced) .shutter::after {
   content: ''; position: absolute; inset: -1px; z-index: 3; pointer-events: none;
   background: var(--bg, var(--paper));

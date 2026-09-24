@@ -47,7 +47,7 @@
         <circle cx="12" cy="12" r="1.4" fill="currentColor"/>
       </symbol>
       <filter id="boil" x="-4%" y="-10%" width="108%" height="120%" color-interpolation-filters="sRGB">
-        <feTurbulence id="boil-noise" type="fractalNoise" baseFrequency="0.02 0.034" numOctaves="2" seed="1" result="n"/>
+        <feTurbulence id="boil-noise" type="fractalNoise" baseFrequency="0.02 0.034" numOctaves="1" seed="1" result="n"/>
         <feDisplacementMap in="SourceGraphic" in2="n" scale="5" xChannelSelector="R" yChannelSelector="G"/>
       </filter>
     </defs>
@@ -72,10 +72,6 @@
   <div class="overlay t-forest" id="overlay" role="dialog" aria-modal="true" hidden></div>
 
   <dialog class="lightbox" id="lightbox"></dialog>
-  <div class="cursor" id="cursor" aria-hidden="true">
-    <span class="cursor__dot"></span>
-    <span class="cursor__ring"><svg viewBox="0 0 24 24"><use href="#sfiha"/></svg><span class="cursor__label"></span></span>
-  </div>
   <div class="floatpic" id="floatpic" aria-hidden="true"><img alt="" width="400" height="500"></div>
   <div class="grain" aria-hidden="true"></div>
   <div class="sr-only" id="live" aria-live="polite" aria-atomic="true"></div>

@@ -114,38 +114,6 @@ export function magnetic(scope) {
   return () => offs.forEach((f) => f());
 }
 
-/* ── Custom cursor ─────────────────────────────────────────────────── */
-const VIEW = { fr: 'Voir', en: 'View', es: 'Ver' };
-export function initCursor() {
-  if (state.reduced || !mq.fine.matches) return;
-  root.classList.add('has-cursor');
-  const c = document.getElementById('cursor');
-  const dot = c.querySelector('.cursor__dot');
-  const ring = c.querySelector('.cursor__ring');
-  const label = c.querySelector('.cursor__label');
-  const dx = gsap.quickTo(dot, 'x', { duration: 0.06 });
-  const dy = gsap.quickTo(dot, 'y', { duration: 0.06 });
-  const rx = gsap.quickTo(ring, 'x', { duration: 0.16, ease: 'power3.out' });
-  const ry = gsap.quickTo(ring, 'y', { duration: 0.16, ease: 'power3.out' });
-  let seen = false;
-  window.addEventListener('pointermove', (e) => {
-    if (e.pointerType !== 'mouse') return;
-    if (!seen) { gsap.set([dot, ring], { x: e.clientX, y: e.clientY }); seen = true; }
-    dx(e.clientX); dy(e.clientY); rx(e.clientX); ry(e.clientY);
-    c.classList.remove('is-hidden');
-  }, { passive: true });
-  document.addEventListener('pointerover', (e) => {
-    const t = e.target;
-    const view = t.closest?.('[data-cursor="view"]');
-    const link = t.closest?.('a, button, [role="button"], label, select');
-    c.classList.toggle('is-view', !!view);
-    c.classList.toggle('is-link', !view && !!link);
-    c.classList.toggle('is-hidden', t.tagName === 'IFRAME' || !!t.closest?.('input, textarea'));
-    label.textContent = view ? VIEW[root.lang] || VIEW.fr : '';
-  });
-  document.documentElement.addEventListener('pointerleave', () => c.classList.add('is-hidden'));
-}
-
 /* ── Hand-drawn "boiling line" on the wordmark (~9 fps) ────────────── */
 export function boil(el) {
   if (state.reduced) return () => {};
@@ -153,7 +121,7 @@ export function boil(el) {
   el.classList.add('is-boiling');
   let visible = true;
   let seed = 1;
-  const io = new IntersectionObserver(([e]) => { visible = e.isIntersecting; });
+  const io = new IntersectionObserver(([e]) => { visible = e.isIntersecting; el.classList.toggle('is-boiling', visible); });
   io.observe(el);
   const id = setInterval(() => {
     if (!visible || document.hidden) return;

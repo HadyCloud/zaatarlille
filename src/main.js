@@ -5,7 +5,7 @@ import './styles/carte.css';
 
 import { initLang, setLang } from './i18n.js';
 import { initShell, renderShell } from './shell.js';
-import { gsap, state, initSmoothScroll, initChrome, initCursor, lockScroll } from './motion.js';
+import { gsap, state, initSmoothScroll, initChrome, lockScroll } from './motion.js';
 import * as router from './router.js';
 
 const wait = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -53,7 +53,6 @@ async function boot() {
   });
   initSmoothScroll();
   initChrome();
-  initCursor();
 
   const pre = document.getElementById('preloader');
   const withPreloader = !state.reduced && !document.documentElement.classList.contains('no-preload');
