@@ -72,7 +72,6 @@ export function render(route, reason) {
     </section>
     <div class="chips t-paper" data-chips>
       <div class="chips__scroller" role="group" aria-label="${esc(c.categories)}">
-        <button class="chip chip--all" type="button" data-cat="all" aria-pressed="false">${esc(c.all)}</button>
         ${MENU.sections.map(chip).join('')}
       </div>
     </div>
@@ -186,7 +185,7 @@ export function mount(root, route, reason) {
     spy.update();
   }
 
-  /* Scroll-spy: with "Tout", the chip of the section in view gets an ember marker. */
+  /* Scroll-spy: with the whole menu shown, the chip of the section in view gets an ember marker. */
   const spy = (() => {
     let current = null;
     const inView = new Map();
@@ -212,7 +211,7 @@ export function mount(root, route, reason) {
 
   /* Events */
   chips.forEach((b) => b.addEventListener('click', () => {
-    filters.cat = b.dataset.cat;
+    filters.cat = filters.cat === b.dataset.cat ? 'all' : b.dataset.cat; // tapping the active section again shows the whole menu
     apply({ scrollTop: true });
   }));
   vegBtn.addEventListener('click', () => { filters.veg = !filters.veg; apply(); });
