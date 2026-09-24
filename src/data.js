@@ -123,9 +123,9 @@ export const MENU = {
       id: 'desserts', num: 'V', pre: 'Nos', title: 'Desserts', post: '',
       script: '',
       label: { fr: 'Desserts', en: 'Desserts', es: 'Postres' },
-      cover: 'knefeh', itemPrefix: '',
+      cover: 'dessert', itemPrefix: '',
       items: [
-        { id: 'knefeh', name: 'Knefeh', price: 7, veg: true, photo: 'dessert',
+        { id: 'knefeh', name: 'Knefeh', price: 7, veg: true, photo: 'knefeh',
           gloss: { fr: 'Dessert au fromage fondant et semoule, au sirop', en: 'Soft cheese and semolina pastry in syrup', es: 'Postre de queso fundente y sémola, con almíbar' } },
         { id: 'nutella', name: 'Nutella', price: 5, veg: true },
       ],
@@ -245,11 +245,11 @@ export const PHOTOS = {
     fr: "Coupe d'un chausson à la dinde et au fromage fondu, posé sur du papier journal",
     en: 'Cross-section of a turkey and melted cheese wrap, on newsprint',
     es: 'Corte de un wrap de pavo y queso fundido, sobre papel de periódico' } },
-  knefeh: { pos: '50% 50%', alt: {
+  knefeh: { pos: '50% 22%', alt: {
     fr: 'Un chef soulève une part de knefeh au fromage filant, au-dessus de la grande plaque dorée',
     en: 'A chef lifts a stretchy cheese portion of knefeh above the large golden tray',
     es: 'Un chef levanta una porción de knefeh de queso hilante sobre la gran bandeja dorada' } },
-  pizza_reine: { pos: '50% 50%', alt: {
+  pizza_reine: { pos: '50% 36%', alt: {
     fr: 'Une pizza reine au jambon, champignons et fromage fondu, part soulevée',
     en: 'A ham, mushroom and melted cheese pizza, a slice lifted',
     es: 'Una pizza reina de jamón, champiñones y queso fundido, con una porción levantada' } },
@@ -265,7 +265,7 @@ export const PHOTOS = {
     fr: "Des plateaux en bois de fatayers dorés : triangles, carrés à la viande et au fromage, petites pizzas et za'atar",
     en: "Wooden boards of golden fatayers: triangles, square pies with meat and cheese, mini pizzas and za'atar rounds",
     es: "Tablas de madera con fatayers dorados: triángulos, tartas cuadradas de carne y queso, mini pizzas y redondas de za'atar" } },
-  dessert: { pos: '50% 50%', alt: {
+  dessert: { pos: '50% 72%', alt: {
     fr: 'Un chef détache une part de knefeh fondant à la spatule, sur une grande plaque dorée',
     en: 'A chef lifts a melting portion of knefeh with a spatula from a large golden tray',
     es: 'Un chef levanta con la espátula una porción de knefeh fundente de una gran bandeja dorada' } },
@@ -297,7 +297,7 @@ export const PHOTOS = {
     fr: "Des fatayers au fromage et aux herbes, et des mini galettes au za'atar sur des planches",
     en: "Cheese and herb fatayers, with mini za'atar flatbreads on wooden boards",
     es: "Fatayers de queso y hierbas, con mini tortas de za'atar sobre tablas" } },
-  wraps: { pos: '50% 55%', alt: {
+  wraps: { pos: '50% 38%', alt: {
     fr: 'Une pile de six wraps grillés coupés en deux',
     en: 'A stack of six grilled wraps cut in half',
     es: 'Una pila de seis wraps a la plancha cortados por la mitad' } },
