@@ -91,7 +91,7 @@ function process() {
   return `<section class="sec t-paper process-sec" aria-label="${esc(pr.eyebrow)}">
     <div class="wrap process" data-process>
       <div class="process__head">
-        <div class="stack" style="--gap:1rem"><p class="eyebrow">${star()}${esc(pr.eyebrow)}</p><h3 class="h h--l" data-split>${pr.title}</h3></div>
+        <div class="stack" style="--gap:1rem"><h3 class="h h--l" data-split>${pr.title}</h3></div>
       </div>
       <div class="process__body" style="position:relative">
         <div class="process__track" aria-hidden="true"><span class="process__fill"></span></div>
@@ -108,7 +108,6 @@ function chef() {
     <div class="wrap chef__grid">
       <div class="arch chef__media shutter" data-reveal="img" data-cursor="view" data-photo="knefe_chef">${pic('knefe_chef', { sizes: '(min-width: 900px) 34vw, 90vw' })}</div>
       <div class="chef__text stack">
-        <p class="eyebrow" data-reveal="up">${star()}${esc(c.eyebrow)}</p>
         <h2 class="h h--l" id="chef-title" data-split>${c.title}</h2>
         <p class="body" data-reveal="up">${esc(c.p)}</p>
         <a class="chef__house" data-reveal="up" href="${CONFIG.chef.otherHouseUrl}" target="_blank" rel="noopener noreferrer">${star()}${esc(CONFIG.chef.otherHouse)} · Lille ${ICON.arrow}</a>
@@ -163,7 +162,6 @@ function reviews() {
     <div class="wrap reviews__head">
       <div class="arch reviews__portrait shutter" data-reveal="img" data-cursor="view" data-photo="Portrait">${pic('Portrait', { sizes: '(min-width: 900px) 26vw, 80vw', attrs: 'data-speed="0.9"' })}</div>
       <div class="reviews__text stack">
-        <p class="eyebrow" data-reveal="up">${star()}${esc(d.home.reviews.eyebrow)}</p>
         <h2 class="h h--xl" id="rev-title" data-split>${d.home.reviews.title}</h2>
         ${r ? `<p class="lead" data-reveal="up">${esc(d.common.rating(String(r.value).replace('.', ','), r.count))}</p>` : ''}
         <div class="reviews__actions" data-reveal="up">
@@ -184,7 +182,6 @@ function find() {
   return `<section class="sec t-paper find" aria-labelledby="find-title">
     <div class="wrap">
       <div class="stack" style="--gap:1.2rem;margin-bottom:clamp(32px,4vw,56px)">
-        <p class="eyebrow" data-reveal="up">${star()}${esc(d.home.find.eyebrow)}</p>
         <h2 class="h h--xl" id="find-title" data-split>${d.home.find.title}</h2>
       </div>
       <div class="find__grid">${mapHTML()}${visitCardHTML()}</div>

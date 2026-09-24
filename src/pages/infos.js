@@ -66,7 +66,6 @@ export function render() {
       <div class="wrap histoire__grid">
         <div class="arch histoire__media shutter" data-reveal="img" data-cursor="view" data-photo="furn">${pic('furn', { sizes: '(min-width: 900px) 40vw, 90vw', attrs: 'data-speed="0.9"' })}</div>
         <div class="histoire__text stack">
-          <p class="eyebrow" data-reveal="up">${star()}${esc(h.eyebrow)}</p>
           <h2 class="h h--xl" id="histoire-title" data-split>${h.title}</h2>
           <p class="body" data-reveal="up">${esc(h.p1)}</p>
           <p class="body" data-reveal="up">${esc(h.p2)}</p>
@@ -80,7 +79,6 @@ export function render() {
       <div class="wrap">
         <div class="mosaic__head">
           <div class="stack">
-            <p class="eyebrow" data-reveal="up">${star()}${esc(g.eyebrow)} · @${esc(CONFIG.instagram.handle)}</p>
             <h2 class="h h--xl" id="gallery-title" data-split>${g.title}</h2>
             <p class="body" data-reveal="up">${esc(g.lead)}</p>
           </div>
@@ -92,8 +90,7 @@ export function render() {
 
     <section class="sec t-paper2" aria-labelledby="faq-title">
       <div class="wrap faq">
-        <p class="eyebrow" data-reveal="up">${star()}${esc(f.eyebrow)}</p>
-        <h2 class="h h--xl" id="faq-title" data-split style="margin-top:1.2rem">${f.title}</h2>
+        <h2 class="h h--xl" id="faq-title" data-split>${f.title}</h2>
         <ul class="faq__list" role="list">${faq}</ul>
       </div>
     </section>`;
