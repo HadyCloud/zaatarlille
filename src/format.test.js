@@ -36,8 +36,8 @@ describe('norm / search', () => {
 });
 
 describe('filterMenu', () => {
-  it('has 41 items in total', () => {
-    expect(filterMenu(MENU, {}).count).toBe(41);
+  it('has 54 items in total', () => {
+    expect(filterMenu(MENU, {}).count).toBe(54);
   });
   it('category filter', () => {
     const r = filterMenu(MENU, { cat: 'wraps' });

@@ -146,6 +146,8 @@
 .livebox strong { font-weight: 500; }
 .visit__photo { aspect-ratio: 16 / 10; border-radius: 22px 22px 22px 22px; overflow: hidden; position: relative; }
 .visit__photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+/* Centre the Za'atar sign (≈42% × 46% of the box at any size): scale around it, then shift it to the middle. */
+.visit__photo img { transform-origin: 42% 46%; transform: translate(8%, 3.6%) scale(1.25); }
 
 .histoire__grid { display: grid; gap: clamp(40px, 6vw, 100px); align-items: center; }
 .histoire__media { aspect-ratio: 4 / 5; width: min(100%, 500px); justify-self: center; }

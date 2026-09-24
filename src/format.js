@@ -31,7 +31,7 @@ export function formatTime(hhmm, lang) {
 export const esc = (s = '') =>
   String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 
-export const CATS = ['manouche', 'fatayers', 'wraps', 'desserts', 'boissons'];
+export const CATS = ['manouche', 'fatayers', 'wraps', 'pizzas', 'desserts', 'boissons', 'boissons-chaudes'];
 export const DEFAULT_FILTERS = Object.freeze({ cat: 'all', veg: false, q: '' });
 
 /**

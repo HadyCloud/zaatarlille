@@ -74,7 +74,7 @@
   box-shadow: 0 10px 30px rgba(38, 51, 47, 0.12);
 }
 .stamp svg.stamp__ring { position: absolute; inset: 8px; width: calc(100% - 16px); height: calc(100% - 16px); animation: spin 26s linear infinite; }
-.stamp text { font: 600 10.5px var(--f-grot); letter-spacing: 0.22em; text-transform: uppercase; fill: var(--forest); }
+.stamp text { font: 600 9.5px var(--f-grot); letter-spacing: 0.16em; text-transform: uppercase; fill: var(--forest); }
 .stamp .star { width: 30px; height: 30px; color: var(--ember); }
 @keyframes spin { to { transform: rotate(360deg); } }
 .badge {

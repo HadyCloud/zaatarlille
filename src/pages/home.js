@@ -52,7 +52,7 @@ function ratingBadge() {
 function maison() {
   const d = t();
   const m = d.home.maison;
-  const stamp = d.ticker.slice(2, 5).join(' · ') + ' · ';
+  const stamp = ['Halal', ...d.ticker.slice(2, 5)].join(' · ') + ' · ';
   return `<section class="sec t-paper maison" aria-labelledby="maison-title">
     ${watermark()}
     <div class="wrap maison__grid">
@@ -65,7 +65,7 @@ function maison() {
         <a class="link" href="#/infos#histoire" data-reveal="up">${esc(d.common.story)} ${ICON.arrow}</a>
       </div>
       <figure class="maison__media">
-        <div class="arch maison__arch shutter" data-reveal="img" data-cursor="view" data-photo="homepage">${pic('homepage', { sizes: '(min-width: 900px) 40vw, 90vw', attrs: 'data-speed="0.9"' })}</div>
+        <div class="arch maison__arch shutter" data-reveal="img" data-cursor="view" data-photo="homepage">${pic('homepage', { sizes: '(min-width: 900px) 40vw, 90vw', pos: '12% 50%', attrs: 'data-speed="0.9"' })}</div>
         <div class="stamp" aria-hidden="true">
           <svg class="stamp__ring" viewBox="0 0 100 100"><defs><path id="stamp-c" d="M50,50 m-39,0 a39,39 0 1,1 78,0 a39,39 0 1,1 -78,0"/></defs>
             <text><textPath href="#stamp-c" textLength="243" lengthAdjust="spacingAndGlyphs">${esc(stamp)}</textPath></text></svg>
@@ -119,7 +119,7 @@ function chef() {
 
 function envies() {
   const d = t();
-  const panels = MENU.sections.filter((s) => s.id !== 'boissons').map((s) => {
+  const panels = MENU.sections.filter((s) => !s.id.startsWith('boissons')).map((s) => {
     const label = s.label[lang()];
     const media = s.cover
       ? `<div class="env__media">${pic(s.cover, { sizes: '(min-width: 1024px) 64vw, 100vw' })}</div>`
