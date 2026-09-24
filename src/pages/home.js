@@ -57,7 +57,6 @@ function maison() {
     ${watermark()}
     <div class="wrap maison__grid">
       <div class="maison__text stack">
-        <p class="eyebrow" data-reveal="up">${star()}${esc(m.eyebrow)}</p>
         <h2 class="h h--xl" id="maison-title" data-split>${m.title}</h2>
         <p class="body" data-reveal="up">${esc(m.p1)}</p>
         <p class="body" data-reveal="up">${esc(m.p2)}</p>
