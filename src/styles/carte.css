@@ -198,3 +198,8 @@
   .histoire__grid { gap: 32px; }
   .mosaic__head { margin-bottom: 32px; }
 }
+
+@media (max-width: 767px) {
+  .week th, .week td { padding: 7px 0; }
+  .week caption { padding-bottom: 6px; }
+}
