@@ -203,3 +203,8 @@
   .week th, .week td { padding: 7px 0; }
   .week caption { padding-bottom: 6px; }
 }
+
+/* Histoire photo: shorter arch on phones (less scrolling, keeps flames + peel in frame). */
+@media (max-width: 767px) {
+  .histoire__media { aspect-ratio: 15 / 16; }
+}
