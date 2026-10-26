@@ -53,7 +53,7 @@ const DICT = {
     },
     home: {
       eyebrow: 'Un furn à Lille',
-      lead: "Au Liban, le furn, c'est le four du quartier. Le nôtre est rue des Postes, et il sent le za'atar.",
+      lead: "Au Liban, le furn, c'est le four du quartier. À Lille, c'est Za'atar.",
       ctaMenu: 'Découvrir la carte', ctaFind: 'Nous trouver',
       maison: {
         eyebrow: 'La maison', title: "Un four, des mains, <em>du za'atar.</em>",
@@ -99,7 +99,7 @@ const DICT = {
         eyebrow: 'À propos', title: 'Une histoire <em>de four.</em>',
         p1: "Au Liban, chaque quartier a son furn. On y passe le matin, on repart avec une man'ouche pliée dans du papier, encore chaude.",
         p2: `Za'atar, c'est ce four-là, rue des Postes, à Lille. Aux commandes, le chef ${chef.name}, qu'on connaît aussi à ${chef.otherHouse}.`,
-        quote: 'Au Liban, le furn, c’est le four du quartier. À Lille, c’est rue des Postes.',
+        quote: 'Au Liban, le furn, c’est le four du quartier. À Lille, c’est Za’atar.',
       },
       gallery: {
         eyebrow: 'Instagram', title: 'Le four <em>en images.</em>',
@@ -167,7 +167,7 @@ const DICT = {
     },
     home: {
       eyebrow: 'A furn in Lille',
-      lead: "In Lebanon, the furn is the neighbourhood oven. Ours is on Rue des Postes, and it smells of za'atar.",
+      lead: "In Lebanon, the furn is the neighbourhood oven. In Lille, it's Za'atar.",
       ctaMenu: 'See the menu', ctaFind: 'Find us',
       maison: {
         eyebrow: 'The house', title: "One oven, two hands, <em>some za'atar.</em>",
@@ -213,7 +213,7 @@ const DICT = {
         eyebrow: 'About', title: 'A story <em>of an oven.</em>',
         p1: "In Lebanon, every neighbourhood has its furn. You stop by in the morning and leave with a man'ouche folded in paper, still warm.",
         p2: `Za'atar is that oven, on Rue des Postes in Lille. At the helm: chef ${chef.name}, also known for ${chef.otherHouse}.`,
-        quote: 'In Lebanon, the furn is the neighbourhood oven. In Lille, it’s on Rue des Postes.',
+        quote: 'In Lebanon, the furn is the neighbourhood oven. In Lille, it’s Za’atar.',
       },
       gallery: {
         eyebrow: 'Instagram', title: 'The oven <em>in pictures.</em>',
@@ -281,7 +281,7 @@ const DICT = {
     },
     home: {
       eyebrow: 'Un furn en Lille',
-      lead: "En el Líbano, el furn es el horno del barrio. El nuestro está en la Rue des Postes, y huele a za'atar.",
+      lead: "En el Líbano, el furn es el horno del barrio. En Lille, es Za'atar.",
       ctaMenu: 'Descubrir la carta', ctaFind: 'Encontrarnos',
       maison: {
         eyebrow: 'La casa', title: "Un horno, dos manos, <em>y za'atar.</em>",
@@ -327,7 +327,7 @@ const DICT = {
         eyebrow: 'Sobre nosotros', title: 'Una historia <em>de horno.</em>',
         p1: "En el Líbano, cada barrio tiene su furn. Pasas por la mañana y te vas con una man'ouche doblada en papel, todavía caliente.",
         p2: `Za'atar es ese horno, en la Rue des Postes de Lille. Al mando, el chef ${chef.name}, al que también conocen por ${chef.otherHouse}.`,
-        quote: 'En el Líbano, el furn es el horno del barrio. En Lille, está en la Rue des Postes.',
+        quote: 'En el Líbano, el furn es el horno del barrio. En Lille, es Za’atar.',
       },
       gallery: {
         eyebrow: 'Instagram', title: 'El horno <em>en imágenes.</em>',
