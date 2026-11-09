@@ -26,10 +26,13 @@ function row(s, it) {
   const full = `${s.itemPrefix}${it.name}`.trim();
   const photoBtn = (cls, inner) => `<button class="${cls}" type="button" data-open-photo aria-label="${esc(d.photoOf(full))}">${inner}</button>`;
   const gloss = it.gloss?.[lang()];
-  return `<li class="row${it.photo ? ' has-thumb' : ''}" data-row="${id}"${it.photo ? ` data-photo="${it.photo}"` : ''}>
+  const plain = s.id.startsWith('boissons'); // drinks: no photo column at all
+  const photo = plain ? null : it.photo;
+  const thumb = plain ? '' : photo ? photoBtn('row__thumb', pic(photo, { sizes: '44px', alt: '' })) : '<span class="row__thumb row__thumb--empty" aria-hidden="true"></span>';
+  return `<li class="row${photo ? ' has-thumb' : ''}${plain ? ' row--plain' : ''}" data-row="${id}"${photo ? ` data-photo="${photo}"` : ''}>
     <div class="row__line">
-      ${it.photo ? photoBtn('row__thumb', pic(it.photo, { sizes: '44px', alt: '' })) : '<span class="row__thumb row__thumb--empty" aria-hidden="true"></span>'}
-      <span class="row__name">${esc(it.name)}${it.veg ? `<span class="row__veg" title="${esc(d.vegTag)}">${ICON.leaf}<span class="sr-only">, ${esc(d.vegTag)}</span></span>` : ''}</span>
+      ${thumb}
+      <span class="row__name">${esc(it.name)}</span>
       <span class="row__dots" aria-hidden="true"></span>
       <span class="row__price">${formatPrice(it.price)}</span>
     </div>

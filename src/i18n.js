@@ -85,7 +85,7 @@ const DICT = {
       count: (n) => (n === 0 ? 'Aucun plat' : n === 1 ? '1 plat' : `${n} plats`),
       empty: 'Rien ne sort du four avec ces filtres.', emptyHint: 'Essayez un autre mot, ou repartez de zéro.',
       reset: 'Tout réinitialiser', note: 'Allergènes et compositions : demandez à l’équipe. Prix service compris.',
-      vegTag: 'Végétarien', photoOf: (n) => `Photo : ${n}`,
+      photoOf: (n) => `Photo : ${n}`,
     },
     infos: {
       title: 'Adresse <em>& accès.</em>',
@@ -184,7 +184,7 @@ const DICT = {
       count: (n) => (n === 0 ? 'No dishes' : n === 1 ? '1 dish' : `${n} dishes`),
       empty: 'Nothing comes out of the oven with these filters.', emptyHint: 'Try another word, or start over.',
       reset: 'Reset all', note: 'Allergens and ingredients: please ask the team. Service included.',
-      vegTag: 'Vegetarian', photoOf: (n) => `Photo: ${n}`,
+      photoOf: (n) => `Photo: ${n}`,
     },
     infos: {
       title: 'Address <em>& access.</em>',
@@ -283,7 +283,7 @@ const DICT = {
       count: (n) => (n === 0 ? 'Ningún plato' : n === 1 ? '1 plato' : `${n} platos`),
       empty: 'Nada sale del horno con estos filtros.', emptyHint: 'Prueba otra palabra o empieza de nuevo.',
       reset: 'Restablecer todo', note: 'Alérgenos e ingredientes: pregunta al equipo. Servicio incluido.',
-      vegTag: 'Vegetariano', photoOf: (n) => `Foto: ${n}`,
+      photoOf: (n) => `Foto: ${n}`,
     },
     infos: {
       title: 'Dirección <em>y acceso.</em>',
