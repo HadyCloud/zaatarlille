@@ -102,7 +102,7 @@ function chef() {
       <div class="arch chef__media shutter" data-reveal="img" data-cursor="view" data-photo="knefe_chef">${pic('knefe_chef', { sizes: '(min-width: 900px) 34vw, 90vw' })}</div>
       <div class="chef__text stack">
         <h2 class="h h--l" id="chef-title" data-split>${c.title}</h2>
-        <p class="body" data-reveal="up">${esc(c.p)}</p>
+        <p class="body chef__p" data-reveal="up">${c.p.split('\n').map((l) => `<span class="chef__line">${esc(l)}</span>`).join(' ')}</p>
         <a class="chef__house" data-reveal="up" href="${CONFIG.chef.otherHouseUrl}" target="_blank" rel="noopener noreferrer">${star()}${esc(CONFIG.chef.otherHouse)} · Lille ${ICON.arrow}</a>
       </div>
     </div>

@@ -130,6 +130,10 @@
 .chef__house .star { width: 12px; height: 12px; color: var(--sesame); }
 @media (min-width: 900px) {
   .chef__grid { grid-template-columns: 0.8fr 1.2fr; }
+  /* Desktop: the chef copy is two lines, each kept whole and scaled to the column width. */
+  .chef__text { container-type: inline-size; max-width: none; }
+  .chef__p { max-width: none; font-size: min(1.0625rem, 2.85cqw); }
+  .chef__line { display: block; white-space: nowrap; }
 }
 
 /* ═══ ENVIES ══════════════════════════════════════════════════════════ */

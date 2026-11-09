@@ -68,7 +68,7 @@ const DICT = {
       },
       chef: {
         eyebrow: 'Le chef', title: `Signé <em>${chef.name}.</em>`,
-        p: `Derrière le four, le chef ${chef.name}. Il fait vivre plusieurs maisons à Lille, dont ${chef.otherHouse}. ZA'ATAR, c'est sa boulangerie libanaise, rue des Postes.`,
+        p: `Derrière le four, le chef ${chef.name}. Il fait vivre plusieurs maisons à Lille, dont ${chef.otherHouse}.\nZA'ATAR, c'est sa boulangerie libanaise, rue des Postes.`,
       },
       sig: { eyebrow: 'Le plat signature', title: 'Trois classiques, <em>un seul four.</em>' },
       envies: {
@@ -172,7 +172,7 @@ const DICT = {
       },
       chef: {
         eyebrow: 'The chef', title: `Signed <em>${chef.name}.</em>`,
-        p: `Behind the oven: chef ${chef.name}. He runs several places in Lille, including ${chef.otherHouse}. ZA'ATAR is his Lebanese bakery on Rue des Postes.`,
+        p: `Behind the oven: chef ${chef.name}. He runs several places in Lille, including ${chef.otherHouse}.\nZA'ATAR is his Lebanese bakery on Rue des Postes.`,
       },
       sig: { eyebrow: 'Signature dishes', title: 'Three classics, <em>one oven.</em>' },
       envies: {
@@ -276,7 +276,7 @@ const DICT = {
       },
       chef: {
         eyebrow: 'El chef', title: `Firmado <em>${chef.name}.</em>`,
-        p: `Detrás del horno, el chef ${chef.name}. Lleva varias casas en Lille, entre ellas ${chef.otherHouse}. ZA'ATAR es su panadería libanesa en la Rue des Postes.`,
+        p: `Detrás del horno, el chef ${chef.name}. Lleva varias casas en Lille, entre ellas ${chef.otherHouse}.\nZA'ATAR es su panadería libanesa en la Rue des Postes.`,
       },
       sig: { eyebrow: 'Los platos estrella', title: 'Tres clásicos, <em>un solo horno.</em>' },
       envies: {
