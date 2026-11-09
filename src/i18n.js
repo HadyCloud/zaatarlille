@@ -79,8 +79,7 @@ const DICT = {
       find: { eyebrow: 'Nous trouver', title: 'Rue des Postes, <em>à Lille.</em>' },
     },
     carte: {
-      title: 'La Carte', script: 'Tout sort du four, ou presque',
-      lead: "Man'ouches, fatayers, wraps, pizzas, desserts et boissons.",
+      title: 'La Carte', script: 'Tout sort du four',
       filters: 'Filtrer la carte', categories: 'Catégories', all: 'Tout', vegOnly: 'Végétarien',
       search: 'Rechercher un plat', searchPh: 'épinards, halloumi, jebné…', clear: 'Effacer la recherche',
       count: (n) => (n === 0 ? 'Aucun plat' : n === 1 ? '1 plat' : `${n} plats`),
@@ -99,13 +98,9 @@ const DICT = {
       faq: {
         eyebrow: 'FAQ', title: 'Questions <em>fréquentes.</em>',
         items: [
-          ['Quels sont vos horaires ?', 'HOURS'],
-          ['Comment venir ?', `Nous sommes au 139 Rue des Postes, 59000 Lille. Le plus simple : ouvrez l’itinéraire depuis cette page.`],
-          ["C'est quoi, une man'ouche ?", "Une galette libanaise garnie puis cuite au four. La plus classique est au za'atar, un mélange de thym et de sésame ; on la trouve aussi au fromage ou à la viande épicée. Au Liban, c'est le petit-déjeuner du quartier."],
-          ['Avez-vous des options végétariennes ?', "Oui : plusieurs man'ouches (za'atar, fromage, labneh, mouhammara…), les mini fromage et mini épinards, le wrap halloumi pesto et le knefeh. Pour les allergènes, demandez à l'équipe."],
-          ['Où voir la carte ?', "Sur la page La Carte de ce site, et en story sur notre Instagram @zaatar.lille."],
-          ["Qui est derrière ZA'ATAR ?", `Le chef ${chef.name}, qui fait vivre plusieurs restaurants à Lille, dont ${chef.otherHouse}.`],
-          ['Réservation, à emporter, groupes ?', `Le plus simple : appelez-nous au ${CONFIG.phone.display}.`],
+          ['La viande est-elle halal ?', "Oui, notre viande est halal."],
+          ['Réservation, à emporter, groupes ?', `Le plus simple : appelez-nous au ${CONFIG.phone.display}.`],
+          ['Avez-vous des options végétariennes ?', "Oui : plusieurs man'ouches (za'atar, fromage, labneh, mouhammara…), les mini fromage et mini épinards, le wrap halloumi pesto et le knefeh. Pour les allergènes, demandez à l'équipe."],
         ],
       },
     },
@@ -183,8 +178,7 @@ const DICT = {
       find: { eyebrow: 'Find us', title: 'Rue des Postes, <em>Lille.</em>' },
     },
     carte: {
-      title: 'The Menu', script: 'Tout sort du four, ou presque',
-      lead: "Man'ouches, fatayers, wraps, pizzas, desserts and drinks.",
+      title: 'The Menu', script: 'Tout sort du four',
       filters: 'Filter the menu', categories: 'Categories', all: 'All', vegOnly: 'Vegetarian',
       search: 'Search a dish', searchPh: 'spinach, halloumi, jebné…', clear: 'Clear search',
       count: (n) => (n === 0 ? 'No dishes' : n === 1 ? '1 dish' : `${n} dishes`),
@@ -203,13 +197,9 @@ const DICT = {
       faq: {
         eyebrow: 'FAQ', title: 'Frequently <em>asked.</em>',
         items: [
-          ['What are your opening hours?', 'HOURS'],
-          ['How do I get there?', 'We are at 139 Rue des Postes, 59000 Lille. The easiest way: open the directions from this page.'],
-          ["What is a man'ouche?", "A Lebanese flatbread, topped and then baked in the oven. The classic one is za'atar, a thyme and sesame blend; it also comes with cheese or spiced meat. In Lebanon, it’s the neighbourhood breakfast."],
-          ['Do you have vegetarian options?', "Yes: several man'ouches (za'atar, cheese, labneh, mouhammara…), the mini cheese and mini spinach, the halloumi pesto wrap and the knefeh. For allergens, please ask the team."],
-          ['Where can I see the menu?', 'On the Menu page of this site, and in the stories of our Instagram @zaatar.lille.'],
-          ["Who is behind ZA'ATAR?", `Chef ${chef.name}, who runs several restaurants in Lille, including ${chef.otherHouse}.`],
+          ['Is the meat halal?', 'Yes, our meat is halal.'],
           ['Reservations, takeaway, groups?', `The easiest way: call us on ${CONFIG.phone.display}.`],
+          ['Do you have vegetarian options?', "Yes: several man'ouches (za'atar, cheese, labneh, mouhammara…), the mini cheese and mini spinach, the halloumi pesto wrap and the knefeh. For allergens, please ask the team."],
         ],
       },
     },
@@ -287,8 +277,7 @@ const DICT = {
       find: { eyebrow: 'Encontrarnos', title: 'Rue des Postes, <em>en Lille.</em>' },
     },
     carte: {
-      title: 'La Carta', script: 'Tout sort du four, ou presque',
-      lead: "Man'ouches, fatayers, wraps, pizzas, postres y bebidas.",
+      title: 'La Carta', script: 'Tout sort du four',
       filters: 'Filtrar la carta', categories: 'Categorías', all: 'Todo', vegOnly: 'Vegetariano',
       search: 'Buscar un plato', searchPh: 'espinacas, halloumi, jebné…', clear: 'Borrar la búsqueda',
       count: (n) => (n === 0 ? 'Ningún plato' : n === 1 ? '1 plato' : `${n} platos`),
@@ -307,13 +296,9 @@ const DICT = {
       faq: {
         eyebrow: 'FAQ', title: 'Preguntas <em>frecuentes.</em>',
         items: [
-          ['¿Cuál es vuestro horario?', 'HOURS'],
-          ['¿Cómo llegar?', 'Estamos en el 139 Rue des Postes, 59000 Lille. Lo más fácil: abre la ruta desde esta página.'],
-          ["¿Qué es una man'ouche?", "Una torta libanesa que se cubre y luego se hornea. La más clásica es de za'atar, una mezcla de tomillo y sésamo; también la hay de queso o de carne especiada. En el Líbano es el desayuno del barrio."],
-          ['¿Tenéis opciones vegetarianas?', "Sí: varias man'ouches (za'atar, queso, labneh, mouhammara…), los mini de queso y de espinacas, el wrap halloumi pesto y el knefeh. Para los alérgenos, pregunta al equipo."],
-          ['¿Dónde veo la carta?', 'En la página La Carta de esta web, y en las stories de nuestro Instagram @zaatar.lille.'],
-          ["¿Quién está detrás de ZA'ATAR?", `El chef ${chef.name}, que lleva varios restaurantes en Lille, entre ellos ${chef.otherHouse}.`],
+          ['¿La carne es halal?', 'Sí, nuestra carne es halal.'],
           ['¿Reservas, para llevar, grupos?', `Lo más fácil: llámanos al ${CONFIG.phone.display}.`],
+          ['¿Tenéis opciones vegetarianas?', "Sí: varias man'ouches (za'atar, queso, labneh, mouhammara…), los mini de queso y de espinacas, el wrap halloumi pesto y el knefeh. Para los alérgenos, pregunta al equipo."],
         ],
       },
     },

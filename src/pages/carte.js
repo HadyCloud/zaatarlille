@@ -27,9 +27,8 @@ function row(s, it) {
   const gloss = it.gloss?.[lang()];
   return `<li class="row${it.photo ? ' has-thumb' : ''}" data-row="${id}"${it.photo ? ` data-photo="${it.photo}"` : ''}>
     <div class="row__line">
-      ${it.photo ? photoBtn('row__thumb', pic(it.photo, { sizes: '44px', alt: '' })) : ''}
+      ${it.photo ? photoBtn('row__thumb', pic(it.photo, { sizes: '44px', alt: '' })) : '<span class="row__thumb row__thumb--empty" aria-hidden="true"></span>'}
       <span class="row__name">${esc(it.name)}${it.veg ? `<span class="row__veg" title="${esc(d.vegTag)}">${ICON.leaf}<span class="sr-only">, ${esc(d.vegTag)}</span></span>` : ''}</span>
-      ${it.photo ? photoBtn('row__cam', ICON.camera) : ''}
       <span class="row__dots" aria-hidden="true"></span>
       <span class="row__price">${formatPrice(it.price)}</span>
     </div>
@@ -66,7 +65,6 @@ export function render(route, reason) {
       <div class="wrap">
         <h1 class="h phero__title" id="carte-title" tabindex="-1" data-split>${esc(c.title)}</h1>
         <p class="phero__script" lang="fr">${esc(c.script)}</p>
-        <p class="lead" data-reveal="up">${esc(c.lead)}</p>
         ${external(links.review, '', 'btn', `${esc(d.common.review)} ${ICON.arrow}`)}
       </div>
     </section>
