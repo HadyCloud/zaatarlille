@@ -52,7 +52,7 @@ const DICT = {
     },
     home: {
       eyebrow: 'Lille',
-      lead: 'Le four de Lille.',
+      lead: 'Le four de Lille',
       ctaMenu: 'Découvrir la carte', ctaFind: 'Nous trouver',
       maison: {
         eyebrow: 'La maison', title: "Du feu, du ZA'ATAR, <em>de l'envie.</em>",
@@ -151,7 +151,7 @@ const DICT = {
     },
     home: {
       eyebrow: 'Lille',
-      lead: "Lille's oven.",
+      lead: "Lille's oven",
       ctaMenu: 'See the menu', ctaFind: 'Find us',
       maison: {
         eyebrow: 'The house', title: "Fire, ZA'ATAR, <em>appetite.</em>",
@@ -250,7 +250,7 @@ const DICT = {
     },
     home: {
       eyebrow: 'Lille',
-      lead: 'El horno de Lille.',
+      lead: 'El horno de Lille',
       ctaMenu: 'Descubrir la carta', ctaFind: 'Encontrarnos',
       maison: {
         eyebrow: 'La casa', title: "Fuego, ZA'ATAR, <em>antojo.</em>",
