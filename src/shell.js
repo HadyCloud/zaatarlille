@@ -88,8 +88,7 @@ function footerHTML() {
   const hours = hoursGroups().map((g) => `<li><span>${esc(g.days)}</span><span class="${g.closed ? 'closed' : ''}">${esc(g.text)}</span></li>`).join('');
   return `<div class="footer__top">
       <span class="wm" aria-hidden="true">ZA'</span>
-      <img class="footer__logo" src="${imgSrc('logo-tile', 842)}" width="842" height="502" alt="Za'atar — La Boulangerie Libanaise" loading="lazy">
-      <p class="footer__pitch">${esc(d.footer.pitch)}</p>
+      <img class="footer__logo" src="${imgSrc('logo-tile', 842)}" width="842" height="502" alt="ZA'ATAR — La Boulangerie Libanaise" loading="lazy">
     </div>
     <div class="footer__base"><div class="wrap">
       <div class="footer__grid">

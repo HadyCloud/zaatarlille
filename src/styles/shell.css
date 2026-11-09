@@ -118,7 +118,6 @@
 .footer__top > :not(.wm) { position: relative; z-index: 1; }
 .footer__top .wm { top: -10%; inset-inline-end: -4vw; }
 .footer__logo { width: min(78vw, 520px); margin-inline: auto; }
-.footer__pitch { margin-top: 18px; font: 700 clamp(2rem, 4.4vw, 3rem)/1 var(--f-display); -webkit-text-stroke: 0.025em currentColor; }
 .footer__base { --focus: var(--cream); background: var(--sage-deep); color: var(--cream); padding: 56px 0 calc(40px + var(--safe-b)); }
 .footer__grid { display: grid; gap: 36px; grid-template-columns: 1fr; }
 .footer__col h2 { font: 500 0.72rem/1.2 var(--f-grot); letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 14px; display: flex; gap: 10px; align-items: center; }

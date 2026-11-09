@@ -4,7 +4,7 @@
 // ═══════════════════════════════════════════════════════════════════════
 
 export const CONFIG = {
-  name: "Za'atar",
+  name: "ZA'ATAR",
   tagline: 'La Boulangerie Libanaise',
   address: { street: '139 Rue des Postes', postcode: '59000', city: 'Lille', country: 'FR' },
   // Verified 2026-09-24: OpenStreetMap node 6657678076 + api-adresse.data.gouv.fr (score 0.99).
@@ -12,9 +12,9 @@ export const CONFIG = {
   transport: '', // Leave empty unless verified (e.g. nearest metro).
   phone: { display: '09 83 84 69 75', tel: '+33983846975' },
   instagram: { handle: 'zaatar.lille', url: 'https://www.instagram.com/zaatar.lille/' },
-  googleQuery: "Za'atar 139 Rue des Postes Lille",
-  // Hidden everywhere while null. Example: { value: 4.8, count: 212 }
-  GOOGLE_RATING: null,
+  googleQuery: "ZA'ATAR 139 Rue des Postes Lille",
+  // Set to null to hide the rating everywhere.
+  GOOGLE_RATING: { value: 4.8, count: 112 },
   chef: {
     name: 'Jalal',
     otherHouse: 'Maison L',
@@ -306,13 +306,13 @@ export const PHOTOS = {
     en: "Two sfihas held up like glasses, above a table of fatayers and man'ouches",
     es: "Dos sfihas sostenidas como gafas, sobre una mesa de fatayers y man'ouches" } },
   homepage: { pos: '50% 30%', alt: {
-    fr: "L'enseigne Za'atar en métal brossé sur un mur gris-vert, au-dessus d'un ficus",
-    en: "The brushed-metal Za'atar sign on a grey-green wall, above a potted ficus",
-    es: "El rótulo de Za'atar en metal cepillado sobre una pared gris verdosa, sobre un ficus" } },
+    fr: "L'enseigne ZA'ATAR en métal brossé sur un mur gris-vert, au-dessus d'un ficus",
+    en: "The brushed-metal ZA'ATAR sign on a grey-green wall, above a potted ficus",
+    es: "El rótulo de ZA'ATAR en metal cepillado sobre una pared gris verdosa, sobre un ficus" } },
   storefront: { pos: '50% 55%', alt: {
-    fr: 'La façade noire de Za’atar, rue des Postes, et la salle derrière la vitrine',
-    en: "Za'atar's black shopfront on Rue des Postes, with the room behind the glass",
-    es: 'La fachada negra de Za’atar en la Rue des Postes, con la sala tras el cristal' } },
+    fr: "La façade noire de ZA'ATAR, rue des Postes, et la salle derrière la vitrine",
+    en: "ZA'ATAR's black shopfront on Rue des Postes, with the room behind the glass",
+    es: "La fachada negra de ZA'ATAR en la Rue des Postes, con la sala tras el cristal" } },
   interior: { pos: '50% 58%', alt: {
     fr: 'La salle : comptoir en bois éclairé, tabourets colorés le long d’un mur vert sauge',
     en: 'The room: a lit wooden counter and colourful stools along a sage-green wall',

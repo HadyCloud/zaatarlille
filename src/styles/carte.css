@@ -146,23 +146,9 @@
 .livebox.is-open .status__dot { background: var(--ember); }
 .livebox.is-open .status__dot::after { content: ''; position: absolute; inset: 0; border-radius: 50%; background: var(--ember); animation: pulse 2s var(--ease-out) infinite; }
 .livebox strong { font-weight: 500; }
-.visit__photo { aspect-ratio: 16 / 10; border-radius: 22px 22px 22px 22px; overflow: hidden; position: relative; }
-.visit__photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-/* Centre the Za'atar sign (≈42% × 46% of the box at any size): scale around it, then shift it to the middle. */
-.visit__photo img { transform-origin: 42% 46%; transform: translate(8%, 3.6%) scale(1.25); }
 
-.histoire__grid { display: grid; gap: clamp(40px, 6vw, 100px); align-items: center; }
-.histoire__media { aspect-ratio: 4 / 5; width: min(100%, 500px); justify-self: center; }
-
-.histoire__text { --gap: 1.4rem; }
-.quote { position: relative; padding-top: 12px; }
-.quote p { font: 700 clamp(2.2rem, 3.8vw, 3.2rem)/1 var(--f-display); -webkit-text-stroke: 0.025em currentColor; text-wrap: balance; }
-.quote .star { width: 26px; height: 26px; color: var(--sesame); margin-bottom: 14px; }
 .handle { display: inline-flex; align-items: center; gap: 10px; font: 500 0.8rem/1 var(--f-grot); letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; min-height: 44px; }
 .handle:hover { text-decoration: underline; }
-@media (min-width: 900px) {
-  .histoire__grid { grid-template-columns: 0.9fr 1.1fr; }
-}
 
 .mosaic__head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 24px 40px; margin-bottom: clamp(32px, 4vw, 56px); }
 .mosaic__head .stack { --gap: 1.2rem; max-width: 560px; }
@@ -199,7 +185,6 @@
 /* Mobile rhythm (see home.css) */
 @media (max-width: 767px) {
   .phero { padding-bottom: 48px; }
-  .histoire__grid { gap: 32px; }
   .mosaic__head { margin-bottom: 32px; }
 }
 
@@ -208,7 +193,10 @@
   .week caption { padding-bottom: 6px; }
 }
 
-/* Histoire photo: shorter arch on phones (less scrolling, keeps flames + peel in frame). */
+/* Infos: the map + hours section now opens the page, so clear the fixed ticker/header. */
+.infos-main { padding-top: calc(var(--ticker-h) + var(--header-h) + clamp(24px, 4vw, 56px)); }
+
+/* Phones: the card already lists the hours, so skip the long weekly table. */
 @media (max-width: 767px) {
-  .histoire__media { aspect-ratio: 15 / 16; }
+  .visit--week { display: none; }
 }

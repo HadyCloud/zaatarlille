@@ -5,18 +5,18 @@
   display: grid; grid-template-rows: auto auto auto 1fr; justify-items: center; text-align: center;
   padding-top: calc(var(--ticker-h) + var(--header-h) + clamp(6px, 1.6svh, 20px));
 }
-.hero__eyebrow { font-family: var(--f-script); font-size: clamp(2.4rem, 5vw, 3.4rem); line-height: 1.05; color: var(--cream); }
+.hero__eyebrow { font-family: var(--f-script); font-size: clamp(3.2rem, 6.4vw, 4.6rem); line-height: 1.05; color: var(--cream); position: relative; left: -0.056em; /* script glyphs overhang to the right; recentre the ink */ }
 .hero__word {
   display: flex; justify-content: center;
-  font: 700 clamp(5.4rem, min(29vw, 30svh), 17rem)/0.8 var(--f-display);
+  font: 700 clamp(5rem, min(26vw, 27svh), 15.5rem)/0.8 var(--f-display);
   letter-spacing: 0.02em; -webkit-text-stroke: 0.03em currentColor; paint-order: stroke fill;
   margin-top: -0.04em;
 }
 .hero__word.is-boiling { filter: url(#boil); }
 .hero__word .ch { display: inline-block; overflow: clip; overflow-clip-margin: 0.08em; padding-top: 0.06em; }
 .hero__word .ch > span { display: inline-block; will-change: transform; }
-.hero__tag { font: 400 clamp(0.74rem, 1.15vw, 0.95rem)/1 var(--f-grot); letter-spacing: 0.1em; margin-top: 0.7em; }
-.hero__cell { position: relative; width: 100%; margin-top: clamp(14px, 2.4svh, 30px); }
+.hero__tag { font: 400 clamp(0.9rem, 1.4vw, 1.2rem)/1.1 var(--f-grot); white-space: nowrap; margin-top: 0.7em; }
+.hero__cell { position: relative; width: 100%; margin-top: clamp(18px, 2.8svh, 34px); }
 .hero__arch {
   position: absolute; bottom: 0; left: 0; right: 0; margin-inline: auto;
   width: calc(100% - 2 * var(--gutter)); height: 100%;
@@ -51,7 +51,7 @@
   display: grid; justify-items: center; gap: 18px; text-align: center;
   padding-inline: calc(var(--gutter) + 18px); color: var(--cream);
 }
-.hero__lead { font: 300 clamp(1.02rem, 1.6vw, 1.3rem)/1.5 var(--f-sans); max-width: 34ch; text-wrap: balance; text-shadow: 0 1px 14px rgba(0, 0, 0, 0.5); }
+.hero__lead { font: 400 clamp(2rem, 3.4vw, 2.9rem)/1.1 var(--f-script); max-width: 34ch; text-wrap: balance; text-shadow: 0 1px 14px rgba(0, 0, 0, 0.5); }
 .hero__ctas { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
 .hero__ctas .btn { --btn-bg: var(--cream); --btn-fg: var(--forest); }
 .hero__ctas .btn--ghost { --fg: var(--cream); background: rgba(14, 20, 18, 0.35); }
@@ -67,6 +67,8 @@
 .maison__text { --gap: 1.6rem; }
 .maison__media { position: relative; justify-self: center; width: min(100%, 520px); }
 .maison__arch { aspect-ratio: 4 / 5; }
+/* The ZA'ATAR sign sits ≈45% across the photo: widen and shift the image (not transform: GSAP owns that) so the sign is centred. */
+.maison__arch > img[data-speed] { width: 119%; max-width: none; left: 0; }
 
 .stamp {
   position: absolute; inset-inline-start: -34px; bottom: 8%; width: 138px; height: 138px; z-index: 2;
@@ -82,6 +84,13 @@
   background: var(--forest); color: var(--cream); font: 500 0.8rem/1 var(--f-grot); letter-spacing: 0.06em;
 }
 .badge .num { font-size: 1.5rem; color: var(--sesame); }
+.rating-tab {
+  display: inline-flex; align-items: center; gap: clamp(12px, 2vw, 22px); flex-wrap: wrap; max-width: 100%;
+  padding: clamp(14px, 2vw, 20px) clamp(16px, 2.4vw, 28px); border-radius: 0 28px 0 28px;
+  background: #2e3c28; color: var(--cream);
+}
+.rating-tab__stars { color: #d6b98a; font-size: clamp(1.1rem, 2vw, 1.5rem); letter-spacing: 0.18em; line-height: 1; }
+.rating-tab__text { font: 500 clamp(0.72rem, 1.2vw, 0.9rem)/1.2 ui-monospace, 'SF Mono', Menlo, Consolas, monospace; letter-spacing: 0.16em; text-transform: uppercase; }
 @media (min-width: 900px) {
   .maison__grid { grid-template-columns: 1.05fr 0.95fr; }
 }

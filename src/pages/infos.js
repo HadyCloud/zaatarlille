@@ -24,10 +24,8 @@ function weekTable() {
 export function render() {
   const d = t();
   const i = d.infos;
-  const h = i.histoire;
   const g = i.gallery;
   const f = i.faq;
-  const photo = `<div class="visit__photo" data-cursor="view" data-photo="homepage">${pic('homepage', { sizes: '(min-width: 900px) 34vw, 90vw', pos: '50% 0%' })}</div>`;
   const tiles = GALLERY.map((tile, n) => `<button class="tile tile--${tile.size}${tile.pcOnly ? ' tile--pc' : ''}" type="button" data-tile="${n}" data-cursor="view" data-reveal="up" aria-label="${esc(d.a11y.photo)} ${n + 1}/${GALLERY.length}">
       ${pic(tile.photo, { sizes: tile.size === 'xl' ? '(min-width: 768px) 50vw, 100vw' : '(min-width: 768px) 25vw, 50vw', alt: '' })}
       ${tile.video ? `<video muted loop playsinline preload="none" data-src="${esc(tile.video)}" aria-hidden="true"></video>` : ''}
@@ -37,41 +35,20 @@ export function render() {
       <div class="faq__a" id="faq-${n}" role="region" aria-labelledby="faq-q-${n}" hidden><p>${a === 'HOURS' ? esc(hoursSentence()) : esc(a)}</p></div>
     </li>`).join('');
 
-  return `<section class="phero t-sage" aria-labelledby="infos-title">
-      ${watermark()}
-      <div class="wrap">
-        <h1 class="h phero__title" id="infos-title" tabindex="-1" data-split style="font-size:clamp(4.6rem,15vw,11rem)">${i.title}</h1>
-        <p class="lead" data-reveal="up">${esc(i.lead)}</p>
-      </div>
-    </section>
-
-    <section class="sec sec--tight t-paper" aria-label="${esc(d.common.address)}">
+  return `<section class="sec sec--tight t-paper infos-main" aria-labelledby="infos-title">
+      <h1 class="sr-only" id="infos-title" tabindex="-1">${esc(i.title.replace(/<[^>]*>/g, ''))}</h1>
       <div class="wrap find__grid">
         <div class="stack" style="--gap:18px">
           ${mapHTML()}
-          <div class="visit" data-reveal="up" style="background:var(--paper-2)">${weekTable()}</div>
+          <div class="visit visit--week" data-reveal="up" style="background:var(--paper-2)">${weekTable()}</div>
         </div>
-        ${visitCardHTML({ extra: photo })}
+        ${visitCardHTML()}
       </div>
       <div class="wrap" style="margin-top:28px">
         <ul class="visit__actions" role="list" data-reveal="up">
           <li>${external(links.instagram, '', 'handle', `${ICON.insta} @${esc(CONFIG.instagram.handle)}`)}</li>
           <li><a class="handle" href="${links.tel}">${ICON.phone} ${esc(CONFIG.phone.display)}</a></li>
         </ul>
-      </div>
-    </section>
-
-    <section class="sec t-sagedeep" id="histoire" aria-labelledby="histoire-title">
-      ${watermark()}
-      <div class="wrap histoire__grid">
-        <div class="arch histoire__media shutter" data-reveal="img" data-cursor="view" data-photo="furn">${pic('furn', { sizes: '(min-width: 900px) 40vw, 90vw', attrs: 'data-speed="0.9"' })}</div>
-        <div class="histoire__text stack">
-          <h2 class="h h--xl" id="histoire-title" data-split>${h.title}</h2>
-          <p class="body" data-reveal="up">${esc(h.p1)}</p>
-          <p class="body" data-reveal="up">${esc(h.p2)}</p>
-          <blockquote class="quote" data-reveal="up">${star()}<p>« ${esc(h.quote)} »</p></blockquote>
-          ${external(links.instagram, '', 'handle', `${ICON.insta} @${esc(CONFIG.instagram.handle)}`)}
-        </div>
       </div>
     </section>
 

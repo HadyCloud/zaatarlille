@@ -17,7 +17,7 @@ function hero() {
   return `<section class="hero t-sage" data-hero>
     <div class="hero__stage">
       <p class="hero__eyebrow" data-intro>${esc(d.home.eyebrow)}</p>
-      <h1 class="hero__word" tabindex="-1"><span class="sr-only">Za'atar — ${esc(CONFIG.tagline)}, Lille</span><span class="hero__chars" aria-hidden="true" style="display:contents">${chars}</span></h1>
+      <h1 class="hero__word" tabindex="-1"><span class="sr-only">ZA'ATAR — ${esc(CONFIG.tagline)}, Lille</span><span class="hero__chars" aria-hidden="true" style="display:contents">${chars}</span></h1>
       <p class="hero__tag" data-intro aria-hidden="true">${esc(CONFIG.tagline)}</p>
       <div class="hero__cell">
         <div class="hero__arch" data-arch>
@@ -43,10 +43,11 @@ function hero() {
   </section>`;
 }
 
-function ratingBadge() {
+function ratingTab() {
   const r = CONFIG.GOOGLE_RATING;
   if (!r) return '';
-  return `<p class="badge" data-reveal="up"><span class="num">${String(r.value).replace('.', ',')}</span>${esc(t().common.rating(String(r.value).replace('.', ','), r.count))}</p>`;
+  const v = String(r.value).replace('.', ',');
+  return `<p class="rating-tab" data-reveal="up"><span class="rating-tab__stars" aria-hidden="true">${'★'.repeat(5)}</span><span class="rating-tab__text">${esc(t().common.ratingLine(v, r.count))}</span></p>`;
 }
 
 function maison() {
@@ -58,13 +59,9 @@ function maison() {
     <div class="wrap maison__grid">
       <div class="maison__text stack">
         <h2 class="h h--xl" id="maison-title" data-split>${m.title}</h2>
-        <p class="body" data-reveal="up">${esc(m.p1)}</p>
-        <p class="body" data-reveal="up">${esc(m.p2)}</p>
-        ${ratingBadge()}
-        <a class="link" href="#/infos#histoire" data-reveal="up">${esc(d.common.story)} ${ICON.arrow}</a>
       </div>
       <figure class="maison__media">
-        <div class="arch maison__arch shutter" data-reveal="img" data-cursor="view" data-photo="homepage">${pic('homepage', { sizes: '(min-width: 900px) 40vw, 90vw', pos: '12% 50%', attrs: 'data-speed="0.9"' })}</div>
+        <div class="arch maison__arch shutter" data-reveal="img" data-cursor="view" data-photo="homepage">${pic('homepage', { sizes: '(min-width: 900px) 40vw, 90vw', pos: '50% 12%', attrs: 'data-speed="0.9"' })}</div>
         <div class="stamp" aria-hidden="true">
           <svg class="stamp__ring" viewBox="0 0 100 100"><defs><path id="stamp-c" d="M50,50 m-39,0 a39,39 0 1,1 78,0 a39,39 0 1,1 -78,0"/></defs>
             <text><textPath href="#stamp-c" textLength="243" lengthAdjust="spacingAndGlyphs">${esc(stamp)}</textPath></text></svg>
@@ -89,9 +86,6 @@ function process() {
     </li>`).join('');
   return `<section class="sec t-paper process-sec" aria-label="${esc(pr.eyebrow)}">
     <div class="wrap process" data-process>
-      <div class="process__head">
-        <div class="stack" style="--gap:1rem"><h3 class="h h--l" data-split>${pr.title}</h3></div>
-      </div>
       <div class="process__body" style="position:relative">
         <div class="process__track" aria-hidden="true"><span class="process__fill"></span></div>
         <ol class="process__steps" role="list">${steps}</ol>
@@ -156,16 +150,14 @@ function reviews() {
   const d = t();
   const a = REVIEWS.map(reviewCard).join('');
   const b = [...REVIEWS].reverse().map(reviewCard).join('');
-  const r = CONFIG.GOOGLE_RATING;
   return `<section class="sec t-forest reviews" aria-labelledby="rev-title">
     <div class="wrap reviews__head">
       <div class="arch reviews__portrait shutter" data-reveal="img" data-cursor="view" data-photo="Portrait">${pic('Portrait', { sizes: '(min-width: 900px) 26vw, 80vw', attrs: 'data-speed="0.9"' })}</div>
       <div class="reviews__text stack">
         <h2 class="h h--xl" id="rev-title" data-split>${d.home.reviews.title}</h2>
-        ${r ? `<p class="lead" data-reveal="up">${esc(d.common.rating(String(r.value).replace('.', ','), r.count))}</p>` : ''}
+        ${ratingTab()}
         <div class="reviews__actions" data-reveal="up">
           ${external(links.review, '', 'btn', `${esc(d.common.review)} ${ICON.arrow}`)}
-          <button class="btn btn--ghost btn--sm" type="button" data-mq-toggle aria-pressed="false">${ICON.pause}<span>${esc(d.a11y.pause)}</span></button>
         </div>
       </div>
     </div>
@@ -341,16 +333,25 @@ function tilt(root) {
   return () => offs.forEach((f) => f());
 }
 
-function marqueeToggle(root) {
-  const btn = root.querySelector('[data-mq-toggle]');
-  const el = root.querySelector('[data-mq]');
-  const a = t().a11y;
-  btn.addEventListener('click', () => {
-    const paused = !el.classList.contains('is-paused');
-    el.classList.toggle('is-paused', paused);
-    btn.setAttribute('aria-pressed', String(paused));
-    btn.innerHTML = `${paused ? ICON.play : ICON.pause}<span>${esc(paused ? a.play : a.pause)}</span>`;
-  });
+// Spread the tagline's letters so it spans exactly the width of the wordmark, like the logo lockup.
+function fitTag(root) {
+  const word = root.querySelector('.hero__word');
+  const tag = root.querySelector('.hero__tag');
+  if (!word || !tag) return () => {};
+  const fit = () => {
+    tag.style.letterSpacing = '0px';
+    tag.style.paddingLeft = '0px';
+    const n = tag.textContent.length;
+    const natural = tag.getBoundingClientRect().width;
+    const ls = Math.max(0, (word.offsetWidth - natural) / n);
+    tag.style.letterSpacing = `${ls}px`;
+    tag.style.paddingLeft = `${ls}px`; // balances the trailing letter-space so the text stays centred
+  };
+  fit();
+  const ro = new ResizeObserver(fit);
+  ro.observe(word);
+  document.fonts?.ready.then(fit);
+  return () => ro.disconnect();
 }
 
 export function mount(root) {
@@ -364,10 +365,10 @@ export function mount(root) {
   const stopReel = reel(root);
   offs.push(stopReel);
   heroVideo(root, stopReel);
+  offs.push(fitTag(root));
   offs.push(boil(root.querySelector('.hero__word')));
   offs.push(sparks(root.querySelector('.hero__sparks')));
   offs.push(magnetic(root), tilt(root), mountMap(root));
-  marqueeToggle(root);
   const onClick = (e) => {
     const ph = e.target.closest('[data-photo]');
     if (ph) openLightbox([{ photo: ph.dataset.photo }], 0);
