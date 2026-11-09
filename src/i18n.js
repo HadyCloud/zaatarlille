@@ -42,7 +42,7 @@ const DICT = {
       : `${f === to ? `Le ${D[f]}` : `Du ${D[f]} au ${D[to]}`} : ${slots}`),
     common: {
       directions: 'Itinéraire', seeMenu: 'Voir toute la carte', discover: 'Découvrir',
-      review: 'Laisser un avis Google', profile: 'Voir la fiche Google', deliveroo: 'Commander sur Deliveroo', address: 'Adresse', hours: 'Horaires',
+      review: 'Laisser un avis Google', profile: 'Voir la fiche Google', delivery: 'Livraison', address: 'Adresse', hours: 'Horaires',
       phone: 'Téléphone', instagram: 'Instagram', closed: 'Fermé', today: "Aujourd'hui", sample: "Avis d'exemple",
       veg: 'Végétarien', and: 'et', rating: (v, n) => `${v}/5 · ${n} avis Google`, ratingLine: (v, n) => `${v}/5 sur ${n} avis Google`,
     },
@@ -141,7 +141,7 @@ const DICT = {
       : `${D[f]}${f === to ? '' : ` to ${D[to]}`}: ${slots}`),
     common: {
       directions: 'Directions', seeMenu: 'See the full menu', discover: 'Discover',
-      review: 'Leave a Google review', profile: 'View on Google', deliveroo: 'Order on Deliveroo', address: 'Address', hours: 'Hours',
+      review: 'Leave a Google review', profile: 'View on Google', delivery: 'Delivery', address: 'Address', hours: 'Hours',
       phone: 'Phone', instagram: 'Instagram', closed: 'Closed', today: 'Today', sample: 'Sample review',
       veg: 'Vegetarian', and: 'and', rating: (v, n) => `${v}/5 · ${n} Google reviews`, ratingLine: (v, n) => `${v}/5 from ${n} Google reviews`,
     },
@@ -240,7 +240,7 @@ const DICT = {
       : `${f === to ? `El ${D[f]}` : `De ${D[f]} a ${D[to]}`}: ${slots}`),
     common: {
       directions: 'Cómo llegar', seeMenu: 'Ver toda la carta', discover: 'Descubrir',
-      review: 'Dejar una reseña en Google', profile: 'Ver la ficha de Google', deliveroo: 'Pedir en Deliveroo', address: 'Dirección', hours: 'Horario',
+      review: 'Dejar una reseña en Google', profile: 'Ver la ficha de Google', delivery: 'Entrega', address: 'Dirección', hours: 'Horario',
       phone: 'Teléfono', instagram: 'Instagram', closed: 'Cerrado', today: 'Hoy', sample: 'Reseña de ejemplo',
       veg: 'Vegetariano', and: 'y', rating: (v, n) => `${v}/5 · ${n} reseñas de Google`, ratingLine: (v, n) => `${v}/5 en ${n} reseñas de Google`,
     },

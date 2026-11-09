@@ -14,12 +14,12 @@ export function visitCardHTML({ extra = '' } = {}) {
       <div class="visit__row"><dt>${star}${esc(d.common.hours)}</dt><dd><ul class="hours-mini">${hours}</ul></dd></div>
       <div class="visit__row"><dt>${star}${esc(d.common.phone)}</dt><dd><a href="${links.tel}">${esc(CONFIG.phone.display)}</a></dd></div>
       <div class="visit__row"><dt>${star}${esc(d.common.instagram)}</dt><dd>${external(links.instagram, '', 'handle', `${ICON.insta} @${esc(CONFIG.instagram.handle)}`)}</dd></div>
+      <div class="visit__row"><dt>${star}${esc(d.common.delivery)}</dt><dd>${external(links.deliveroo, '', 'handle', `${ICON.deliveroo} Deliveroo`)}</dd></div>
     </dl>
     <div class="livebox" data-livebox></div>
     <div class="visit__actions">
       ${external(links.directions, '', 'btn', `${esc(d.common.directions)} ${ICON.arrow}`)}
       ${external(links.profile, '', 'link', `${esc(d.common.profile)} ${ICON.arrow}`)}
-      ${external(links.deliveroo, '', 'link', `${esc(d.common.deliveroo)} ${ICON.arrow}`)}
     </div>
   </div>`;
 }
