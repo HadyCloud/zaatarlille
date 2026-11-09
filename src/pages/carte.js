@@ -7,6 +7,7 @@ import { gsap, Flip, ScrollTrigger, state, mq, reveals, magnetic, scrollToEl } f
 
 // Filters survive a language switch; a fresh visit starts from the defaults.
 let filters = { ...DEFAULT_FILTERS };
+let pendingCat = 'all'; // ?cat= deep link: scroll to that section on arrival (the whole menu stays listed)
 
 const star = () => ICON.star();
 const catFromParams = (params) => (CATS.includes(params?.get('cat')) ? params.get('cat') : 'all');
@@ -57,7 +58,7 @@ function section(s) {
 }
 
 export function render(route, reason) {
-  if (reason !== 'lang') filters = { ...DEFAULT_FILTERS, cat: catFromParams(route.params) };
+  if (reason !== 'lang') { filters = { ...DEFAULT_FILTERS }; pendingCat = catFromParams(route.params); }
   const d = t();
   const c = d.carte;
   return `<section class="phero t-sage" aria-labelledby="carte-title">
@@ -118,17 +119,9 @@ export function mount(root, route, reason) {
   let announceTimer;
 
   const syncControls = () => {
-    chips.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.cat === filters.cat)));
     vegBtn.setAttribute('aria-pressed', String(filters.veg));
     clearBtn.hidden = !filters.q;
     if (input.value !== filters.q) input.value = filters.q;
-    const pressed = chips.find((b) => b.dataset.cat === filters.cat);
-    if (pressed) scroller.scrollTo({ left: Math.max(0, pressed.offsetLeft - 16), behavior: state.reduced ? 'auto' : 'smooth' });
-  };
-
-  const syncUrl = () => {
-    const h = filters.cat === 'all' ? '#/carte' : `#/carte?cat=${filters.cat}`;
-    if (location.hash !== h) history.replaceState(null, '', h);
   };
 
   const announce = (n) => {
@@ -142,7 +135,6 @@ export function mount(root, route, reason) {
     const order = new Map(result.sections.map((s) => [s.id, s.items.map((i) => `${s.id}/${i.id}`)]));
     const visible = new Set([...order.values()].flat());
     syncControls();
-    syncUrl();
     if (animate) announce(result.count);
     const doAnim = animate && !state.reduced;
 
@@ -183,18 +175,24 @@ export function mount(root, route, reason) {
     spy.update();
   }
 
-  /* Scroll-spy: with the whole menu shown, the chip of the section in view gets an ember marker. */
+  /* Scroll-spy: the whole menu stays listed; the chip of the section in view is highlighted as you scroll. */
   const spy = (() => {
     let current = null;
+    let lockUntil = 0;
     const inView = new Map();
     const mark = (id) => {
       if (id === current) return;
       current = id;
-      chips.forEach((b) => b.classList.toggle('is-spy', filters.cat === 'all' && b.dataset.cat === id));
+      chips.forEach((b) => {
+        const on = b.dataset.cat === id;
+        b.classList.toggle('is-spy', on);
+        b.setAttribute('aria-pressed', String(on));
+      });
       const chipEl = chips.find((b) => b.dataset.cat === id);
-      if (chipEl && filters.cat === 'all') scroller.scrollTo({ left: chipEl.offsetLeft - 24, behavior: state.reduced ? 'auto' : 'smooth' });
+      if (chipEl) scroller.scrollTo({ left: Math.max(0, chipEl.offsetLeft - 24), behavior: state.reduced ? 'auto' : 'smooth' });
     };
     const recompute = () => {
+      if (performance.now() < lockUntil) return;
       const first = sections.find((s) => inView.get(s.dataset.section) && !s.hidden);
       mark(first ? first.dataset.section : null);
     };
@@ -204,14 +202,25 @@ export function mount(root, route, reason) {
     }, { rootMargin: '-35% 0px -55% 0px' });
     sections.forEach((s) => io.observe(s));
     offs.push(() => io.disconnect());
-    return { update: () => { current = undefined; recompute(); } };
+    return {
+      update: () => { current = undefined; recompute(); },
+      // A tapped chip stays highlighted while the page glides there (the last sections can't reach the top).
+      force: (id) => { lockUntil = performance.now() + 1500; mark(id); setTimeout(recompute, 1550); },
+    };
   })();
 
+  /* Chip tap = jump to that section of the full menu. */
+  const goTo = (id, immediate = false) => {
+    const sec = sections.find((x) => x.dataset.section === id && !x.hidden);
+    if (!sec) return;
+    const headerH = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-h')) || 68;
+    state.lenis?.resize?.(); // page height may not be measured yet on a cold load
+    spy.force(id);
+    scrollToEl(sec, -(headerH + chipsBar.offsetHeight + 12), immediate);
+  };
+
   /* Events */
-  chips.forEach((b) => b.addEventListener('click', () => {
-    filters.cat = filters.cat === b.dataset.cat ? 'all' : b.dataset.cat; // tapping the active section again shows the whole menu
-    apply({ scrollTop: true });
-  }));
+  chips.forEach((b) => b.addEventListener('click', () => goTo(b.dataset.cat)));
   vegBtn.addEventListener('click', () => { filters.veg = !filters.veg; apply(); });
   let qTimer;
   input.addEventListener('input', () => {
@@ -264,17 +273,19 @@ export function mount(root, route, reason) {
   const ctx = gsap.context(() => reveals(root), root);
   offs.push(magnetic(root));
   apply({ animate: false });
-  const deepLinked = filters.cat !== 'all' && reason !== 'lang';
 
   return {
     intro: () => {
-      if (!deepLinked) return;
-      const headerH = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-h')) || 68;
-      scrollToEl(chipsBar, -headerH + 1);
+      if (pendingCat === 'all') return;
+      const id = pendingCat;
+      pendingCat = 'all'; // used once: a later language switch must not scroll again
+      // Cold load: let the layout settle (lazy images, pinned hero) before jumping, then once more to be safe.
+      requestAnimationFrame(() => requestAnimationFrame(() => goTo(id, true)));
+      setTimeout(() => goTo(id, true), 500);
     },
     update: (r) => {
-      filters.cat = catFromParams(r.params);
-      apply({ scrollTop: true });
+      const cat = catFromParams(r.params);
+      if (cat !== 'all') goTo(cat);
     },
     cleanup: () => { ctx.revert(); offs.forEach((f) => f && f()); flipTl?.kill(); clearTimeout(announceTimer); },
   };
