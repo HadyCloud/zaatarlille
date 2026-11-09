@@ -84,9 +84,6 @@ export function render(route, reason) {
             <input id="menu-q" type="search" autocomplete="off" enterkeyhint="search" placeholder="${esc(c.searchPh)}" value="${esc(filters.q)}" data-q>
             <button class="search__clear" type="button" aria-label="${esc(c.clear)}" data-clear ${filters.q ? '' : 'hidden'}>${ICON.close}</button>
           </div>
-          <button class="toggle" type="button" aria-pressed="${filters.veg}" data-veg>
-            <span class="toggle__track" aria-hidden="true"></span>${ICON.leaf}${esc(c.vegOnly)}
-          </button>
         </div>
         <div data-sections>${MENU.sections.map(section).join('')}</div>
         <div class="empty" data-empty>
@@ -112,14 +109,12 @@ export function mount(root, route, reason) {
   const empty = root.querySelector('[data-empty]');
   const input = root.querySelector('[data-q]');
   const clearBtn = root.querySelector('[data-clear]');
-  const vegBtn = root.querySelector('[data-veg]');
   const live = document.getElementById('live');
   let flipTl = null;
   let seq = 0;
   let announceTimer;
 
   const syncControls = () => {
-    vegBtn.setAttribute('aria-pressed', String(filters.veg));
     clearBtn.hidden = !filters.q;
     if (input.value !== filters.q) input.value = filters.q;
   };
@@ -221,7 +216,6 @@ export function mount(root, route, reason) {
 
   /* Events */
   chips.forEach((b) => b.addEventListener('click', () => goTo(b.dataset.cat)));
-  vegBtn.addEventListener('click', () => { filters.veg = !filters.veg; apply(); });
   let qTimer;
   input.addEventListener('input', () => {
     clearBtn.hidden = !input.value;

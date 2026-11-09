@@ -80,7 +80,7 @@ const DICT = {
     },
     carte: {
       title: 'La Carte', script: 'Tout sort du four',
-      filters: 'Filtrer la carte', categories: 'Catégories', all: 'Tout', vegOnly: 'Végétarien',
+      filters: 'Filtrer la carte', categories: 'Catégories', all: 'Tout',
       search: 'Rechercher un plat', searchPh: 'épinards, halloumi, jebné…', clear: 'Effacer la recherche',
       count: (n) => (n === 0 ? 'Aucun plat' : n === 1 ? '1 plat' : `${n} plats`),
       empty: 'Rien ne sort du four avec ces filtres.', emptyHint: 'Essayez un autre mot, ou repartez de zéro.',
@@ -179,7 +179,7 @@ const DICT = {
     },
     carte: {
       title: 'The Menu', script: 'Tout sort du four',
-      filters: 'Filter the menu', categories: 'Categories', all: 'All', vegOnly: 'Vegetarian',
+      filters: 'Filter the menu', categories: 'Categories', all: 'All',
       search: 'Search a dish', searchPh: 'spinach, halloumi, jebné…', clear: 'Clear search',
       count: (n) => (n === 0 ? 'No dishes' : n === 1 ? '1 dish' : `${n} dishes`),
       empty: 'Nothing comes out of the oven with these filters.', emptyHint: 'Try another word, or start over.',
@@ -278,7 +278,7 @@ const DICT = {
     },
     carte: {
       title: 'La Carta', script: 'Tout sort du four',
-      filters: 'Filtrar la carta', categories: 'Categorías', all: 'Todo', vegOnly: 'Vegetariano',
+      filters: 'Filtrar la carta', categories: 'Categorías', all: 'Todo',
       search: 'Buscar un plato', searchPh: 'espinacas, halloumi, jebné…', clear: 'Borrar la búsqueda',
       count: (n) => (n === 0 ? 'Ningún plato' : n === 1 ? '1 plato' : `${n} platos`),
       empty: 'Nada sale del horno con estos filtros.', emptyHint: 'Prueba otra palabra o empieza de nuevo.',
