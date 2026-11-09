@@ -12,6 +12,7 @@ export const CONFIG = {
   transport: '', // Leave empty unless verified (e.g. nearest metro).
   phone: { display: '09 83 84 69 75', tel: '+33983846975' },
   instagram: { handle: 'zaatar.lille', url: 'https://www.instagram.com/zaatar.lille/' },
+  deliveroo: 'https://deliveroo.fr/en/menu/lille/lille-gambetta/zaatar-lille',
   googleQuery: "ZA'ATAR 139 Rue des Postes Lille",
   // Set to null to hide the rating everywhere.
   GOOGLE_RATING: { value: 4.8, count: 112 },

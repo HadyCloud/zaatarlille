@@ -19,6 +19,7 @@ export function visitCardHTML({ extra = '' } = {}) {
     <div class="visit__actions">
       ${external(links.directions, '', 'btn', `${esc(d.common.directions)} ${ICON.arrow}`)}
       ${external(links.profile, '', 'link', `${esc(d.common.profile)} ${ICON.arrow}`)}
+      ${external(links.deliveroo, '', 'link', `${esc(d.common.deliveroo)} ${ICON.arrow}`)}
     </div>
   </div>`;
 }

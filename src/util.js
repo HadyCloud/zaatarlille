@@ -35,6 +35,7 @@ export const links = {
   profile: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(CONFIG.googleQuery)}`,
   review: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(CONFIG.googleQuery)}`,
   instagram: CONFIG.instagram.url,
+  deliveroo: CONFIG.deliveroo,
   osm: () => {
     const { lat, lng } = CONFIG.geo;
     const d = 0.0045;
