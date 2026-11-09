@@ -135,6 +135,11 @@
 /* ═══ ENVIES ══════════════════════════════════════════════════════════ */
 .envies__head { --gap: 1.4rem; margin-bottom: clamp(40px, 5vw, 64px); }
 .envies__head .lead { max-width: 34ch; font-size: clamp(1.5rem, 2.2vw, 1.75rem); }
+/* Desktop: heading and subtitle each on a single line, scaled to the available width. */
+@media (min-width: 768px) {
+  .envies__head .h { white-space: nowrap; font-size: min(clamp(3.6rem, 9.2vw, 9rem), calc((100vw - 2 * var(--gutter)) / 8.8)); }
+  .envies__head .lead { max-width: none; white-space: nowrap; font-size: min(1.75rem, calc((100vw - 2 * var(--gutter)) / 32)); }
+}
 .envies__rail { display: grid; gap: 14px; }
 .env {
   --focus: var(--sesame);
