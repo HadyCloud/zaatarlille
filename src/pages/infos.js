@@ -44,12 +44,6 @@ export function render() {
         </div>
         ${visitCardHTML()}
       </div>
-      <div class="wrap" style="margin-top:28px">
-        <ul class="visit__actions" role="list" data-reveal="up">
-          <li>${external(links.instagram, '', 'handle', `${ICON.insta} @${esc(CONFIG.instagram.handle)}`)}</li>
-          <li><a class="handle" href="${links.tel}">${ICON.phone} ${esc(CONFIG.phone.display)}</a></li>
-        </ul>
-      </div>
     </section>
 
     <section class="sec t-paper" aria-labelledby="gallery-title">

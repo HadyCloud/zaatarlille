@@ -113,23 +113,8 @@
 
 /* ── Footer ─────────────────────────────────────────────────────────── */
 .footer { position: relative; overflow: clip; }
-.footer__top { position: relative; overflow: clip; padding: clamp(72px, 10vw, 140px) 0 clamp(56px, 7vw, 96px); text-align: center; }
-@media (max-width: 767px) { .footer__top { padding: 52px 0 40px; } }
-.footer__top > :not(.wm) { position: relative; z-index: 1; }
-.footer__top .wm { top: -10%; inset-inline-end: -4vw; }
-.footer__logo { width: min(78vw, 520px); margin-inline: auto; }
-.footer__base { --focus: var(--cream); background: var(--sage-deep); color: var(--cream); padding: 56px 0 calc(40px + var(--safe-b)); }
-.footer__grid { display: grid; gap: 36px; grid-template-columns: 1fr; }
-.footer__col h2 { font: 500 0.72rem/1.2 var(--f-grot); letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 14px; display: flex; gap: 10px; align-items: center; }
-.footer__col h2 .star { width: 11px; height: 11px; color: var(--sesame); }
-.footer__col p, .footer__col li { font-size: 1rem; line-height: 1.6; }
-.footer__col a { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; text-decoration: none; }
-.footer__col a:hover { text-decoration: underline; }
-.footer__col ul { list-style: none; padding: 0; margin: 0; }
-.footer__hours li { display: flex; gap: 12px; justify-content: space-between; max-width: 300px; }
-.footer__hours .closed { font-style: italic; }
+.footer__base { --focus: var(--cream); background: var(--sage-deep); color: var(--cream); padding: 32px 0 calc(32px + var(--safe-b)); }
 .footer__bottom {
-  margin-top: 48px; padding-top: 28px; border-top: 1px solid var(--line);
   display: flex; flex-wrap: wrap; gap: 18px 28px; align-items: center; justify-content: space-between;
   font-size: 0.92rem;
 }
@@ -137,12 +122,6 @@
 .footer__bottom .pillnav { background: var(--forest); }
 .footer__bottom .pillnav button { min-height: 44px; }
 .footer__tools { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
-@media (min-width: 768px) {
-  .footer__grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (min-width: 1024px) {
-  .footer__grid { grid-template-columns: 1.1fr 1.3fr 1fr 1fr; }
-}
 
 /* ── Mobile action bar ──────────────────────────────────────────────── */
 .actionbar {
@@ -228,20 +207,8 @@ html.no-preload .preloader, html.reduced .preloader { display: none; }
 .lightbox__close { position: absolute; top: 12px; inset-inline-end: 12px; z-index: 2; }
 .lightbox__prev .ico { transform: rotate(180deg); }
 
-/* ── Footer base, compact on phones: address | phone+Instagram side by side, hours full width ── */
+/* ── Footer, compact on phones ── */
 @media (max-width: 767px) {
-  .footer__base { padding: 36px 0 calc(28px + var(--safe-b)); }
-  .footer__grid {
-    grid-template-columns: 1fr 1fr; gap: 20px 24px;
-    grid-template-areas: 'addr phone' 'addr insta' 'hours hours';
-  }
-  .footer__col:nth-child(1) { grid-area: addr; }
-  .footer__col:nth-child(2) { grid-area: hours; }
-  .footer__col:nth-child(3) { grid-area: phone; }
-  .footer__col:nth-child(4) { grid-area: insta; }
-  .footer__col h2 { margin-bottom: 6px; }
-  .footer__col p, .footer__col li { font-size: 0.95rem; line-height: 1.5; }
-  .footer__col a { min-height: 32px; }
-  .footer__hours li { max-width: none; }
-  .footer__bottom { margin-top: 24px; padding-top: 20px; gap: 14px 20px; }
+  .footer__base { padding: 24px 0 calc(24px + var(--safe-b)); }
+  .footer__bottom { gap: 14px 20px; }
 }

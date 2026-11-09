@@ -1,7 +1,7 @@
 import { CONFIG } from './data.js';
 import { t, lang, LANGS, tl } from './i18n.js';
 import { esc } from './format.js';
-import { ICON, links, statusInfo, hoursGroups, imgSrc, external } from './util.js';
+import { ICON, links, statusInfo, imgSrc, external } from './util.js';
 import { gsap, state, lockScroll } from './motion.js';
 
 const $ = (s, r = document) => r.querySelector(s);
@@ -85,21 +85,7 @@ function overlayHTML() {
 
 function footerHTML() {
   const d = t();
-  const hours = hoursGroups().map((g) => `<li><span>${esc(g.days)}</span><span class="${g.closed ? 'closed' : ''}">${esc(g.text)}</span></li>`).join('');
-  return `<div class="footer__top">
-      <span class="wm" aria-hidden="true">ZA'</span>
-      <img class="footer__logo" src="${imgSrc('logo-tile', 842)}" width="842" height="502" alt="ZA'ATAR — La Boulangerie Libanaise" loading="lazy">
-    </div>
-    <div class="footer__base"><div class="wrap">
-      <div class="footer__grid">
-        <div class="footer__col"><h2>${ICON.star()}${esc(d.common.address)}</h2>
-          <p>${esc(CONFIG.address.street)}<br>${esc(CONFIG.address.postcode)} ${esc(CONFIG.address.city)}</p>
-          ${external(links.directions, '', '', `${esc(d.common.directions)} ${ICON.arrow}`)}
-        </div>
-        <div class="footer__col"><h2>${ICON.star()}${esc(d.common.hours)}</h2><ul class="footer__hours">${hours}</ul></div>
-        <div class="footer__col"><h2>${ICON.star()}${esc(d.common.phone)}</h2><a href="${links.tel}">${ICON.phone}${esc(CONFIG.phone.display)}</a></div>
-        <div class="footer__col"><h2>${ICON.star()}${esc(d.common.instagram)}</h2>${external(links.instagram, '', '', `${ICON.insta}@${esc(CONFIG.instagram.handle)}`)}</div>
-      </div>
+  return `<div class="footer__base"><div class="wrap">
       <div class="footer__bottom">
         <p class="footer__signed">${esc(d.footer.signed)}</p>
         <div class="footer__tools"><div class="pillnav langs" role="group" aria-label="${esc(d.a11y.lang)}">${langButtons()}</div></div>
