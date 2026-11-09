@@ -90,6 +90,11 @@ ul[role='list'], ol[role='list'] { list-style: none; padding: 0; }
   .sec { padding-block: 48px; }
   .sec--tight { padding-block: 48px; }
 }
+/* Desktop rhythm: tighter than before, a notch looser than the 48px phone rhythm. */
+@media (min-width: 768px) {
+  .sec { padding-block: clamp(56px, 6.5vw, 96px); }
+  .sec--tight { padding-block: clamp(44px, 5vw, 72px); }
+}
 .stack > * + * { margin-top: var(--gap, 1.25rem); }
 
 /* ── Type ───────────────────────────────────────────────────────────── */

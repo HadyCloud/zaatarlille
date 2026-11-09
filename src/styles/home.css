@@ -271,6 +271,14 @@ html.js:not(.reduced) .hero [data-intro] { opacity: 0; }
   .process__head, .envies__head, .reviews__head { margin-bottom: 32px; }
 }
 
+/* Desktop rhythm: smaller head→content and column gaps (phones keep their own values above). */
+@media (min-width: 768px) {
+  .maison__grid { gap: clamp(40px, 5vw, 72px); }
+  .chef__grid { gap: clamp(32px, 4.5vw, 64px); }
+  .reviews__head { gap: clamp(32px, 4vw, 56px); margin-bottom: clamp(32px, 4vw, 56px); }
+  .envies__head { margin-bottom: clamp(32px, 4vw, 48px); }
+}
+
 /* Visit card ("Nous trouver", Infos), compact on phones: same rhythm as the footer. */
 @media (max-width: 767px) {
   .visit { padding: 22px 20px; gap: 16px; border-radius: 24px; }
