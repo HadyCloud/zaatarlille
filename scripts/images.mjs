@@ -51,7 +51,7 @@ const SOURCES = [
   ['menu photos/carte/zaatar-labneh-legumes.jpg', 'menu_zaatar_labneh_legumes', [240, 800, 1400]],
   ['menu photos/carte/jebne.jpg', 'menu_jebne', [240, 800, 1400]],
   ['menu photos/carte/jebne-jambon.jpg', 'menu_jebne_jambon', [240, 800, 1400]],
-  ['menu photos/carte/jebne-mouhammara.jpg', 'menu_jebne_mouhammara', [240, 800, 1400]],
+  ['menu photos/carte/kechek.jpg', 'menu_kechek', [240, 800, 1400]],
   ['menu photos/carte/lahm-bi-ajin.jpg', 'menu_lahm_bi_ajin', [240, 800, 1400]],
   ['menu photos/carte/lahm-jebne.jpg', 'menu_lahm_jebne', [240, 800, 1400]],
   ['menu photos/carte/mini-pizza.jpg', 'menu_mini_pizza', [240, 800, 1400]],

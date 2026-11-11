@@ -59,8 +59,7 @@ export const MENU = {
         { id: 'jebne', photo: 'menu_jebne', desc: { fr: "Full fromage fondant", en: "Loaded with melting cheese", es: "Todo de queso fundente" }, name: 'Jebné', price: 5.5, veg: true,
           gloss: { fr: 'Jebné : « fromage » en libanais', en: 'Jebné: Lebanese for “cheese”', es: 'Jebné: «queso» en libanés' } },
         { id: 'jebne-jambon', photo: 'menu_jebne_jambon', desc: { fr: "Full fromage fondant avec du jambon", en: "Loaded with melting cheese and ham", es: "Todo de queso fundente con jamón" }, name: 'Jebné et jambon', price: 8 },
-        { id: 'jebne-mouhammara', photo: 'menu_jebne_mouhammara', desc: { fr: "Fromage fondant et mouhammara aux poivrons rouges grillés et mélasse de grenade", en: "Melting cheese and mouhammara with roasted red peppers and pomegranate molasses", es: "Queso fundente y mouhammara con pimientos rojos asados y melaza de granada" }, name: 'Jebné et mouhammara', price: 6, veg: true },
-        { id: 'kechek', desc: { fr: "Fromage séché libanais, tomates & oignons", en: "Lebanese dried cheese, tomatoes & onions", es: "Queso seco libanés, tomates y cebollas" }, name: 'Kéchek', price: 5,
+        { id: 'kechek', photo: 'menu_kechek', desc: { fr: "Fromage séché libanais, tomates & oignons", en: "Lebanese dried cheese, tomatoes & onions", es: "Queso seco libanés, tomates y cebollas" }, name: 'Kéchek', price: 5,
           gloss: { fr: 'Blé concassé et yaourt fermentés', en: 'Fermented yogurt and cracked wheat', es: 'Trigo partido y yogur fermentados' } },
         { id: 'lahm-bi-ajin', photo: 'menu_lahm_bi_ajin', desc: { fr: "Viande hachée épicée & tomates. À twister avec un filet de citron et sauce piquante (optionnel)", en: "Spiced minced meat & tomatoes. Twist with a squeeze of lemon and hot sauce (optional)", es: "Carne picada especiada y tomates. Para exprimir con limón y salsa picante (opcional)" }, name: 'Lahm bi ajin', price: 5,
           gloss: { fr: '« Viande sur pâte » : viande hachée épicée', en: '“Meat on dough”: spiced minced meat', es: '«Carne sobre masa»: carne picada especiada' } },
@@ -345,10 +344,10 @@ export const PHOTOS = {
     fr: "Une man'ouche au fromage fondant et au jambon, avec un long filet de fromage",
     en: "A melted cheese and ham man'ouche with a long stretch of cheese",
     es: "Una man'ouche de queso fundido y jamón, con un largo hilo de queso" } },
-  menu_jebne_mouhammara: { pos: '50% 50%', alt: {
-    fr: "Une man'ouche à la mouhammara orange et au fromage, pliée sur une planche",
-    en: "An orange mouhammara and cheese man'ouche, folded on a board",
-    es: "Una man'ouche de mouhammara naranja y queso, doblada sobre una tabla" } },
+  menu_kechek: { pos: '50% 50%', alt: {
+    fr: "Une man'ouche au kéchek, garnie d'une pâte orange dorée, pliée sur une planche",
+    en: "A kechek man'ouche topped with a golden-orange spread, folded on a board",
+    es: "Una man'ouche de kéchek con una crema naranja dorada, doblada sobre una tabla" } },
   menu_lahm_bi_ajin: { pos: '50% 50%', alt: {
     fr: "Un lahm bi ajin, galette de viande hachée épicée, avec citron et poivre sur la planche",
     en: "A lahm bi ajin, spiced minced-meat flatbread, with a lemon and pepper shaker on the board",
