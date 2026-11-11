@@ -48,23 +48,23 @@ export const MENU = {
       label: { fr: "Man'ouche", en: "Man'ouche", es: "Man'ouche" },
       cover: 'manoucheZaatar', itemPrefix: "Man'ouche ",
       items: [
-        { id: 'zaatar', desc: { fr: "Thym sauvage, sésame grillé et huile d'olive", en: "Wild thyme, toasted sesame and olive oil", es: "Tomillo silvestre, sésamo tostado y aceite de oliva" }, name: 'Zaatar', price: 4, veg: true,
+        { id: 'zaatar', photo: 'menu_zaatar', desc: { fr: "Thym sauvage, sésame grillé et huile d'olive", en: "Wild thyme, toasted sesame and olive oil", es: "Tomillo silvestre, sésamo tostado y aceite de oliva" }, name: 'Zaatar', price: 4, veg: true,
           gloss: { fr: 'Galette au mélange thym et sésame', en: 'Flatbread with the thyme–sesame blend', es: 'Torta con la mezcla de tomillo y sésamo' } },
-        { id: 'zaatar-fromage', desc: { fr: "Thym sauvage et trio de fromages fondants", en: "Wild thyme and a trio of melting cheeses", es: "Tomillo silvestre y trío de quesos fundentes" }, name: 'Zaatar et fromage', price: 6, veg: true },
-        { id: 'zaatar-legumes', desc: { fr: "Thym sauvage, concombres, tomates fraîches, olives et menthe", en: "Wild thyme, cucumbers, fresh tomatoes, olives and mint", es: "Tomillo silvestre, pepinos, tomates frescos, aceitunas y menta" }, name: 'Zaatar et légumes', price: 5, veg: true, photo: 'manoucheZaatar' },
-        { id: 'zaatar-labneh', desc: { fr: "Thym sauvage et labneh ultra crémeux", en: "Wild thyme and ultra-creamy labneh", es: "Tomillo silvestre y labneh ultracremoso" }, name: 'Zaatar et labneh', price: 5, veg: true,
+        { id: 'zaatar-fromage', photo: 'menu_zaatar_fromage', desc: { fr: "Thym sauvage et trio de fromages fondants", en: "Wild thyme and a trio of melting cheeses", es: "Tomillo silvestre y trío de quesos fundentes" }, name: 'Zaatar et fromage', price: 6, veg: true },
+        { id: 'zaatar-legumes', photo: 'menu_zaatar_legumes', desc: { fr: "Thym sauvage, concombres, tomates fraîches, olives et menthe", en: "Wild thyme, cucumbers, fresh tomatoes, olives and mint", es: "Tomillo silvestre, pepinos, tomates frescos, aceitunas y menta" }, name: 'Zaatar et légumes', price: 5, veg: true },
+        { id: 'zaatar-labneh', photo: 'menu_zaatar_labneh', desc: { fr: "Thym sauvage et labneh ultra crémeux", en: "Wild thyme and ultra-creamy labneh", es: "Tomillo silvestre y labneh ultracremoso" }, name: 'Zaatar et labneh', price: 5, veg: true,
           gloss: { fr: 'Labneh : fromage frais de yaourt égoutté', en: 'Labneh: strained yogurt cheese', es: 'Labneh: queso fresco de yogur colado' } },
-        { id: 'zaatar-labneh-legumes', desc: { fr: "Le combo parfait : thym sauvage, labneh, concombres, tomates, olives et menthe", en: "The perfect combo: wild thyme, labneh, cucumbers, tomatoes, olives and mint", es: "El combo perfecto: tomillo silvestre, labneh, pepinos, tomates, aceitunas y menta" }, name: 'Zaatar labneh et légumes', price: 6, veg: true, photo: 'zaatar_labneh_legumes' },
+        { id: 'zaatar-labneh-legumes', photo: 'menu_zaatar_labneh_legumes', desc: { fr: "Le combo parfait : thym sauvage, labneh, concombres, tomates, olives et menthe", en: "The perfect combo: wild thyme, labneh, cucumbers, tomatoes, olives and mint", es: "El combo perfecto: tomillo silvestre, labneh, pepinos, tomates, aceitunas y menta" }, name: 'Zaatar labneh et légumes', price: 6, veg: true },
         { id: 'labneh-sesame', desc: { fr: "Labneh, sésame blanc & noir, tomates, olives, sariette et filet d'huile d'olive", en: "Labneh, white & black sesame, tomatoes, olives, savory and a drizzle of olive oil", es: "Labneh, sésamo blanco y negro, tomates, aceitunas, ajedrea y un chorrito de aceite de oliva" }, name: 'Labneh sésame', price: 6.5, veg: true },
-        { id: 'jebne', desc: { fr: "Full fromage fondant", en: "Loaded with melting cheese", es: "Todo de queso fundente" }, name: 'Jebné', price: 5.5, veg: true, photo: 'jebne',
+        { id: 'jebne', photo: 'menu_jebne', desc: { fr: "Full fromage fondant", en: "Loaded with melting cheese", es: "Todo de queso fundente" }, name: 'Jebné', price: 5.5, veg: true,
           gloss: { fr: 'Jebné : « fromage » en libanais', en: 'Jebné: Lebanese for “cheese”', es: 'Jebné: «queso» en libanés' } },
-        { id: 'jebne-jambon', desc: { fr: "Full fromage fondant avec du jambon", en: "Loaded with melting cheese and ham", es: "Todo de queso fundente con jamón" }, name: 'Jebné et jambon', price: 8 },
-        { id: 'jebne-mouhammara', desc: { fr: "Fromage fondant et mouhammara aux poivrons rouges grillés et mélasse de grenade", en: "Melting cheese and mouhammara with roasted red peppers and pomegranate molasses", es: "Queso fundente y mouhammara con pimientos rojos asados y melaza de granada" }, name: 'Jebné et mouhammara', price: 6, veg: true },
+        { id: 'jebne-jambon', photo: 'menu_jebne_jambon', desc: { fr: "Full fromage fondant avec du jambon", en: "Loaded with melting cheese and ham", es: "Todo de queso fundente con jamón" }, name: 'Jebné et jambon', price: 8 },
+        { id: 'jebne-mouhammara', photo: 'menu_jebne_mouhammara', desc: { fr: "Fromage fondant et mouhammara aux poivrons rouges grillés et mélasse de grenade", en: "Melting cheese and mouhammara with roasted red peppers and pomegranate molasses", es: "Queso fundente y mouhammara con pimientos rojos asados y melaza de granada" }, name: 'Jebné et mouhammara', price: 6, veg: true },
         { id: 'kechek', desc: { fr: "Fromage séché libanais, tomates & oignons", en: "Lebanese dried cheese, tomatoes & onions", es: "Queso seco libanés, tomates y cebollas" }, name: 'Kéchek', price: 5,
           gloss: { fr: 'Blé concassé et yaourt fermentés', en: 'Fermented yogurt and cracked wheat', es: 'Trigo partido y yogur fermentados' } },
-        { id: 'lahm-bi-ajin', desc: { fr: "Viande hachée épicée & tomates. À twister avec un filet de citron et sauce piquante (optionnel)", en: "Spiced minced meat & tomatoes. Twist with a squeeze of lemon and hot sauce (optional)", es: "Carne picada especiada y tomates. Para exprimir con limón y salsa picante (opcional)" }, name: 'Lahm bi ajin', price: 5,
+        { id: 'lahm-bi-ajin', photo: 'menu_lahm_bi_ajin', desc: { fr: "Viande hachée épicée & tomates. À twister avec un filet de citron et sauce piquante (optionnel)", en: "Spiced minced meat & tomatoes. Twist with a squeeze of lemon and hot sauce (optional)", es: "Carne picada especiada y tomates. Para exprimir con limón y salsa picante (opcional)" }, name: 'Lahm bi ajin', price: 5,
           gloss: { fr: '« Viande sur pâte » : viande hachée épicée', en: '“Meat on dough”: spiced minced meat', es: '«Carne sobre masa»: carne picada especiada' } },
-        { id: 'lahm-jebne', desc: { fr: "Viande hachée épicée & tomates avec du fromage fondant. À twister avec un filet de mélasse de grenade et sauce piquante (optionnel)", en: "Spiced minced meat & tomatoes with melting cheese. Twist with a drizzle of pomegranate molasses and hot sauce (optional)", es: "Carne picada especiada y tomates con queso fundente. Para aderezar con melaza de granada y salsa picante (opcional)" }, name: 'Lahm bi ajin et jebné', price: 6, photo: 'jebnelahme' },
+        { id: 'lahm-jebne', photo: 'menu_lahm_jebne', desc: { fr: "Viande hachée épicée & tomates avec du fromage fondant. À twister avec un filet de mélasse de grenade et sauce piquante (optionnel)", en: "Spiced minced meat & tomatoes with melting cheese. Twist with a drizzle of pomegranate molasses and hot sauce (optional)", es: "Carne picada especiada y tomates con queso fundente. Para aderezar con melaza de granada y salsa picante (opcional)" }, name: 'Lahm bi ajin et jebné', price: 6 },
       ],
     },
     {
@@ -73,12 +73,12 @@ export const MENU = {
       label: { fr: 'Fatayers & Beignets', en: 'Fatayers & Pastries', es: 'Fatayers y Buñuelos' },
       cover: 'fatayers_plateau', itemPrefix: '',
       items: [
-        { id: 'mini-pizza', desc: { fr: "Dinde, fromage, olives", en: "Turkey, cheese, olives", es: "Pavo, queso, aceitunas" }, name: 'Mini pizza', price: 1.5, photo: 'minipizza_cuite' },
-        { id: 'mini-zaatar', desc: { fr: "Thym sauvage et huile d'olive", en: "Wild thyme and olive oil", es: "Tomillo silvestre y aceite de oliva" }, name: 'Mini zaatar', price: 1, veg: true, photo: 'mini_zaatar' },
-        { id: 'mini-fromage', desc: { fr: "Chausson maison", en: "Homemade turnover", es: "Empanadilla casera" }, name: 'Mini fromage', price: 1, veg: true, photo: 'sfihafromage' },
-        { id: 'mini-epinards', desc: { fr: "Épinards, tomate, persil et oignons", en: "Spinach, tomato, parsley and onions", es: "Espinacas, tomate, perejil y cebolla" }, name: 'Mini épinards', price: 1, veg: true, photo: 'epinard',
+        { id: 'mini-pizza', photo: 'menu_mini_pizza', desc: { fr: "Dinde, fromage, olives", en: "Turkey, cheese, olives", es: "Pavo, queso, aceitunas" }, name: 'Mini pizza', price: 1.5 },
+        { id: 'mini-zaatar', photo: 'menu_mini_zaatar', desc: { fr: "Thym sauvage et huile d'olive", en: "Wild thyme and olive oil", es: "Tomillo silvestre y aceite de oliva" }, name: 'Mini zaatar', price: 1, veg: true },
+        { id: 'mini-fromage', photo: 'menu_mini_fromage', desc: { fr: "Chausson maison", en: "Homemade turnover", es: "Empanadilla casera" }, name: 'Mini fromage', price: 1, veg: true },
+        { id: 'mini-epinards', photo: 'menu_mini_epinards', desc: { fr: "Épinards, tomate, persil et oignons", en: "Spinach, tomato, parsley and onions", es: "Espinacas, tomate, perejil y cebolla" }, name: 'Mini épinards', price: 1, veg: true,
           gloss: { fr: 'Petit chausson aux épinards', en: 'Small spinach turnover', es: 'Empanadilla de espinacas' } },
-        { id: 'sfiha', desc: { fr: "Viande hachée et tomates", en: "Minced meat and tomatoes", es: "Carne picada y tomates" }, name: 'Sfiha', price: 1.5, photo: 'sfiha',
+        { id: 'sfiha', photo: 'menu_sfiha', desc: { fr: "Viande hachée et tomates", en: "Minced meat and tomatoes", es: "Carne picada y tomates" }, name: 'Sfiha', price: 1.5,
           gloss: { fr: 'Petite tarte carrée à la viande', en: 'Small square open meat pie', es: 'Pequeña tarta cuadrada de carne' } },
         { id: 'kebbe', desc: { fr: "Boulette de viande farcie", en: "Stuffed meatball", es: "Albóndiga rellena" }, name: 'Kebbé', price: 2, photo: 'kebbe',
           gloss: { fr: 'Croquette de boulgour et viande', en: 'Bulgur and meat croquette', es: 'Croqueta de bulgur y carne' } },
@@ -92,15 +92,15 @@ export const MENU = {
       label: { fr: 'Wraps', en: 'Wraps', es: 'Wraps' },
       cover: 'wraps', itemPrefix: 'Wrap ',
       items: [
-        { id: 'kafta', desc: { fr: "Viande hachée épicée, fromages, tomates, cornichons et mayo", en: "Spiced minced meat, cheeses, tomatoes, pickles and mayo", es: "Carne picada especiada, quesos, tomates, pepinillos y mayonesa" }, name: 'Kafta', price: 9,
+        { id: 'kafta', photo: 'menu_kafta', desc: { fr: "Viande hachée épicée, fromages, tomates, cornichons et mayo", en: "Spiced minced meat, cheeses, tomatoes, pickles and mayo", es: "Carne picada especiada, quesos, tomates, pepinillos y mayonesa" }, name: 'Kafta', price: 9,
           gloss: { fr: 'Viande hachée aux herbes', en: 'Minced meat with herbs', es: 'Carne picada con hierbas' } },
-        { id: 'soujouk', desc: { fr: "Saucisse épicée, poivrons rouges, fromages, cornichons, tomates et mayo", en: "Spiced sausage, red peppers, cheeses, pickles, tomatoes and mayo", es: "Salchicha especiada, pimientos rojos, quesos, pepinillos, tomates y mayonesa" }, name: 'Soujouk', price: 9, photo: 'wrapsoujoukjebne',
+        { id: 'soujouk', photo: 'menu_soujouk', desc: { fr: "Saucisse épicée, poivrons rouges, fromages, cornichons, tomates et mayo", en: "Spiced sausage, red peppers, cheeses, pickles, tomatoes and mayo", es: "Salchicha especiada, pimientos rojos, quesos, pepinillos, tomates y mayonesa" }, name: 'Soujouk', price: 9,
           gloss: { fr: 'Saucisse épicée', en: 'Spiced sausage', es: 'Salchicha especiada' } },
-        { id: 'taouk', desc: { fr: "Poulet grillé, crème d'ail, fromage, tomates, cornichons et salade", en: "Grilled chicken, garlic cream, cheese, tomatoes, pickles and salad", es: "Pollo a la plancha, crema de ajo, queso, tomates, pepinillos y ensalada" }, name: 'Taouk', price: 9, photo: 'taouk',
+        { id: 'taouk', photo: 'menu_taouk', desc: { fr: "Poulet grillé, crème d'ail, fromage, tomates, cornichons et salade", en: "Grilled chicken, garlic cream, cheese, tomatoes, pickles and salad", es: "Pollo a la plancha, crema de ajo, queso, tomates, pepinillos y ensalada" }, name: 'Taouk', price: 9,
           gloss: { fr: 'Poulet mariné, façon chich taouk', en: 'Marinated chicken, shish taouk style', es: 'Pollo marinado, estilo shish taouk' } },
-        { id: 'poulet-avocat', desc: { fr: "Poulet grillé, fromages, roquette, avocat, tomates et sauce maison", en: "Grilled chicken, cheeses, arugula, avocado, tomatoes and house sauce", es: "Pollo a la plancha, quesos, rúcula, aguacate, tomates y salsa de la casa" }, name: 'Poulet avocat', price: 10 },
-        { id: 'dinde-fromage', desc: { fr: "Dinde, fromages, salade, tomates, cornichons et sauce maison", en: "Turkey, cheeses, salad, tomatoes, pickles and house sauce", es: "Pavo, quesos, ensalada, tomates, pepinillos y salsa de la casa" }, name: 'Dinde et fromage', price: 9, photo: 'dinde_fromage' },
-        { id: 'halloumi-pesto', desc: { fr: "Halloumi grillé, pesto au basilic, olives, roquette et sauce maison", en: "Grilled halloumi, basil pesto, olives, arugula and house sauce", es: "Halloumi a la plancha, pesto de albahaca, aceitunas, rúcula y salsa de la casa" }, name: 'Halloumi pesto', price: 9, veg: true,
+        { id: 'poulet-avocat', photo: 'menu_poulet_avocat', desc: { fr: "Poulet grillé, fromages, roquette, avocat, tomates et sauce maison", en: "Grilled chicken, cheeses, arugula, avocado, tomatoes and house sauce", es: "Pollo a la plancha, quesos, rúcula, aguacate, tomates y salsa de la casa" }, name: 'Poulet avocat', price: 10 },
+        { id: 'dinde-fromage', photo: 'menu_dinde_fromage', desc: { fr: "Dinde, fromages, salade, tomates, cornichons et sauce maison", en: "Turkey, cheeses, salad, tomatoes, pickles and house sauce", es: "Pavo, quesos, ensalada, tomates, pepinillos y salsa de la casa" }, name: 'Dinde et fromage', price: 9 },
+        { id: 'halloumi-pesto', photo: 'menu_halloumi_pesto', desc: { fr: "Halloumi grillé, pesto au basilic, olives, roquette et sauce maison", en: "Grilled halloumi, basil pesto, olives, arugula and house sauce", es: "Halloumi a la plancha, pesto de albahaca, aceitunas, rúcula y salsa de la casa" }, name: 'Halloumi pesto', price: 9, veg: true,
           gloss: { fr: 'Halloumi : fromage qui se grille', en: 'Halloumi: a cheese made for grilling', es: 'Halloumi: queso para la plancha' } },
       ],
     },
@@ -110,12 +110,12 @@ export const MENU = {
       label: { fr: 'Pizzas', en: 'Pizzas', es: 'Pizzas' },
       cover: 'pizza_reine', itemPrefix: '',
       items: [
-        { id: 'margherita', desc: { fr: "Sauce tomate cuisinée, mélange de fromages fondants et herbes aromatiques", en: "Cooked tomato sauce, melting cheese blend and aromatic herbs", es: "Salsa de tomate cocinada, mezcla de quesos fundentes y hierbas aromáticas" }, name: 'Margherita', price: 7, veg: true },
-        { id: 'reine', desc: { fr: "Sauce tomate, fromage, fines tranches de jambon et champignons de Paris frais", en: "Tomato sauce, cheese, thin slices of ham and fresh button mushrooms", es: "Salsa de tomate, queso, finas lonchas de jamón y champiñones frescos" }, name: 'Reine', price: 9, photo: 'pizza_reine' },
-        { id: 'pepperoni', desc: { fr: "Sauce tomate, fromage et généreuses tranches de pepperoni bœuf", en: "Tomato sauce, cheese and generous slices of beef pepperoni", es: "Salsa de tomate, queso y generosas lonchas de pepperoni de ternera" }, name: 'Pepperoni', price: 9, photo: 'pizza_pepperoni' },
-        { id: 'la-libanaise', desc: { fr: "Sauce tomate, fromage, jambon, poivrons frais, olives noires et champignons", en: "Tomato sauce, cheese, ham, fresh peppers, black olives and mushrooms", es: "Salsa de tomate, queso, jamón, pimientos frescos, aceitunas negras y champiñones" }, name: 'La Libanaise', price: 9, photo: 'pizzalibaniase' },
-        { id: 'la-truffe', desc: { fr: "Base crème à la truffe noire, champignons émincés et fromage fondant", en: "Black truffle cream base, sliced mushrooms and melting cheese", es: "Base de crema de trufa negra, champiñones laminados y queso fundente" }, name: 'La Truffe', price: 9, photo: 'pizza_truffe' },
-        { id: 'la-poulet', desc: { fr: "Poulet grillé mariné, oignons émincés et base fromage", en: "Marinated grilled chicken, sliced onions and cheese base", es: "Pollo a la plancha marinado, cebolla en juliana y base de queso" }, name: 'La Poulet', price: 9 },
+        { id: 'margherita', photo: 'menu_margherita', desc: { fr: "Sauce tomate cuisinée, mélange de fromages fondants et herbes aromatiques", en: "Cooked tomato sauce, melting cheese blend and aromatic herbs", es: "Salsa de tomate cocinada, mezcla de quesos fundentes y hierbas aromáticas" }, name: 'Margherita', price: 7, veg: true },
+        { id: 'reine', photo: 'menu_reine', desc: { fr: "Sauce tomate, fromage, fines tranches de jambon et champignons de Paris frais", en: "Tomato sauce, cheese, thin slices of ham and fresh button mushrooms", es: "Salsa de tomate, queso, finas lonchas de jamón y champiñones frescos" }, name: 'Reine', price: 9 },
+        { id: 'pepperoni', photo: 'menu_pepperoni', desc: { fr: "Sauce tomate, fromage et généreuses tranches de pepperoni bœuf", en: "Tomato sauce, cheese and generous slices of beef pepperoni", es: "Salsa de tomate, queso y generosas lonchas de pepperoni de ternera" }, name: 'Pepperoni', price: 9 },
+        { id: 'la-libanaise', photo: 'menu_la_libanaise', desc: { fr: "Sauce tomate, fromage, jambon, poivrons frais, olives noires et champignons", en: "Tomato sauce, cheese, ham, fresh peppers, black olives and mushrooms", es: "Salsa de tomate, queso, jamón, pimientos frescos, aceitunas negras y champiñones" }, name: 'La Libanaise', price: 9 },
+        { id: 'la-truffe', photo: 'menu_la_truffe', desc: { fr: "Base crème à la truffe noire, champignons émincés et fromage fondant", en: "Black truffle cream base, sliced mushrooms and melting cheese", es: "Base de crema de trufa negra, champiñones laminados y queso fundente" }, name: 'La Truffe', price: 9 },
+        { id: 'la-poulet', photo: 'menu_la_poulet', desc: { fr: "Poulet grillé mariné, oignons émincés et base fromage", en: "Marinated grilled chicken, sliced onions and cheese base", es: "Pollo a la plancha marinado, cebolla en juliana y base de queso" }, name: 'La Poulet', price: 9 },
       ],
     },
     {
@@ -124,9 +124,9 @@ export const MENU = {
       label: { fr: 'Desserts', en: 'Desserts', es: 'Postres' },
       cover: 'dessert', itemPrefix: '',
       items: [
-        { id: 'knefeh', desc: { fr: "Fromage fondant, semoule dorée et sirop sucré", en: "Melting cheese, golden semolina and sweet syrup", es: "Queso fundente, sémola dorada y almíbar dulce" }, name: 'Knefeh', price: 7, veg: true, photo: 'knefeh',
+        { id: 'knefeh', photo: 'menu_knefeh', desc: { fr: "Fromage fondant, semoule dorée et sirop sucré", en: "Melting cheese, golden semolina and sweet syrup", es: "Queso fundente, sémola dorada y almíbar dulce" }, name: 'Knefeh', price: 7, veg: true,
           gloss: { fr: 'Dessert au fromage fondant et semoule, au sirop', en: 'Soft cheese and semolina pastry in syrup', es: 'Postre de queso fundente y sémola, con almíbar' } },
-        { id: 'nutella', desc: { fr: "Nutella et éclats de noisettes", en: "Nutella and hazelnut pieces", es: "Nutella y trocitos de avellana" }, name: 'Nutella', price: 5, veg: true },
+        { id: 'nutella', photo: 'menu_nutella', desc: { fr: "Nutella et éclats de noisettes", en: "Nutella and hazelnut pieces", es: "Nutella y trocitos de avellana" }, name: 'Nutella', price: 5, veg: true },
       ],
     },
     {
@@ -316,6 +316,123 @@ export const PHOTOS = {
     fr: 'La salle : comptoir en bois éclairé, tabourets colorés le long d’un mur vert sauge',
     en: 'The room: a lit wooden counter and colourful stools along a sage-green wall',
     es: 'La sala: mostrador de madera iluminado y taburetes de colores junto a una pared verde salvia' } },
+  // Carte page: Jalal's dish photos (4:5, named after the dish).
+  menu_zaatar: { pos: '50% 50%', alt: {
+    fr: "Une man'ouche au za'atar dorée, nappée de thym sauvage et de sésame",
+    en: "A golden za'atar man'ouche covered in wild thyme and sesame",
+    es: "Una man'ouche de za'atar dorada, cubierta de tomillo silvestre y sésamo" } },
+  menu_zaatar_fromage: { pos: '50% 50%', alt: {
+    fr: "Une man'ouche au za'atar et au fromage fondant, pliée sur une planche en bois",
+    en: "A za'atar and melted cheese man'ouche, folded on a wooden board",
+    es: "Una man'ouche de za'atar y queso fundido, doblada sobre una tabla de madera" } },
+  menu_zaatar_legumes: { pos: '50% 50%', alt: {
+    fr: "Une man'ouche au za'atar pliée, garnie de tomate, concombre et olives",
+    en: "A folded za'atar man'ouche filled with tomato, cucumber and olives",
+    es: "Una man'ouche de za'atar doblada, con tomate, pepino y aceitunas" } },
+  menu_zaatar_labneh: { pos: '50% 50%', alt: {
+    fr: "Une man'ouche moitié za'atar, moitié labneh crémeux",
+    en: "A man'ouche half za'atar, half creamy labneh",
+    es: "Una man'ouche mitad za'atar, mitad labneh cremoso" } },
+  menu_zaatar_labneh_legumes: { pos: '50% 50%', alt: {
+    fr: "Une man'ouche au sésame dépliée sur du labneh, tomate, concombre, menthe et olives",
+    en: "A sesame man'ouche unfolded over labneh, tomato, cucumber, mint and olives",
+    es: "Una man'ouche de sésamo desplegada sobre labneh, tomate, pepino, menta y aceitunas" } },
+  menu_jebne: { pos: '50% 50%', alt: {
+    fr: "Une man'ouche au fromage fondant, dorée, tenue au-dessus d'une table de galettes",
+    en: "A golden melted-cheese man'ouche held above a table of flatbreads",
+    es: "Una man'ouche de queso fundido, dorada, sobre una mesa de tortas" } },
+  menu_jebne_jambon: { pos: '50% 50%', alt: {
+    fr: "Une man'ouche au fromage fondant et au jambon, avec un long filet de fromage",
+    en: "A melted cheese and ham man'ouche with a long stretch of cheese",
+    es: "Una man'ouche de queso fundido y jamón, con un largo hilo de queso" } },
+  menu_jebne_mouhammara: { pos: '50% 50%', alt: {
+    fr: "Une man'ouche à la mouhammara orange et au fromage, pliée sur une planche",
+    en: "An orange mouhammara and cheese man'ouche, folded on a board",
+    es: "Una man'ouche de mouhammara naranja y queso, doblada sobre una tabla" } },
+  menu_lahm_bi_ajin: { pos: '50% 50%', alt: {
+    fr: "Un lahm bi ajin, galette de viande hachée épicée, avec citron et poivre sur la planche",
+    en: "A lahm bi ajin, spiced minced-meat flatbread, with a lemon and pepper shaker on the board",
+    es: "Un lahm bi ajin, torta de carne picada especiada, con limón y pimentero sobre la tabla" } },
+  menu_lahm_jebne: { pos: '50% 50%', alt: {
+    fr: "Un lahm bi ajin et jebné plié, viande hachée et fromage fondant qui déborde",
+    en: "A folded lahm bi ajin with jebné, minced meat and melted cheese oozing out",
+    es: "Un lahm bi ajin con jebné doblado, carne picada y queso fundido desbordando" } },
+  menu_mini_pizza: { pos: '50% 50%', alt: {
+    fr: "Une mini pizza dorée à la tomate, au fromage fondant, poivron et olive, devant un plateau de minis",
+    en: "A golden mini pizza with tomato, melted cheese, pepper and olive, above a tray of minis",
+    es: "Una mini pizza dorada con tomate, queso fundido, pimiento y aceituna, sobre una bandeja de minis" } },
+  menu_mini_zaatar: { pos: '50% 50%', alt: {
+    fr: "Un mini za'atar doré, couvert de thym et de sésame, au-dessus d'une pile de minis",
+    en: "A golden mini za'atar covered in thyme and sesame, above a stack of minis",
+    es: "Un mini za'atar dorado, cubierto de tomillo y sésamo, sobre una pila de minis" } },
+  menu_mini_fromage: { pos: '50% 50%', alt: {
+    fr: "Un petit fatayer carré au fromage et aux herbes, aux coins pincés",
+    en: "A small square fatayer filled with cheese and herbs, with pinched corners",
+    es: "Un pequeño fatayer cuadrado de queso y hierbas, con las esquinas pellizcadas" } },
+  menu_mini_epinards: { pos: '50% 50%', alt: {
+    fr: "Un fatayer triangulaire aux épinards, croqué, devant un plateau de fatayers",
+    en: "A triangular spinach fatayer, bitten, in front of a tray of fatayers",
+    es: "Un fatayer triangular de espinacas, mordido, ante una bandeja de fatayers" } },
+  menu_sfiha: { pos: '50% 50%', alt: {
+    fr: "Une sfiha carrée à la viande hachée et aux tomates, aux coins pincés",
+    en: "A square sfiha with minced meat and tomatoes, pinched corners",
+    es: "Una sfiha cuadrada de carne picada y tomate, con las esquinas pellizcadas" } },
+  menu_kafta: { pos: '50% 50%', alt: {
+    fr: "Un wrap grillé à la kafta coupé en deux : viande hachée, fromage, tomate et cornichons",
+    en: "A grilled kafta wrap cut in half: minced meat, cheese, tomato and pickles",
+    es: "Un wrap a la plancha de kafta cortado por la mitad: carne picada, queso, tomate y pepinillos" } },
+  menu_soujouk: { pos: '50% 50%', alt: {
+    fr: "Un wrap grillé au soujouk coupé en deux : saucisse épicée et fromage fondant",
+    en: "A grilled soujouk wrap cut in half: spiced sausage and melted cheese",
+    es: "Un wrap a la plancha de soujouk cortado por la mitad: salchicha especiada y queso fundido" } },
+  menu_taouk: { pos: '50% 50%', alt: {
+    fr: "Un wrap grillé au poulet taouk coupé en deux, avec salade, tomate et fromage",
+    en: "A grilled taouk chicken wrap cut in half, with salad, tomato and cheese",
+    es: "Un wrap a la plancha de pollo taouk cortado por la mitad, con ensalada, tomate y queso" } },
+  menu_poulet_avocat: { pos: '50% 50%', alt: {
+    fr: "Un wrap grillé au poulet et à l'avocat coupé en deux, avec roquette et tomate",
+    en: "A grilled chicken and avocado wrap cut in half, with arugula and tomato",
+    es: "Un wrap a la plancha de pollo y aguacate cortado por la mitad, con rúcula y tomate" } },
+  menu_dinde_fromage: { pos: '50% 50%', alt: {
+    fr: "Un wrap grillé à la dinde et au fromage fondant coupé en deux, avec salade et tomate",
+    en: "A grilled turkey and melted cheese wrap cut in half, with salad and tomato",
+    es: "Un wrap a la plancha de pavo y queso fundido cortado por la mitad, con ensalada y tomate" } },
+  menu_halloumi_pesto: { pos: '50% 50%', alt: {
+    fr: "Un wrap grillé au halloumi et au pesto coupé en deux, avec olives, roquette et tomate",
+    en: "A grilled halloumi and pesto wrap cut in half, with olives, arugula and tomato",
+    es: "Un wrap a la plancha de halloumi y pesto cortado por la mitad, con aceitunas, rúcula y tomate" } },
+  menu_margherita: { pos: '50% 50%', alt: {
+    fr: "Une pizza margherita, sauce tomate et fromage fondant, part soulevée avec un long filet de fromage",
+    en: "A margherita pizza with tomato sauce and melted cheese, a slice lifted with a long cheese pull",
+    es: "Una pizza margarita con salsa de tomate y queso fundido, con una porción levantada y un largo hilo de queso" } },
+  menu_reine: { pos: '50% 50%', alt: {
+    fr: "Une pizza reine au jambon, champignons et fromage fondant, part soulevée",
+    en: "A ham, mushroom and melted cheese pizza, a slice lifted",
+    es: "Una pizza reina de jamón, champiñones y queso fundido, con una porción levantada" } },
+  menu_pepperoni: { pos: '50% 50%', alt: {
+    fr: "Une part de pizza au pepperoni, sauce tomate et fromage fondant",
+    en: "A slice of pepperoni pizza with tomato sauce and melted cheese",
+    es: "Una porción de pizza de pepperoni con salsa de tomate y queso fundido" } },
+  menu_la_libanaise: { pos: '50% 50%', alt: {
+    fr: "Une part de pizza libanaise aux champignons, poivrons verts et olives noires, fromage filant",
+    en: "A slice of Lebanese pizza with mushrooms, green peppers and black olives, stretchy cheese",
+    es: "Una porción de pizza libanesa con champiñones, pimientos verdes y aceitunas negras, queso hilante" } },
+  menu_la_truffe: { pos: '50% 50%', alt: {
+    fr: "Une pizza à la crème de truffe noire, champignons et fromage fondant, part soulevée",
+    en: "A black truffle cream pizza with mushrooms and melted cheese, a slice lifted",
+    es: "Una pizza de crema de trufa negra con champiñones y queso fundido, con una porción levantada" } },
+  menu_la_poulet: { pos: '50% 50%', alt: {
+    fr: "Une pizza au poulet grillé mariné, oignons rouges et fromage, vue du dessus",
+    en: "A pizza with marinated grilled chicken, red onions and cheese, seen from above",
+    es: "Una pizza de pollo a la plancha marinado, cebolla morada y queso, vista desde arriba" } },
+  menu_knefeh: { pos: '50% 50%', alt: {
+    fr: "Une part de knefeh : fromage fondant, semoule dorée et sirop sucré, servie sur une assiette blanche",
+    en: "A portion of knefeh: melted cheese, golden semolina and sweet syrup, served on a white plate",
+    es: "Una porción de knefeh: queso fundente, sémola dorada y almíbar dulce, servida en un plato blanco" } },
+  menu_nutella: { pos: '50% 50%', alt: {
+    fr: "Une galette au Nutella parsemée d'éclats de noisettes, sur une planche en bois",
+    en: "A flatbread with Nutella and hazelnut pieces, on a wooden board",
+    es: "Una torta con Nutella y trocitos de avellana, sobre una tabla de madera" } },
 };
 
 // Hero reel (frame #1 = the fire).
