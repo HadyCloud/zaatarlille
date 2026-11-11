@@ -100,7 +100,7 @@ const DICT = {
         items: [
           ['La viande est-elle halal ?', "Oui, notre viande est halal."],
           ['Réservation, à emporter, groupes ?', `Le plus simple : appelez-nous au ${CONFIG.phone.display}.`],
-          ['Avez-vous des options végétariennes ?', "Oui : plusieurs man'ouches (za'atar, fromage, labneh, mouhammara…), les mini fromage et mini épinards, le wrap halloumi pesto et le knefeh. Pour les allergènes, demandez à l'équipe."],
+          ['Avez-vous des options végétariennes ?', "Oui : plusieurs man'ouches (za'atar, fromage, labneh…), les mini fromage et mini épinards, le wrap halloumi pesto et le knefeh. Pour les allergènes, demandez à l'équipe."],
         ],
       },
     },
@@ -199,7 +199,7 @@ const DICT = {
         items: [
           ['Is the meat halal?', 'Yes, our meat is halal.'],
           ['Reservations, takeaway, groups?', `The easiest way: call us on ${CONFIG.phone.display}.`],
-          ['Do you have vegetarian options?', "Yes: several man'ouches (za'atar, cheese, labneh, mouhammara…), the mini cheese and mini spinach, the halloumi pesto wrap and the knefeh. For allergens, please ask the team."],
+          ['Do you have vegetarian options?', "Yes: several man'ouches (za'atar, cheese, labneh…), the mini cheese and mini spinach, the halloumi pesto wrap and the knefeh. For allergens, please ask the team."],
         ],
       },
     },
@@ -298,7 +298,7 @@ const DICT = {
         items: [
           ['¿La carne es halal?', 'Sí, nuestra carne es halal.'],
           ['¿Reservas, para llevar, grupos?', `Lo más fácil: llámanos al ${CONFIG.phone.display}.`],
-          ['¿Tenéis opciones vegetarianas?', "Sí: varias man'ouches (za'atar, queso, labneh, mouhammara…), los mini de queso y de espinacas, el wrap halloumi pesto y el knefeh. Para los alérgenos, pregunta al equipo."],
+          ['¿Tenéis opciones vegetarianas?', "Sí: varias man'ouches (za'atar, queso, labneh…), los mini de queso y de espinacas, el wrap halloumi pesto y el knefeh. Para los alérgenos, pregunta al equipo."],
         ],
       },
     },
