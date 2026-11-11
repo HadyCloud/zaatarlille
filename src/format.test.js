@@ -31,13 +31,13 @@ describe('norm / search', () => {
     expect(r.sections[0].items[0].name).toBe('Mini épinards');
   });
   it('"JEBNE" finds every jebné item', () => {
-    expect(filterMenu(MENU, { q: 'JEBNE' }).count).toBe(3);
+    expect(filterMenu(MENU, { q: 'JEBNE' }).count).toBe(4);
   });
 });
 
 describe('filterMenu', () => {
-  it('has 52 items in total', () => {
-    expect(filterMenu(MENU, {}).count).toBe(52);
+  it('has 53 items in total', () => {
+    expect(filterMenu(MENU, {}).count).toBe(53);
   });
   it('category filter', () => {
     const r = filterMenu(MENU, { cat: 'wraps' });
