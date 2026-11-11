@@ -25,6 +25,7 @@ function row(s, it) {
   const id = `${s.id}/${it.id}`;
   const full = `${s.itemPrefix}${it.name}`.trim();
   const photoBtn = (cls, inner) => `<button class="${cls}" type="button" data-open-photo aria-label="${esc(d.photoOf(full))}">${inner}</button>`;
+  const desc = it.desc?.[lang()];
   const gloss = it.gloss?.[lang()];
   const plain = s.id.startsWith('boissons'); // drinks: no photo column at all
   const photo = plain ? null : it.photo;
@@ -36,6 +37,7 @@ function row(s, it) {
       <span class="row__dots" aria-hidden="true"></span>
       <span class="row__price">${formatPrice(it.price)}</span>
     </div>
+    ${desc ? `<p class="row__desc">${esc(desc)}</p>` : ''}
     ${gloss ? `<p class="row__gloss">${esc(gloss)}</p>` : ''}
   </li>`;
 }

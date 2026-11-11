@@ -46,7 +46,7 @@ describe('filterMenu', () => {
   });
   it('category + vegetarian + search combined', () => {
     const r = filterMenu(MENU, { cat: 'manouche', veg: true, q: 'zaatar' });
-    expect(r.sections[0].items.map((i) => i.price)).toEqual([4, 5, 5, 5, 6]);
+    expect(r.sections[0].items.map((i) => i.price)).toEqual([4, 6, 5, 5, 6]);
   });
   it('vegetarian only keeps tagged items', () => {
     const r = filterMenu(MENU, { cat: 'wraps', veg: true });

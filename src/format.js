@@ -48,7 +48,7 @@ export function filterMenu(menu, filters, lang = 'fr') {
       const items = s.items.filter((it) => {
         if (veg && !it.veg) return false;
         if (!tokens.length) return true;
-        const hay = norm([it.name, s.title, s.label?.[lang], s.label?.fr, it.gloss?.[lang], it.gloss?.fr].join(' '));
+        const hay = norm([it.name, s.title, s.label?.[lang], s.label?.fr, it.desc?.[lang], it.desc?.fr, it.gloss?.[lang], it.gloss?.fr].join(' '));
         return tokens.every((t) => hay.includes(t));
       });
       count += items.length;
