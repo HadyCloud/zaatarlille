@@ -72,6 +72,7 @@ const SOURCES = [
   ['menu photos/carte/la-truffe.jpg', 'menu_la_truffe', [240, 800, 1400]],
   ['menu photos/carte/la-poulet.jpg', 'menu_la_poulet', [240, 800, 1400]],
   ['menu photos/carte/knefeh.jpg', 'menu_knefeh', [240, 800, 1400]],
+  ['menu photos/carte/kebbe.jpg', 'menu_kebbe', [240, 800, 1400]],
   ['menu photos/carte/nutella.jpg', 'menu_nutella', [240, 800, 1400]],
 ];
 

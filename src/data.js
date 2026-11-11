@@ -79,7 +79,7 @@ export const MENU = {
           gloss: { fr: 'Petit chausson aux épinards', en: 'Small spinach turnover', es: 'Empanadilla de espinacas' } },
         { id: 'sfiha', photo: 'menu_sfiha', desc: { fr: "Viande hachée et tomates", en: "Minced meat and tomatoes", es: "Carne picada y tomates" }, name: 'Sfiha', price: 1.5,
           gloss: { fr: 'Petite tarte carrée à la viande', en: 'Small square open meat pie', es: 'Pequeña tarta cuadrada de carne' } },
-        { id: 'kebbe', desc: { fr: "Boulette de viande farcie", en: "Stuffed meatball", es: "Albóndiga rellena" }, name: 'Kebbé', price: 2, photo: 'kebbe',
+        { id: 'kebbe', desc: { fr: "Boulette de viande farcie", en: "Stuffed meatball", es: "Albóndiga rellena" }, name: 'Kebbé', price: 2, photo: 'menu_kebbe',
           gloss: { fr: 'Croquette de boulgour et viande', en: 'Bulgur and meat croquette', es: 'Croqueta de bulgur y carne' } },
         { id: 'samboussek', desc: { fr: "Chausson à la viande", en: "Meat turnover", es: "Empanadilla de carne" }, name: 'Samboussek', price: 1.5, photo: 'samboussek',
           gloss: { fr: 'Petit chausson en demi-lune', en: 'Small half-moon turnover', es: 'Empanadilla en media luna' } },
@@ -428,6 +428,10 @@ export const PHOTOS = {
     fr: "Une part de knefeh : fromage fondant, semoule dorée et sirop sucré, servie sur une assiette blanche",
     en: "A portion of knefeh: melted cheese, golden semolina and sweet syrup, served on a white plate",
     es: "Una porción de knefeh: queso fundente, sémola dorada y almíbar dulce, servida en un plato blanco" } },
+  menu_kebbe: { pos: '50% 50%', alt: {
+    fr: "Un kebbé frit, doré, tenu entre deux doigts",
+    en: "A golden fried kebbe held between two fingers",
+    es: "Un kebbé frito y dorado sostenido entre dos dedos" } },
   menu_nutella: { pos: '50% 50%', alt: {
     fr: "Une galette au Nutella parsemée d'éclats de noisettes, sur une planche en bois",
     en: "A flatbread with Nutella and hazelnut pieces, on a wooden board",
