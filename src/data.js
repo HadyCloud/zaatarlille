@@ -54,7 +54,7 @@ export const MENU = {
         { id: 'zaatar-legumes', photo: 'menu_zaatar_legumes', desc: { fr: "Thym sauvage, concombres, tomates fraîches, olives et menthe", en: "Wild thyme, cucumbers, fresh tomatoes, olives and mint", es: "Tomillo silvestre, pepinos, tomates frescos, aceitunas y menta" }, name: 'Zaatar et légumes', price: 5, veg: true },
         { id: 'zaatar-labneh', photo: 'menu_zaatar_labneh', desc: { fr: "Thym sauvage et labneh ultra crémeux", en: "Wild thyme and ultra-creamy labneh", es: "Tomillo silvestre y labneh ultracremoso" }, name: 'Zaatar et labneh', price: 5, veg: true,
           gloss: { fr: 'Labneh : fromage frais de yaourt égoutté', en: 'Labneh: strained yogurt cheese', es: 'Labneh: queso fresco de yogur colado' } },
-        { id: 'zaatar-labneh-legumes', desc: { fr: "Le combo parfait : thym sauvage, labneh, concombres, tomates, olives et menthe", en: "The perfect combo: wild thyme, labneh, cucumbers, tomatoes, olives and mint", es: "El combo perfecto: tomillo silvestre, labneh, pepinos, tomates, aceitunas y menta" }, name: 'Zaatar labneh et légumes', price: 6, veg: true },
+        { id: 'zaatar-labneh-legumes', photo: 'menu_zaatar_labneh_legumes', desc: { fr: "Le combo parfait : thym sauvage, labneh, concombres, tomates, olives et menthe", en: "The perfect combo: wild thyme, labneh, cucumbers, tomatoes, olives and mint", es: "El combo perfecto: tomillo silvestre, labneh, pepinos, tomates, aceitunas y menta" }, name: 'Zaatar labneh et légumes', price: 6, veg: true },
         { id: 'labneh-sesame', photo: 'menu_labneh_sesame', desc: { fr: "Labneh, sésame blanc & noir, tomates, olives, sariette et filet d'huile d'olive", en: "Labneh, white & black sesame, tomatoes, olives, savory and a drizzle of olive oil", es: "Labneh, sésamo blanco y negro, tomates, aceitunas, ajedrea y un chorrito de aceite de oliva" }, name: 'Labneh sésame', price: 6.5, veg: true },
         { id: 'jebne', photo: 'menu_jebne', desc: { fr: "Full fromage fondant", en: "Loaded with melting cheese", es: "Todo de queso fundente" }, name: 'Jebné', price: 5.5, veg: true,
           gloss: { fr: 'Jebné : « fromage » en libanais', en: 'Jebné: Lebanese for “cheese”', es: 'Jebné: «queso» en libanés' } },
@@ -332,6 +332,10 @@ export const PHOTOS = {
     fr: "Une man'ouche moitié za'atar, moitié labneh crémeux",
     en: "A man'ouche half za'atar, half creamy labneh",
     es: "Una man'ouche mitad za'atar, mitad labneh cremoso" } },
+  menu_zaatar_labneh_legumes: { pos: '50% 50%', alt: {
+    fr: "Une man'ouche moitié za'atar, moitié labneh, garnie de tomate, concombre, olives et menthe",
+    en: "A man'ouche half za'atar, half labneh, topped with tomato, cucumber, olives and mint",
+    es: "Una man'ouche mitad za'atar, mitad labneh, con tomate, pepino, aceitunas y menta" } },
   menu_labneh_sesame: { pos: '50% 50%', alt: {
     fr: "Une man'ouche au sésame dépliée sur du labneh, tomate, concombre, menthe et olives",
     en: "A sesame man'ouche unfolded over labneh, tomato, cucumber, mint and olives",

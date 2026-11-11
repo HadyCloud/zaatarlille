@@ -318,6 +318,15 @@
       1400
     ]
   },
+  "menu_zaatar_labneh_legumes": {
+    "w": 1122,
+    "h": 1402,
+    "widths": [
+      240,
+      800,
+      1122
+    ]
+  },
   "menu_jebne": {
     "w": 1440,
     "h": 1800,
