@@ -15,7 +15,7 @@ export const CONFIG = {
   deliveroo: 'https://deliveroo.fr/en/menu/lille/lille-gambetta/zaatar-lille',
   googleQuery: "ZA'ATAR 139 Rue des Postes Lille",
   // Set to null to hide the rating everywhere.
-  GOOGLE_RATING: { value: 4.8, count: 112 },
+  GOOGLE_RATING: { value: 4.8, count: 114 },
   chef: {
     name: 'Jalal',
     otherHouse: 'Maison L',
