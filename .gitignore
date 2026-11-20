@@ -1,4 +1,6 @@
 node_modules
 dist
 dist-single
+.cloudflare
+.dev.vars*
 .DS_Store
